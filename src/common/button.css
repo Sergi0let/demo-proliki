@@ -1,0 +1,19 @@
+/* style buttons */
+.button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 3px;
+  background: #f0f0f0;
+  color: #333;
+  border-bottom: solid 4px #bbb;
+  border-right: solid 4px #bbb;
+}
+.button:hover {
+  background: #e0e0e0;
+}
+.button:active {
+  background: #e0e0e0;
+  border-bottom: solid 4px #999;
+  border-right: solid 4px #999;
+}
