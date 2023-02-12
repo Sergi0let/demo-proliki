@@ -1,7 +1,7 @@
 import logo from '../img/logo/logo.svg';
 const Logo = () => {
   return (
-    <div>
+    <div className="logo">
       <img src={logo} alt="logo" />
     </div>
   );
