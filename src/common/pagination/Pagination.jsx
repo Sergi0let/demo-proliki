@@ -5,7 +5,7 @@ import arrow from '../../img/icons/arrow.svg';
 export const PaginationArrow = ({ value }) => {
   return (
     <button className={`pagination-tab ${value === 'endBtn' ? 'endBtn' : ''}`}>
-      <img src={arrow} alt="Button previous" />
+      <img src={arrow} alt="Button for switch slider" />
     </button>
   );
 };
