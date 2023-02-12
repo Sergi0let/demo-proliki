@@ -1,11 +1,12 @@
 import './App.scss';
 import Checkbox from './common/checkbox/Checkbox';
-
 import Logo from './common/logo/Logo';
 import RadioBtn from './common/radioBtn/RadioBtn';
 import Letter from './common/letter/Letter';
 import Tab from './common/tab/Tab';
 import Pagination, { PaginationArrow } from './common/pagination/Pagination';
+import Sort from './common/sort/Sort';
+import SortMobile from './common/sort/SortMobile';
 
 function App() {
   return (
@@ -54,6 +55,18 @@ function App() {
         <Pagination value={'...'} />
         <Pagination value={'12'} />
         <PaginationArrow value={'endBtn'} />
+      </div>
+
+      <div>
+        <p>Sort</p>
+        <Sort value={'По популярности'} className="checked" />
+        <Sort value={'А-я'} />
+        <Sort value={'Я-а'} />
+      </div>
+
+      <div>
+        <p>Sort_mobile</p>
+        <SortMobile value={'По популярности'} />
       </div>
     </div>
   );

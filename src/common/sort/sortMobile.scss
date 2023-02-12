@@ -1,0 +1,39 @@
+@import '../../scss/variables.scss';
+
+.sort-mobile {
+  display: flex;
+  align-items: center;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    button {
+      background: none;
+      border: none;
+    }
+  }
+
+  &__down,
+  &__up {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+  }
+
+  &__up {
+    bottom: -2.5px;
+  }
+
+  &__down {
+    top: -2.5px;
+    transform: rotate(180deg);
+  }
+
+  &__text {
+    padding-left: 8px;
+    font-size: 14px;
+    line-height: 160%;
+    color: $blueColor;
+  }
+}
