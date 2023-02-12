@@ -2,7 +2,7 @@ import React from 'react';
 
 import './radioBtn.scss';
 
-const RadioBtn = ({ name, value, checked, onChange, label, disabled }) => (
+const RadioBtn = ({ name, value, checked, onChange, label }) => (
   <label className="radio-btn">
     <input
       type="radio"
@@ -10,9 +10,8 @@ const RadioBtn = ({ name, value, checked, onChange, label, disabled }) => (
       value={value}
       checked={checked}
       onChange={onChange}
-      disabled={disabled}
     />
-    <div className={`radio-btn__round ${disabled ? 'disabled' : ''}`}></div>
+    <div className="radio-btn__round"></div>
     {label}
   </label>
 );

@@ -8,12 +8,15 @@
   justify-content: center;
   border-radius: 12px;
   background-color: $strokeColor;
-
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
   &.checked {
     background-color: $blueColor;
     color: #fff;
+    transition: background-color 0.3s ease 0s;
   }
-  &.disabled {
-    background-color: $blackColor;
+  &:hover {
+    background-color: $blueHoverColor;
+    color: #fff;
   }
 }
