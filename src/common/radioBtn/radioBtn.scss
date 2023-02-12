@@ -1,0 +1,35 @@
+@import '../../scss/variables.scss';
+.radio-btn {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  line-height: 160%;
+
+  input {
+    display: none;
+
+    &:checked {
+      transform: scale(0);
+    }
+
+    &:checked + .radio-btn__round {
+      border-color: $blueColor;
+      transform: scale(1);
+      border-width: 7px;
+    }
+  }
+
+  &__round {
+    margin-right: 8px;
+    display: flex;
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease 0s;
+    border: 2px solid $blueColor;
+    border-radius: 100%;
+  }
+  .disabled {
+    border-color: $strokeColor;
+    cursor: not-allowed;
+  }
+}

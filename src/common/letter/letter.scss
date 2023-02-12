@@ -1,0 +1,19 @@
+@import '../../scss/variables.scss';
+
+.letter {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background-color: $strokeColor;
+
+  &.checked {
+    background-color: $blueColor;
+    color: #fff;
+  }
+  &.disabled {
+    background-color: $blackColor;
+  }
+}
