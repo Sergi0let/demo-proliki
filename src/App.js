@@ -5,7 +5,10 @@ import Logo from './common/Logo';
 function App() {
   return (
     <div className="App">
-      <span>Site heare Soon</span>
+      <span className="regular">Site heare Soon</span>
+      <span className="medium">Site heare Soon</span>
+      <span className="bold">Site heare Soon</span>
+
       <Logo />
     </div>
   );
