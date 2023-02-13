@@ -1,17 +1,22 @@
 import './App.scss';
-import Checkbox from './common/checkbox/Checkbox';
-import Logo from './common/logo/Logo';
-import RadioBtn from './common/radioBtn/RadioBtn';
-import Letter from './common/letter/Letter';
-import Tab from './common/tab/Tab';
-import Pagination, { PaginationArrow } from './common/pagination/Pagination';
-import Sort from './common/sort/Sort';
-import SortMobile from './common/sort/SortMobile';
+// import Checkbox from './common/checkbox/Checkbox';
+// import Logo from './common/logo/Logo';
+// import RadioBtn from './common/radioBtn/RadioBtn';
+// import Letter from './common/letter/Letter';
+// import Tab from './common/tab/Tab';
+// import Pagination, { PaginationArrow } from './common/pagination/Pagination';
+// import Sort from './common/sort/Sort';
+// import SortMobile from './common/sort/SortMobile';
+import {
+  BigButton,
+  SecondaryButton,
+  SmallButton,
+} from './common/Button/Button';
 
 function App() {
   return (
     <div className="App">
-      <Logo />
+      {/* <Logo />
 
       <div>
         <span className="regular">Golos Regular</span>
@@ -67,6 +72,47 @@ function App() {
       <div>
         <p>Sort_mobile</p>
         <SortMobile value={'По популярности'} />
+      </div> */}
+
+      <div>
+        <p>BigButton</p>
+        <BigButton>Цены в аптеках</BigButton>
+        <BigButton>Цены в аптеках</BigButton>
+        <BigButton className="active">Цены в аптеках</BigButton>
+      </div>
+
+      <div>
+        <p>BigButtonIcon</p>
+        <BigButton icon className="icon">
+          Цены в аптеках
+        </BigButton>
+        <BigButton icon className="icon">
+          Цены в аптеках
+        </BigButton>
+        <BigButton icon className="active">
+          Цены в аптеках
+        </BigButton>
+      </div>
+
+      <div>
+        <p>BigButtonIcon</p>
+        <SecondaryButton className="icon">Аналоги</SecondaryButton>
+        <SecondaryButton className="icon active">Аналоги</SecondaryButton>
+        <SecondaryButton icon className=" icon">
+          Показать еще
+        </SecondaryButton>
+        <SecondaryButton icon className="active icon">
+          Показать еще
+        </SecondaryButton>
+      </div>
+
+      <div>
+        <p>Small button</p>
+        <SmallButton>Инструкция</SmallButton>
+        <SmallButton>Инструкция</SmallButton>
+        <SmallButton icon className="active">
+          Инструкция
+        </SmallButton>
       </div>
     </div>
   );

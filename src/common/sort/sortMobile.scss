@@ -3,15 +3,12 @@
 .sort-mobile {
   display: flex;
   align-items: center;
+  padding-left: 8px;
 
   &__container {
     display: flex;
     flex-direction: column;
     position: relative;
-    button {
-      background: none;
-      border: none;
-    }
   }
 
   &__down,
