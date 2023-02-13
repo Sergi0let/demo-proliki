@@ -3,10 +3,6 @@
 .App {
   font-family: 'GolosRegular';
 
-  // div > * {
-  //   margin: 10px 0px;
-  // }
-
   .regular {
     font-family: 'GolosRegular';
   }
@@ -30,4 +26,8 @@
     gap: 16px;
     margin: 20px 0px;
   }
+}
+
+.App > div {
+  margin: 20px 0px;
 }
