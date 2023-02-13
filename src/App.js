@@ -1,24 +1,29 @@
 import './App.scss';
-import Checkbox from './common/checkbox/Checkbox';
-import Logo from './common/logo/Logo';
-import RadioBtn from './common/radioBtn/RadioBtn';
-import Letter from './common/letter/Letter';
-import Tab from './common/tab/Tab';
-import Pagination, { PaginationArrow } from './common/pagination/Pagination';
-import Sort from './common/sort/Sort';
-import SortMobile from './common/sort/SortMobile';
-import {
-  BigButton,
-  SecondaryButton,
-  SmallButton,
-} from './common/Button/Button';
+// import Checkbox from './common/checkbox/Checkbox';
+// import Logo from './common/logo/Logo';
+// import RadioBtn from './common/radioBtn/RadioBtn';
+// import Letter from './common/letter/Letter';
+// import Tab from './common/tab/Tab';
+// import Pagination, { PaginationArrow } from './common/pagination/Pagination';
+// import Sort from './common/sort/Sort';
+// import SortMobile from './common/sort/SortMobile';
+// import {
+//   BigButton,
+//   SecondaryButton,
+//   SmallButton,
+// } from './common/Button/Button';
 import Container from './layouts/container/Container';
 import Tabs from './components/tabs/Tabs';
+import EmailInput from './common/emailInput/EmailInput';
+import NewsItem from './components/NewsItem/NewsItem';
+
+// import images
+import image from './img/news/news-1.jpg';
 
 function App() {
   return (
     <div className="App">
-      <Container>
+      {/* <Container>
         <Logo />
         <div>
           <span className="regular">Golos Regular</span>
@@ -103,10 +108,22 @@ function App() {
           <SmallButton>Инструкция</SmallButton>
           <SmallButton className="active">Инструкция</SmallButton>
         </div>
+      </Container> */}
 
-        <div>
-          <Tabs />
-        </div>
+      <Tabs />
+
+      <Container>
+        <EmailInput placeholder="Ваш e-mail" type="email" />
+
+        <NewsItem
+          image={image}
+          category="Категорія"
+          date="2 марта 2021"
+          alt="рекомендации по составу вакцин против гриппа"
+        >
+          ЕМА опубликовало рекомендации по составу вакцин против гриппа на
+          2021г.
+        </NewsItem>
       </Container>
     </div>
   );

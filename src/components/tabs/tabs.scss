@@ -1,8 +1,15 @@
 @import '../../scss/variables.scss';
 
 .tabs {
-  display: flex;
   background-color: $bgLightColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__list {
+    display: flex;
+    overflow: hidden;
+  }
 
   &__item {
     line-height: 58px;

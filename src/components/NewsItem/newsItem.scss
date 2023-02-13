@@ -1,0 +1,60 @@
+@import '../../scss/variables.scss';
+@import '../../scss/breakpoints.scss';
+
+.news-item {
+  max-width: 360px;
+  min-width: 157px;
+  padding: 10px 0px;
+
+  &__image-wrap {
+    border-radius: 12px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    padding-top: 24px;
+  }
+}
+
+.content {
+  &__category {
+    line-height: 160%;
+    color: $blueColor;
+    font-size: 14px;
+
+    @include for-sm {
+      font-size: 16px;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 160%;
+    color: #000000;
+    margin-top: 8px;
+
+    @include for-sm {
+      font-size: 18px;
+      margin-top: 16px;
+    }
+  }
+
+  &__datetime {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 160%;
+    color: $greySecondColor;
+
+    @include for-sm {
+      font-size: 16px;
+      margin-top: 16px;
+    }
+  }
+}
