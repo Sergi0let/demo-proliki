@@ -14,21 +14,21 @@ const noteSvg = (
       r="11"
       transform="rotate(180 12 12.5)"
       stroke="white"
-      stroke-width="2"
+      strokeWidth="2"
     />
     <path
       d="M12 17.5L12 12.5"
       stroke="white"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M12 8.5L12 8"
       stroke="white"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );

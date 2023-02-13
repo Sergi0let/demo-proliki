@@ -1,0 +1,28 @@
+@import '../../scss/variables.scss';
+
+.tabs {
+  display: flex;
+  background-color: $bgLightColor;
+
+  &__item {
+    line-height: 58px;
+    color: $blueColor;
+    white-space: nowrap;
+    font-weight: 600;
+    transition: all 0.3s ease 0s;
+
+    cursor: pointer;
+    &:not(:last-child) {
+      margin-right: 32px;
+    }
+
+    &.active {
+      color: $blackSecondColor;
+    }
+
+    &:hover {
+      color: $blueHoverColor;
+      text-decoration: underline;
+    }
+  }
+}

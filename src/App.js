@@ -1,119 +1,113 @@
 import './App.scss';
-// import Checkbox from './common/checkbox/Checkbox';
-// import Logo from './common/logo/Logo';
-// import RadioBtn from './common/radioBtn/RadioBtn';
-// import Letter from './common/letter/Letter';
-// import Tab from './common/tab/Tab';
-// import Pagination, { PaginationArrow } from './common/pagination/Pagination';
-// import Sort from './common/sort/Sort';
-// import SortMobile from './common/sort/SortMobile';
+import Checkbox from './common/checkbox/Checkbox';
+import Logo from './common/logo/Logo';
+import RadioBtn from './common/radioBtn/RadioBtn';
+import Letter from './common/letter/Letter';
+import Tab from './common/tab/Tab';
+import Pagination, { PaginationArrow } from './common/pagination/Pagination';
+import Sort from './common/sort/Sort';
+import SortMobile from './common/sort/SortMobile';
 import {
   BigButton,
   SecondaryButton,
   SmallButton,
 } from './common/Button/Button';
+import Container from './layouts/container/Container';
+import Tabs from './components/tabs/Tabs';
 
 function App() {
   return (
     <div className="App">
-      {/* <Logo />
+      <Container>
+        <Logo />
+        <div>
+          <span className="regular">Golos Regular</span>
+          <span className="medium">Golos Medium</span>
+          <span className="bold">Golos Bold</span>
+        </div>
+        <div>
+          <p>radiobutton</p>
+          <RadioBtn label={'ABC'} name="radio" />
+          <RadioBtn label={'ABC'} name="radio" />
+          <RadioBtn label={'ABC'} name="radio" />
+        </div>
+        <div>
+          <p>Checkbox</p>
+          <Checkbox label="Checkbox" />
+          <Checkbox label="Checkbox" />
+          <Checkbox label="Checkbox" checked />
+        </div>
+        <div>
+          <p>Letter</p>
+          <Letter value={'A'} />
+          <Letter value={'A'} checked />
+          <Letter value={'A'} />
+        </div>
+        <div>
+          <p>Tab</p>
+          <Tab value={'Препараты'} checked />
+          <Tab value={'Производители'} />
+          <Tab value={'Активные вещества'} />
+        </div>
+        <div className="pagination-row">
+          <p>Pagination</p>
+          <PaginationArrow />
+          <Pagination value={'1'} checked />
+          <Pagination value={'2'} />
+          <Pagination value={'...'} />
+          <Pagination value={'12'} />
+          <PaginationArrow value={'endBtn'} />
+        </div>
+        <div>
+          <p>Sort</p>
+          <Sort value={'По популярности'} className="checked" />
+          <Sort value={'А-я'} />
+          <Sort value={'Я-а'} />
+        </div>
+        <div>
+          <p>Sort_mobile</p>
+          <SortMobile value={'По популярности'} />
+        </div>
+        <div>
+          <p>BigButton</p>
+          <BigButton>Цены в аптеках</BigButton>
+          <BigButton>Цены в аптеках</BigButton>
+          <BigButton className="active">Цены в аптеках</BigButton>
+        </div>
+        <div>
+          <p>BigButtonIcon</p>
+          <BigButton icon={true} className="icon">
+            Цены в аптеках
+          </BigButton>
+          <BigButton icon={true} className="icon">
+            Цены в аптеках
+          </BigButton>
+          <BigButton icon={true} className="active">
+            Цены в аптеках
+          </BigButton>
+        </div>
+        <div>
+          <p>BigButtonIcon</p>
+          <SecondaryButton className="icon">Аналоги</SecondaryButton>
+          <SecondaryButton className="icon active">Аналоги</SecondaryButton>
+          <SecondaryButton icon={true} className=" icon">
+            Показать еще
+          </SecondaryButton>
+          <SecondaryButton icon={true} className="active icon">
+            Показать еще
+          </SecondaryButton>
+        </div>
+        <div>
+          <p>Small button</p>
+          <SmallButton>Инструкция</SmallButton>
+          <SmallButton>Инструкция</SmallButton>
+          <SmallButton className="active">Инструкция</SmallButton>
+        </div>
 
-      <div>
-        <span className="regular">Golos Regular</span>
-        <span className="medium">Golos Medium</span>
-        <span className="bold">Golos Bold</span>
-      </div>
-
-      <div>
-        <p>radiobutton</p>
-        <RadioBtn label={'ABC'} name="radio" />
-        <RadioBtn label={'ABC'} name="radio" />
-        <RadioBtn label={'ABC'} name="radio" />
-      </div>
-
-      <div>
-        <p>Checkbox</p>
-        <Checkbox label="Checkbox" />
-        <Checkbox label="Checkbox" />
-        <Checkbox label="Checkbox" checked />
-      </div>
-
-      <div>
-        <p>Letter</p>
-        <Letter value={'A'} />
-        <Letter value={'A'} checked />
-        <Letter value={'A'} />
-      </div>
-
-      <div>
-        <p>Tab</p>
-        <Tab value={'Препараты'} checked />
-        <Tab value={'Производители'} />
-        <Tab value={'Активные вещества'} />
-      </div>
-
-      <div className="pagination-row">
-        <p>Pagination</p>
-        <PaginationArrow />
-        <Pagination value={'1'} checked />
-        <Pagination value={'2'} />
-        <Pagination value={'...'} />
-        <Pagination value={'12'} />
-        <PaginationArrow value={'endBtn'} />
-      </div>
-
-      <div>
-        <p>Sort</p>
-        <Sort value={'По популярности'} className="checked" />
-        <Sort value={'А-я'} />
-        <Sort value={'Я-а'} />
-      </div>
-
-      <div>
-        <p>Sort_mobile</p>
-        <SortMobile value={'По популярности'} />
-      </div> */}
-
-      <div>
-        <p>BigButton</p>
-        <BigButton>Цены в аптеках</BigButton>
-        <BigButton>Цены в аптеках</BigButton>
-        <BigButton className="active">Цены в аптеках</BigButton>
-      </div>
-
-      <div>
-        <p>BigButtonIcon</p>
-        <BigButton icon className="icon">
-          Цены в аптеках
-        </BigButton>
-        <BigButton icon className="icon">
-          Цены в аптеках
-        </BigButton>
-        <BigButton icon className="active">
-          Цены в аптеках
-        </BigButton>
-      </div>
-
-      <div>
-        <p>BigButtonIcon</p>
-        <SecondaryButton className="icon">Аналоги</SecondaryButton>
-        <SecondaryButton className="icon active">Аналоги</SecondaryButton>
-        <SecondaryButton icon className=" icon">
-          Показать еще
-        </SecondaryButton>
-        <SecondaryButton icon className="active icon">
-          Показать еще
-        </SecondaryButton>
-      </div>
-
-      <div>
-        <p>Small button</p>
-        <SmallButton>Инструкция</SmallButton>
-        <SmallButton>Инструкция</SmallButton>
-        <SmallButton icon className="active">
-          Инструкция
-        </SmallButton>
-      </div>
+        <div>
+          <Tabs />
+        </div>
+      </Container>
     </div>
   );
 }
