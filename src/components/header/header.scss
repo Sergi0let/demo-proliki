@@ -1,0 +1,45 @@
+@import '../../scss/variables.scss';
+@import '../../scss/breakpoints.scss';
+
+.header {
+  &__nav {
+  }
+
+  &__search-top {
+    display: flex;
+    height: 80px;
+    align-items: center;
+  }
+
+  // .header__logo-img
+
+  &__logo-img {
+    max-width: 100%;
+    margin-right: 37.73px;
+  }
+
+  // .header__menu
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  // .header__menu-item
+
+  &__menu-item {
+    font-size: 18px;
+    line-height: 52px;
+    a {
+      text-decoration: none;
+      color: $blackColor;
+
+      &:hover {
+        color: $blueHoverColor;
+      }
+    }
+    &.active {
+      border-bottom: 1px solid $blueHoverColor;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import '../../scss/variables.scss';
+@import '../../scss/breakpoints.scss';
+
+.buttonSee {
+  padding-right: 16px;
+
+  border-radius: 12px;
+  &__text {
+    background-color: $bgLightColor;
+    border-radius: 12px;
+    font-size: 16px;
+    white-space: nowrap;
+    padding: 11px 16px;
+    color: $blueColor;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      color: $blueHoverColor;
+    }
+  }
+}
