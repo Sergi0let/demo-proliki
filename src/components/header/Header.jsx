@@ -4,6 +4,7 @@ import Container from '../../layouts/container/Container';
 import SearchInput from '../../common/searchInput/SearchInput';
 import ChangeLang from '../../common/changeLang/ChangeLang';
 import ButtonSee from '../../common/buttonSee/ButtonSee';
+import Burger from '../../common/burger/Burger';
 
 const Header = () => {
   return (
@@ -11,15 +12,25 @@ const Header = () => {
       <Container>
         <nav className="header__nav">
           <div className="header__search-top">
-            <img
-              className="header__logo-img"
-              src={logo}
-              alt="Proliki - медичний довідник"
-            />
-            <SearchInput />
+            <div className="header__logo">
+              <img
+                className="header__logo-img"
+                src={logo}
+                alt="Proliki - медичний довідник"
+              />
+            </div>
+
+            <div className="header__desktop-search">
+              <SearchInput />
+            </div>
             <ButtonSee />
             <ChangeLang />
+            <Burger />
           </div>
+          <div className="header__mobile-search">
+            <SearchInput />
+          </div>
+
           <ul className="header__menu">
             <li className="header__menu-item">
               <a href="" alt="ATХ классификация">

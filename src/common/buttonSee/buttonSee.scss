@@ -3,6 +3,7 @@
 
 .buttonSee {
   padding-right: 16px;
+  display: none;
 
   border-radius: 12px;
   &__text {
@@ -17,5 +18,9 @@
     &:hover {
       color: $blueHoverColor;
     }
+  }
+
+  @include for-tablet {
+    display: block;
   }
 }
