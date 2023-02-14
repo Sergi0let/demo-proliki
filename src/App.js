@@ -1,29 +1,30 @@
 import './App.scss';
-import Checkbox from './common/checkbox/Checkbox';
-import Logo from './common/logo/Logo';
-import RadioBtn from './common/radioBtn/RadioBtn';
-import Letter from './common/letter/Letter';
-import Tab from './common/tab/Tab';
-import Pagination, { PaginationArrow } from './common/pagination/Pagination';
-import Sort from './common/sort/Sort';
-import SortMobile from './common/sort/SortMobile';
-import {
-  BigButton,
-  SecondaryButton,
-  SmallButton,
-} from './common/Button/Button';
+import Footer from './components/footer/Footer';
+// import Checkbox from './common/checkbox/Checkbox';
+// import Logo from './common/logo/Logo';
+// import RadioBtn from './common/radioBtn/RadioBtn';
+// import Letter from './common/letter/Letter';
+// import Tab from './common/tab/Tab';
+// import Pagination, { PaginationArrow } from './common/pagination/Pagination';
+// import Sort from './common/sort/Sort';
+// import SortMobile from './common/sort/SortMobile';
+// import {
+//   BigButton,
+//   SecondaryButton,
+//   SmallButton,
+// } from './common/Button/Button';
 import Container from './layouts/container/Container';
-import Tabs from './components/tabs/Tabs';
-import EmailInput from './common/emailInput/EmailInput';
-import NewsItem from './components/NewsItem/NewsItem';
+// import Tabs from './components/tabs/Tabs';
+// import EmailInput from './common/emailInput/EmailInput';
+// import NewsItem from './components/NewsItem/NewsItem';
 
-// import images
-import image from './img/news/news-1.jpg';
+// // import images
+// import image from './img/news/news-1.jpg';
 
 function App() {
   return (
-    <Container>
-      <div className="App">
+    <div className="App">
+      {/* 
         <Logo />
         <div>
           <span className="regular">Golos Regular</span>
@@ -122,8 +123,10 @@ function App() {
           ЕМА опубликовало рекомендации по составу вакцин против гриппа на
           2021г.
         </NewsItem>
-      </div>
-    </Container>
+       */}
+
+      <Footer />
+    </div>
   );
 }
 
