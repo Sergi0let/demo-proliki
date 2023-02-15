@@ -1,0 +1,21 @@
+@import '../../scss/variables.scss';
+@import '../../scss/breakpoints.scss';
+
+.farm-groups {
+  overflow-x: scroll;
+  margin-top: 24px;
+  margin-bottom: 24px;
+
+  @include for-sm {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    @include for-sm {
+      gap: 24px;
+    }
+  }
+}

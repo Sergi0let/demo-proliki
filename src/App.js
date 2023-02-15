@@ -19,6 +19,8 @@ import EmailInput from './common/emailInput/EmailInput';
 import NewsItem from './components/NewsItem/NewsItem';
 import Header from './components/header/Header';
 import BgMain from './components/bgMain/BgMain';
+import FarmGroups from './components/farmGroups/FarmGroups';
+
 import React from 'react';
 
 // import images
@@ -45,9 +47,10 @@ function App() {
           openClass={openClass}
           open={open}
         />
-
-        <div onClick={closeSideBar} style={{ opacity: open ? '0.2' : '' }}>
+        <main onClick={closeSideBar} style={{ opacity: open ? '0.2' : '' }}>
           <BgMain />
+
+          <FarmGroups />
 
           <Logo />
           <div style={{ marginTop: '40px' }}>
@@ -147,7 +150,7 @@ function App() {
             ЕМА опубликовало рекомендации по составу вакцин против гриппа на
             2021г.
           </NewsItem>
-        </div>
+        </main>
       </Container>
       <Footer />
     </div>

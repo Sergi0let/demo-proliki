@@ -1,0 +1,43 @@
+@import '../../scss/variables.scss';
+@import '../../scss/breakpoints.scss';
+
+.farm-item {
+  background: $bgLightColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 16px 8px;
+  min-width: 132px;
+  border-radius: 24px;
+
+  @include for-sm {
+    min-width: 200px;
+    max-width: 264px;
+    padding: 43px;
+  }
+
+  h3 {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 160%;
+    color: $blueColor;
+    text-align: center;
+
+    @include for-sm {
+      margin-top: 24px;
+
+      white-space: nowrap;
+      font-size: 18px;
+    }
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+    @include for-sm {
+      width: 80px;
+      height: 80px;
+    }
+  }
+}
