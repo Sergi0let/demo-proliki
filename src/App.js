@@ -18,6 +18,7 @@ import Tabs from './components/tabs/Tabs';
 import EmailInput from './common/emailInput/EmailInput';
 import NewsItem from './components/NewsItem/NewsItem';
 import Header from './components/header/Header';
+import BgMain from './components/bgMain/BgMain';
 import React from 'react';
 
 // import images
@@ -37,14 +38,17 @@ function App() {
 
   return (
     <div className="App">
-      <Header
-        onOpen={handleOpen}
-        onClose={closeSideBar}
-        openClass={openClass}
-        open={open}
-      />
-      <div onClick={closeSideBar} style={{ opacity: open ? '0.2' : '' }}>
-        <Container>
+      <Container>
+        <Header
+          onOpen={handleOpen}
+          onClose={closeSideBar}
+          openClass={openClass}
+          open={open}
+        />
+
+        <div onClick={closeSideBar} style={{ opacity: open ? '0.2' : '' }}>
+          <BgMain />
+
           <Logo />
           <div style={{ marginTop: '40px' }}>
             <span className="regular">Golos Regular</span>
@@ -143,9 +147,9 @@ function App() {
             ЕМА опубликовало рекомендации по составу вакцин против гриппа на
             2021г.
           </NewsItem>
-        </Container>
-        <Footer />
-      </div>
+        </div>
+      </Container>
+      <Footer />
     </div>
   );
 }

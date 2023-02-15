@@ -22,8 +22,8 @@ const lowSee = (
       strokeLinecap="round"
     />
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M14.0546 4.79046C14.2347 4.26835 14.8039 3.99106 15.326 4.17112C18.4478 5.24771 21.0835 7.65289 22.8918 10.8025C23.3668 11.6299 23.4799 12.6015 23.2316 13.4975C23.084 14.0297 22.5329 14.3416 22.0007 14.194C21.4685 14.0465 21.1567 13.4954 21.3042 12.9632C21.4117 12.5757 21.3626 12.1559 21.1573 11.7984C19.5394 8.98037 17.2514 6.95069 14.674 6.06185C14.1519 5.88179 13.8746 5.31257 14.0546 4.79046ZM8.7503 4.94125C8.95814 5.45293 8.71183 6.03622 8.20014 6.24406C5.82167 7.21018 3.71737 9.15939 2.2022 11.7984C1.9326 12.268 1.9326 12.845 2.2022 13.3146C4.42466 17.1855 7.89339 19.5565 11.6798 19.5565C14.367 19.5565 16.8801 18.369 18.9146 16.2991C19.3017 15.9052 19.9349 15.8998 20.3288 16.2869C20.7226 16.674 20.7281 17.3072 20.341 17.7011C17.9956 20.0872 14.9897 21.5565 11.6798 21.5565C6.99415 21.5565 2.94527 18.6256 0.467746 14.3104C-0.155911 13.2242 -0.155916 11.8889 0.467735 10.8026C2.16221 7.85128 4.58162 5.55518 7.44748 4.39109C7.95917 4.18325 8.54246 4.42956 8.7503 4.94125Z"
       fill="#202227"
     />
@@ -38,74 +38,72 @@ const lowSee = (
 const Header = ({ onOpen, onClose, open, openClass }) => {
   return (
     <header className="header">
-      <Container>
-        <nav className="header__nav">
-          <div className="header__search-top">
-            <div className="header__logo">
-              <img
-                className="header__logo-img"
-                src={logo}
-                alt="Proliki - медичний довідник"
-              />
-            </div>
-
-            <div className="header__desktop-search">
-              <SearchInput />
-            </div>
-            <ButtonSee />
-            <ChangeLang />
-            <div className="header__burger">
-              <Burger
-                open={open}
-                onOpen={onOpen}
-                onClose={onClose}
-                openClass={openClass}
-              />
-            </div>
+      <nav className="header__nav">
+        <div className="header__search-top">
+          <div className="header__logo">
+            <img
+              className="header__logo-img"
+              src={logo}
+              alt="Proliki - медичний довідник"
+            />
           </div>
-        </nav>
-        <div className="header__mobile-search">
-          <SearchInput />
+
+          <div className="header__desktop-search">
+            <SearchInput />
+          </div>
+          <ButtonSee />
+          <ChangeLang />
+          <div className="header__burger">
+            <Burger
+              open={open}
+              onOpen={onOpen}
+              onClose={onClose}
+              openClass={openClass}
+            />
+          </div>
         </div>
-        <ul className={openClass}>
-          <li className="header__menu-item">
-            <a href="" alt="ATХ классификация">
-              ATХ классификация
-            </a>
-          </li>
-          <li className="header__menu-item active">
-            <a href="" alt="Активные вещества">
-              Активные вещества
-            </a>
-          </li>
-          <li className="header__menu-item">
-            <a href="" alt="Аналоги">
-              Алфавитный указатель
-            </a>
-          </li>
-          <li className="header__menu-item">
-            <a href="" alt="Бренды">
-              Новости
-            </a>
-          </li>
-          <li className="header__menu-item">
-            <a href="" alt="Виды">
-              О нас
-            </a>
-          </li>
-          <li className="header__menu-item">
-            <a href="" alt="Группы">
-              Контакты
-            </a>
-          </li>
-          <li className="header__menu-item button-see ">
-            <a href="" alt="Группы">
-              <span>{lowSee}</span>
-              <span>Версия для слабовидящих</span>
-            </a>
-          </li>
-        </ul>
-      </Container>
+      </nav>
+      <div className="header__mobile-search">
+        <SearchInput />
+      </div>
+      <ul className={openClass}>
+        <li className="header__menu-item">
+          <a href="" alt="ATХ классификация">
+            ATХ классификация
+          </a>
+        </li>
+        <li className="header__menu-item active">
+          <a href="" alt="Активные вещества">
+            Активные вещества
+          </a>
+        </li>
+        <li className="header__menu-item">
+          <a href="" alt="Аналоги">
+            Алфавитный указатель
+          </a>
+        </li>
+        <li className="header__menu-item">
+          <a href="" alt="Бренды">
+            Новости
+          </a>
+        </li>
+        <li className="header__menu-item">
+          <a href="" alt="Виды">
+            О нас
+          </a>
+        </li>
+        <li className="header__menu-item">
+          <a href="" alt="Группы">
+            Контакты
+          </a>
+        </li>
+        <li className="header__menu-item button-see ">
+          <a href="" alt="Группы">
+            <span>{lowSee}</span>
+            <span>Версия для слабовидящих</span>
+          </a>
+        </li>
+      </ul>
     </header>
   );
 };
