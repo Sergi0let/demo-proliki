@@ -5,8 +5,20 @@ import SearchInput from '../../common/searchInput/SearchInput';
 import ChangeLang from '../../common/changeLang/ChangeLang';
 import ButtonSee from '../../common/buttonSee/ButtonSee';
 import Burger from '../../common/burger/Burger';
+import React from 'react';
 
 const Header = () => {
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => {
+    setOpen(!open);
+  };
+  const closeSideBar = () => {
+    setOpen(false);
+  };
+
+  const openClass = open ? 'header__menu open' : 'header__menu';
+
   return (
     <header className="header">
       <Container>
@@ -25,45 +37,46 @@ const Header = () => {
             </div>
             <ButtonSee />
             <ChangeLang />
-            <Burger />
+            <div className="header__burger">
+              <Burger onOpen={handleOpen} onClose={closeSideBar} />
+            </div>
           </div>
-          <div className="header__mobile-search">
-            <SearchInput />
-          </div>
-
-          <ul className="header__menu">
-            <li className="header__menu-item">
-              <a href="" alt="ATХ классификация">
-                ATХ классификация
-              </a>
-            </li>
-            <li className="header__menu-item active">
-              <a href="" alt="Активные вещества">
-                Активные вещества
-              </a>
-            </li>
-            <li className="header__menu-item">
-              <a href="" alt="Аналоги">
-                Алфавитный указатель
-              </a>
-            </li>
-            <li className="header__menu-item">
-              <a href="" alt="Бренды">
-                Новости
-              </a>
-            </li>
-            <li className="header__menu-item">
-              <a href="" alt="Виды">
-                О нас
-              </a>
-            </li>
-            <li className="header__menu-item">
-              <a href="" alt="Группы">
-                Контакты
-              </a>
-            </li>
-          </ul>
         </nav>
+        <div className="header__mobile-search">
+          <SearchInput />
+        </div>
+        <ul className={openClass}>
+          <li className="header__menu-item">
+            <a href="" alt="ATХ классификация">
+              ATХ классификация
+            </a>
+          </li>
+          <li className="header__menu-item active">
+            <a href="" alt="Активные вещества">
+              Активные вещества
+            </a>
+          </li>
+          <li className="header__menu-item">
+            <a href="" alt="Аналоги">
+              Алфавитный указатель
+            </a>
+          </li>
+          <li className="header__menu-item">
+            <a href="" alt="Бренды">
+              Новости
+            </a>
+          </li>
+          <li className="header__menu-item">
+            <a href="" alt="Виды">
+              О нас
+            </a>
+          </li>
+          <li className="header__menu-item">
+            <a href="" alt="Группы">
+              Контакты
+            </a>
+          </li>
+        </ul>
       </Container>
     </header>
   );

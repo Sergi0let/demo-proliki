@@ -18,6 +18,7 @@ import Tabs from './components/tabs/Tabs';
 import EmailInput from './common/emailInput/EmailInput';
 import NewsItem from './components/NewsItem/NewsItem';
 import Header from './components/header/Header';
+import React from 'react';
 
 // import images
 import image from './img/news/news-1.jpg';
@@ -26,6 +27,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+
       <Container>
         <Logo />
         <div>
