@@ -1,15 +1,12 @@
 import React from 'react';
 import './burger.scss';
 
-const Burger = ({ onOpen, closeSideBar }) => {
-  const [burger, setBurger] = React.useState(false);
-
+const Burger = ({ onOpen, open }) => {
   const handleBurger = () => {
-    setBurger(!burger);
-    onOpen();
+    onOpen(!open);
   };
 
-  const burgerClass = burger ? 'burger active' : 'burger';
+  const burgerClass = open ? 'burger active' : 'burger';
 
   return (
     <button className={burgerClass} onClick={handleBurger}>
