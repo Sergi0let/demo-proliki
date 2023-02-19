@@ -1,0 +1,120 @@
+@import '@/styles/variables.scss';
+@import '@/styles/breakpoints.scss';
+
+.header {
+  margin: 0 auto;
+  width: 100%;
+
+  &__top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 52px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    z-index: 100;
+
+    @include for-mm {
+      height: 80px;
+    }
+  }
+
+  &__bottom {
+    min-width: 100%;
+    padding: 0px 15px;
+    margin-top: 52px;
+
+    @include for-mm {
+      margin-top: 80px;
+    }
+  }
+}
+
+.top {
+  width: 100%;
+  color: rgb(255, 255, 255);
+  padding: 0px 15px;
+  max-width: $desktop;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.search {
+  margin-right: 16px;
+  margin-left: 16px;
+  display: none;
+
+  @include for-mm {
+    display: block;
+    width: 100%;
+  }
+}
+
+.forLowSee {
+  display: none;
+
+  button {
+    padding: 11px 16px;
+    cursor: pointer;
+    color: $blueColor;
+    font-size: 16px;
+    line-height: 160%;
+    border-radius: 12px;
+    background: $bgLightColor;
+    transition: all 0.3s ease 0s;
+    white-space: nowrap;
+  }
+
+  @include for-tablet {
+    display: block;
+  }
+
+  &:hover {
+    button {
+      color: $blueHoverColor;
+      text-decoration: underline;
+    }
+  }
+}
+
+.searchBottom {
+  display: block;
+  height: 40px;
+
+  @include for-sm {
+    height: 49px;
+  }
+
+  @include for-mm {
+    display: none;
+  }
+}
+
+.cover {
+  @include for-mm {
+    position: fixed;
+    top: -100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    background: #2259b4;
+    opacity: 0.2;
+    z-index: 101;
+  }
+  @include for-tablet {
+    display: none;
+  }
+}

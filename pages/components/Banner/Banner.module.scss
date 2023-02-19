@@ -1,0 +1,49 @@
+@import '@/styles/variables.scss';
+@import '@/styles/breakpoints.scss';
+
+.banner {
+  height: 244px;
+  width: 100%;
+  text-align: center;
+
+  @include for-tablet {
+    margin-top: 0;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: url('../../../public/img/bg/bg320.jpg') center/cover no-repeat;
+
+    @include for-sm {
+      background: url('../../../public/img/bg/bg1024.jpg') center/cover
+        no-repeat;
+    }
+
+    @include for-md {
+    }
+
+    @include for-ld {
+      background: url('../../../public/img/bg/bg.jpg') center no-repeat;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 130%;
+    padding: 0px 15px;
+
+    text-align: center;
+
+    @include for-sm {
+      font-size: 32px;
+      max-width: 450px;
+    }
+
+    @include for-tablet {
+      max-width: 714px;
+    }
+  }
+}
