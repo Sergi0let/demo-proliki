@@ -49,17 +49,3 @@ a {
   font-family: 'GolosRegular';
   src: url('../public/fonts/Golos_Regular.ttf') format('truetype');
 }
-
-body::-webkit-scrollbar {
-  width: 12px; /* ширина всей полосы прокрутки */
-}
-
-body::-webkit-scrollbar-track {
-  background: orange; /* цвет зоны отслеживания */
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: blue; /* цвет бегунка */
-  border-radius: 20px; /* округлось бегунка */
-  border: 3px solid orange; /* отступ вокруг бегунка */
-}
