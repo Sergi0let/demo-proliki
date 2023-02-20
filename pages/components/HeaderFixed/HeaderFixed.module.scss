@@ -4,6 +4,8 @@
 .header {
   margin: 0 auto;
   width: 100%;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 
   &__top {
     position: fixed;
@@ -12,12 +14,12 @@
     right: 0;
     height: 52px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    z-index: 100;
+    z-index: 10;
 
     @include for-mm {
       height: 80px;
@@ -28,6 +30,7 @@
     min-width: 100%;
     padding: 0px 15px;
     margin-top: 52px;
+    margin-bottom: 13px;
 
     @include for-mm {
       margin-top: 80px;
@@ -43,6 +46,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include for-sm {
+    padding: 0px 35px;
+  }
 
   &__buttons {
     display: flex;
@@ -84,7 +91,6 @@
   &:hover {
     button {
       color: $blueHoverColor;
-      text-decoration: underline;
     }
   }
 }

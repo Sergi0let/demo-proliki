@@ -49,12 +49,12 @@ const List = ({ openBurger }) => {
     </svg>
   );
 
-  const handleActive = () => {
-    const active = document.querySelector('li');
+  // const handleActive = () => {
+  //   const active = document.querySelector('li');
 
-    active.style.borderBottom = '1px solid #3b009a';
-    active.style.color = '#3b009a';
-  };
+  //   active.style.borderBottom = '2px solid #3b009a';
+  //   active.style.color = '#3b009a';
+  // };
 
   return (
     <ul className={styles.list} style={{ top: burgerOpen }}>
@@ -63,7 +63,7 @@ const List = ({ openBurger }) => {
           ATХ классификация
         </a>
       </li>
-      <li style={active}>
+      <li>
         <a href="" alt="Активные вещества">
           Активные вещества
         </a>

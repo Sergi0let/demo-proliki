@@ -10,14 +10,21 @@
     padding-bottom: 32px;
     padding-left: 15px;
     padding-right: 15px;
-    max-width: 1024px;
+    max-width: $desktop;
     border-bottom: 1px solid $strokeColor;
     margin: 0 auto;
-    @include for-tablet {
+    @include for-sm {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
+
+      flex-wrap: wrap;
+      gap: 15px;
       padding-top: 64px;
       padding-bottom: 64px;
+    }
+
+    @include for-mm {
+      flex-wrap: nowrap;
     }
   }
 
@@ -46,6 +53,7 @@
     color: $blackColor;
     font-size: 16px;
     line-height: 160%;
+    font-weight: 400;
     padding-bottom: 16px;
     @include for-mm {
       font-size: 18px;

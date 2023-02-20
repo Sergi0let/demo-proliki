@@ -33,7 +33,7 @@
   }
 
   li {
-    padding: 24px 0px;
+    padding: 20px 0px;
     padding-left: 30px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
@@ -41,7 +41,8 @@
 
     @include for-tablet {
       color: $blackColor;
-      padding-left: 0;
+      height: 40px;
+      padding: 0;
     }
 
     &:not(:last-child) {
@@ -53,7 +54,7 @@
 
     &:hover {
       color: $blueHoverColor;
-      text-decoration: underline;
+      border-bottom: 2px solid $blueHoverColor;
     }
   }
 

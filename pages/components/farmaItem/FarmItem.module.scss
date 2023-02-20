@@ -4,7 +4,7 @@
 .farm-item {
   background: $bgLightColor;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
   padding: 16px 8px;
@@ -19,11 +19,14 @@
   }
 
   h3 {
-    margin-top: 8px;
+    margin-top: 4px;
     font-size: 14px;
     line-height: 160%;
     color: $blueColor;
+
     text-align: center;
+
+    font-weight: 400;
 
     @include for-sm {
       margin-top: 24px;
@@ -36,6 +39,7 @@
   img {
     width: 40px;
     height: 40px;
+
     @include for-sm {
       width: 80px;
       height: 80px;
