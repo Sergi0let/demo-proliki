@@ -3,8 +3,14 @@
 
 .banner {
   height: 244px;
+  max-width: $desktop;
+  padding: 0px 15px;
   width: 100%;
   text-align: center;
+
+  @include for-sm {
+    padding: 0px 32px;
+  }
 
   @include for-tablet {
     margin-top: 0;
@@ -15,18 +21,22 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    border-radius: 24px;
+    overflow: hidden;
     background: url('../../../public/img/bg/bg320.jpg') center/cover no-repeat;
 
     @include for-sm {
+      background: url('../../../public/img/bg/bg768.jpg') center/cover no-repeat;
+    }
+
+    @include for-tablet {
       background: url('../../../public/img/bg/bg1024.jpg') center/cover
         no-repeat;
     }
 
-    @include for-md {
-    }
-
     @include for-ld {
-      background: url('../../../public/img/bg/bg.jpg') center no-repeat;
+      background: url('../../../public/img/bg/bg1128.jpg') center/cover
+        no-repeat;
     }
   }
 

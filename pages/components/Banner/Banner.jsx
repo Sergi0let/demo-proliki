@@ -8,7 +8,7 @@ const Banner = () => {
     <div className={styles.banner}>
       <div className={styles.banner__content}>
         <h1 className={styles.banner__title}>
-          Ваш надійний довідник в медичному світі: вся інформація про ліки тут
+          Надійний довідник в медичному світі: все про ліки тут.
         </h1>
       </div>
     </div>

@@ -1,0 +1,9 @@
+@import '@/styles/variables.scss';
+@import '@/styles/breakpoints.scss';
+
+/* First and Second Tab Styles */
+.FirstTab p,
+.SecondTab p {
+  font-size: 2rem;
+  text-align: center;
+}

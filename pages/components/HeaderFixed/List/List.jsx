@@ -74,6 +74,11 @@ const List = ({ openBurger }) => {
         </a>
       </li>
       <li>
+        <a href="" alt="Аналоги">
+          Производители
+        </a>
+      </li>
+      <li>
         <a href="" alt="Бренды">
           Новости
         </a>

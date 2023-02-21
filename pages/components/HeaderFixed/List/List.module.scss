@@ -21,12 +21,16 @@
   }
 
   @include for-tablet {
+    padding: 0px 32px;
+  }
+
+  @include for-tablet {
     position: relative;
     background: transparent;
     width: 100%;
     max-width: $desktop;
     margin: 0 auto;
-    padding: 0px 0px;
+    padding: 0px 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,8 +45,9 @@
 
     @include for-tablet {
       color: $blackColor;
-      height: 40px;
-      padding: 0;
+      // height: 0px;
+
+      padding: 0px 0px 16px 0px;
     }
 
     &:not(:last-child) {

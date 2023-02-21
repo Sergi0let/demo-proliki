@@ -7,6 +7,7 @@ import Footer from './components/Footer/Footer';
 import Banner from './components/Banner/Banner';
 import FarmGroups from './components/farmGroups/FarmGroups';
 import HeaderFixed from './components/HeaderFixed/HeaderFixed';
+import AlphabetSection from './components/AlphabetSection/AlphabetSection';
 
 export default function Home() {
   const [openBurger, setOpenBurger] = useState(false);
@@ -35,6 +36,7 @@ export default function Home() {
         />
         <Banner />
         <FarmGroups />
+        <AlphabetSection />
 
         <div>
           voluptatem numquam et earum qui doloribus magni perferendis voluptas.

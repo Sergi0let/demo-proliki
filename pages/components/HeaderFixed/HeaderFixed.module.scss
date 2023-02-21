@@ -6,6 +6,11 @@
   width: 100%;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  margin-bottom: 12px;
+
+  @include for-sm {
+    margin-bottom: 41px;
+  }
 
   &__top {
     position: fixed;
@@ -35,6 +40,14 @@
     @include for-mm {
       margin-top: 80px;
     }
+
+    @include for-sm {
+      padding: 0px 32px;
+    }
+    @include for-tablet {
+      padding: 0px 0px;
+      margin-bottom: 0px;
+    }
   }
 }
 
@@ -48,7 +61,7 @@
   align-items: center;
 
   @include for-sm {
-    padding: 0px 35px;
+    padding: 0px 32px;
   }
 
   &__buttons {

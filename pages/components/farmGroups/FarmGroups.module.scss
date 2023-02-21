@@ -16,7 +16,7 @@
   }
   &__row {
     margin: 0 auto;
-
+    padding: 0px 15px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     overflow-x: auto;
@@ -24,6 +24,7 @@
 
     @include for-sm {
       gap: 24px;
+      padding: 0px 32px;
     }
   }
 }
