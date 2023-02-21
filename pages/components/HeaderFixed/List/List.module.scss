@@ -5,7 +5,7 @@
   position: fixed;
   top: 0;
   right: 0;
-  padding: 0px 15px;
+  padding: 0px 32px;
   z-index: 2;
   background: #fff;
   width: 100%;
@@ -15,9 +15,12 @@
   overflow-y: auto;
 
   @include for-mm {
-    margin-top: 80px;
+    margin-top: 0px;
+    z-index: 11;
+    padding-top: 80px;
     width: 50%;
     right: 0;
+    background: #fff;
   }
 
   @include for-tablet {
@@ -38,7 +41,7 @@
 
   li {
     padding: 20px 0px;
-    padding-left: 30px;
+
     cursor: pointer;
     transition: all 0.3s ease 0s;
     color: $blueColor;
@@ -74,5 +77,27 @@
     @include for-tablet {
       display: none;
     }
+  }
+}
+
+.topList {
+  display: none;
+
+  div {
+    display: flex;
+  }
+
+  @include for-mm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 85%;
+    top: 20px;
+    right: 32px;
+  }
+
+  @include for-tablet {
+    display: none;
   }
 }

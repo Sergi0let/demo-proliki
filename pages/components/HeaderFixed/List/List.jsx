@@ -1,7 +1,10 @@
 import styles from './List.module.scss';
 import { useState } from 'react';
+import Burger from '../../Burger/Burger';
+import ChangeLang from '../../ChangeLang/ChangeLang';
+import Image from 'next/image';
 
-const List = ({ openBurger }) => {
+const List = ({ openBurger, onBurger }) => {
   const [activeLink, setActiveLink] = useState(0);
 
   // const links = [
@@ -58,6 +61,18 @@ const List = ({ openBurger }) => {
 
   return (
     <ul className={styles.list} style={{ top: burgerOpen }}>
+      <div className={styles.topList}>
+        <Image
+          src={'./img/logo/logo-l.svg'}
+          alt="Емблема сайту"
+          width={124}
+          height={32}
+        />
+        <div>
+          <ChangeLang />
+          <Burger onBurger={onBurger} openBurger={openBurger} />
+        </div>
+      </div>
       <li>
         <a href="" alt="ATХ классификация">
           ATХ классификация

@@ -35,7 +35,7 @@ const HeaderFixed = ({ openBurger, onBurger, onClose }) => {
           <div className={styles.searchBottom}>
             <Search />
           </div>
-          <List openBurger={openBurger} />
+          <List openBurger={openBurger} onBurger={onBurger} />
         </div>
         <div
           onClick={() => onClose()}
