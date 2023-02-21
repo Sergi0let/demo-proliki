@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Burger from '../../Burger/Burger';
 import ChangeLang from '../../ChangeLang/ChangeLang';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const List = ({ openBurger, onBurger }) => {
   const [activeLink, setActiveLink] = useState(0);
@@ -74,45 +75,45 @@ const List = ({ openBurger, onBurger }) => {
         </div>
       </div>
       <li>
-        <a href="" alt="ATХ классификация">
+        <Link href="/atx_classification" alt="ATХ классификация">
           ATХ классификация
-        </a>
+        </Link>
       </li>
       <li>
-        <a href="" alt="Активные вещества">
+        <Link href="/active_substances" alt="Активные вещества">
           Активные вещества
-        </a>
+        </Link>
       </li>
       <li>
-        <a href="" alt="Аналоги">
+        <a href="/alphabet" alt="Аналоги">
           Алфавитный указатель
         </a>
       </li>
       <li>
-        <a href="" alt="Аналоги">
+        <Link href="/manufacturers" alt="Аналоги">
           Производители
-        </a>
+        </Link>
       </li>
       <li>
-        <a href="" alt="Бренды">
+        <Link href="/news" alt="Бренды">
           Новости
-        </a>
+        </Link>
       </li>
       <li>
-        <a href="" alt="Виды">
+        <Link href="/about" alt="Виды">
           О нас
-        </a>
+        </Link>
       </li>
       <li>
-        <a href="" alt="Группы">
+        <Link href="/contacts" alt="Группы">
           Контакты
-        </a>
+        </Link>
       </li>
       <li className={styles.see}>
-        <a href="" alt="Группы">
+        <Link href="" alt="Группы">
           <span>{lowSee}</span>
           <span>Версия для слабовидящих</span>
-        </a>
+        </Link>
       </li>
     </ul>
   );

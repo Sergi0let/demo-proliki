@@ -19,6 +19,10 @@
   display: inline-block;
   position: relative;
   transition: all 0.3s ease 0s;
+
+  &:hover {
+    border-color: $blueColor;
+  }
 }
 
 .radio-input {
