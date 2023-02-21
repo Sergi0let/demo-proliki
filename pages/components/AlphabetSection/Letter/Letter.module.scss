@@ -1,0 +1,24 @@
+@import '@/styles/variables.scss';
+@import '@/styles/breakpoints.scss';
+
+.letter {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: $bgColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  color: $blueColor;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  gap: 16px;
+
+  &:hover {
+    color: white;
+    background: $blueHoverColor;
+  }
+}
