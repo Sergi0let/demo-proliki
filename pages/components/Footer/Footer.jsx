@@ -1,5 +1,6 @@
 import styles from './Footer.module.scss';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -14,32 +15,48 @@ const Footer = () => {
           </p>
         </section>
         <section className={styles.sectionsFooter}>
-          <h2 className={styles.title}>Разделы</h2>
+          <h2 className={styles.title}>Розділи</h2>
           <ul>
             <li className={styles.link}>
-              <a href="#" className={styles.item}>
-                ATХ классификация
-              </a>
+              <Link
+                href="/atx_classification"
+                alt="ATХ класифікація"
+                className={styles.item}
+              >
+                ATХ класифікація
+              </Link>
             </li>
             <li className={styles.link}>
-              <a href="#" className={styles.item}>
-                Активные вещества
-              </a>
+              <Link
+                href="/active_substances"
+                alt="Активні речовини"
+                className={styles.item}
+              >
+                Активні речовини
+              </Link>
             </li>
             <li className={styles.link}>
-              <a href="#" className={styles.item}>
-                Алфавитный указатель
-              </a>
+              <Link
+                href="/alphabet"
+                alt="Алфавітний покажчик"
+                className={styles.item}
+              >
+                Алфавітний покажчик
+              </Link>
             </li>
             <li className={styles.link}>
-              <a href="#" className={styles.item}>
-                Производители
-              </a>
+              <Link
+                href="/manufacturers"
+                alt="Виробники"
+                className={styles.item}
+              >
+                Виробники
+              </Link>
             </li>
             <li className={styles.link}>
-              <a href="#" className={styles.item}>
-                Новости
-              </a>
+              <Link href="/news" alt="Новини" className={styles.item}>
+                Новини
+              </Link>
             </li>
           </ul>
         </section>
@@ -47,14 +64,14 @@ const Footer = () => {
           <h2 className={styles.title}>Пользователю</h2>
           <ul>
             <li className={styles.link}>
-              <a href="#" className={styles.item}>
-                Контакты
-              </a>
+              <Link href="/contacts" alt="Контакти" className={styles.item}>
+                Контакти
+              </Link>
             </li>
             <li className={styles.link}>
-              <a href="#" className={styles.item}>
-                О нас
-              </a>
+              <Link href="/about" alt="Про нас" className={styles.item}>
+                Про нас
+              </Link>
             </li>
             <li className={styles.link}>
               <a href="#" className={styles.item}>

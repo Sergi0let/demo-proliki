@@ -75,42 +75,42 @@ const List = ({ openBurger, onBurger }) => {
         </div>
       </div>
       <li>
-        <Link href="/atx_classification" alt="ATХ классификация">
-          ATХ классификация
+        <Link href="/atx_classification" alt="ATХ класифікація">
+          ATХ класифікація
         </Link>
       </li>
       <li>
-        <Link href="/active_substances" alt="Активные вещества">
-          Активные вещества
+        <Link href="/active_substances" alt="Активні речовини">
+          Активні речовини
         </Link>
       </li>
       <li>
-        <a href="/alphabet" alt="Аналоги">
-          Алфавитный указатель
-        </a>
-      </li>
-      <li>
-        <Link href="/manufacturers" alt="Аналоги">
-          Производители
+        <Link href="/alphabet" alt="Алфавітний покажчик">
+          Алфавітний покажчик
         </Link>
       </li>
       <li>
-        <Link href="/news" alt="Бренды">
-          Новости
+        <Link href="/manufacturers" alt="Виробники">
+          Виробники
         </Link>
       </li>
       <li>
-        <Link href="/about" alt="Виды">
-          О нас
+        <Link href="/news" alt="Новини">
+          Новини
         </Link>
       </li>
       <li>
-        <Link href="/contacts" alt="Группы">
-          Контакты
+        <Link href="/about" alt="Про нас">
+          Про нас
+        </Link>
+      </li>
+      <li>
+        <Link href="/" alt="Контакти">
+          Контакти
         </Link>
       </li>
       <li className={styles.see}>
-        <Link href="" alt="Группы">
+        <Link href="/" alt="Группы">
           <span>{lowSee}</span>
           <span>Версия для слабовидящих</span>
         </Link>
