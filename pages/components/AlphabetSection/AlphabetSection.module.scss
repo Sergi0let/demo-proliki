@@ -4,56 +4,24 @@
 .alphabetSection {
   max-width: $desktop;
   width: 100%;
-  padding: 0px 32px;
+  padding: 0px 16px;
   margin-top: 24px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid $strokeColor;
+  // padding-bottom: 24px;
+
+  @include for-sm {
+    padding: 0px 32px;
+  }
 
   h2 {
     font-weight: 400;
-    font-size: 32px;
+    font-size: 20px;
     line-height: 130%;
     text-align: left;
     color: $blackColor;
     margin-bottom: 24px;
-  }
 
-  &__container {
-  }
-
-  &__block {
-  }
-
-  &__tabs {
-  }
-
-  &__tab {
-  }
-
-  &__radio {
-  }
-
-  &__radioLabel {
-  }
-
-  &__radioInput {
-  }
-
-  &__radioInput:checked + .alphabetSection__radioLabel {
-  }
-
-  &__radioInput:checked + .alphabetSection__radioLabel::before {
-  }
-
-  &__radioInput:checked + .alphabetSection__radioLabel::after {
-  }
-
-  &__list {
-  }
-
-  &__item {
-  }
-
-  &__link {
+    @include for-sm {
+      font-size: 32px;
+    }
   }
 }

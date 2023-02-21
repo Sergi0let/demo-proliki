@@ -11,6 +11,8 @@
   flex-direction: row;
   gap: 4px;
   margin-bottom: 24px;
+  width: 100%;
+  border-bottom: 1px solid $strokeColor;
 }
 
 .tabs button {
@@ -21,8 +23,13 @@
   padding: 8px 24px;
   transition: all 0.3s ease-out;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 160%;
+  white-space: nowrap;
+
+  @include for-sm {
+    font-size: 16px;
+  }
 }
 
 .tabs button:hover {
@@ -38,7 +45,7 @@
 .links {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 8px;
   padding-top: 24px;
   transition: all 0.3s ease 0s;
 }

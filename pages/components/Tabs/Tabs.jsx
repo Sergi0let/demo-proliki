@@ -6,14 +6,11 @@ import styles from './Tabs.module.scss';
 
 const Tabs = () => {
   const [currentTab, setCurrentTab] = useState('1');
-
   const [checked, setChecked] = useState({ абв: true, abc: false, 123: false });
 
   const filter = Object.keys(checked)
     .filter((key) => checked[key])
     .toString();
-
-  console.log('checked', filter);
 
   const handleTabClick = (e) => {
     setCurrentTab(e.target.id);
