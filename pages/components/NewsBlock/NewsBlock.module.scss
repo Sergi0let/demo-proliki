@@ -1,0 +1,122 @@
+@import '@/styles/variables.scss';
+@import '@/styles/breakpoints.scss';
+
+.news {
+  max-width: $desktop;
+  width: 100%;
+  padding: 48px 15px;
+
+  @include for-sm {
+    padding: 64px 32px;
+  }
+
+  &__header {
+    margin-bottom: 24px;
+    @include for-sm {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+    h2 {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 130%;
+      color: $blackColor;
+      margin-right: 24px;
+      transition: color 0.3s ease 0s;
+      padding-bottom: 4px;
+
+      @include for-sm {
+        font-size: 32px;
+        padding-bottom: 0px;
+      }
+    }
+    a {
+      color: $blueColor;
+      white-space: nowrap;
+
+      &:hover {
+        color: $blueHoverColor;
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    column-gap: 16px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: center;
+
+    @include for-mm {
+      column-gap: 24px;
+    }
+  }
+}
+
+.card {
+  flex-basis: 33.333%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &__img_wrapper {
+    min-width: 157px;
+    min-height: 105px;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+
+    padding-top: 8px;
+    @include for-sm {
+      padding-top: 24px;
+    }
+
+    h3 {
+      font-size: 14px;
+      line-height: 160%;
+      font-weight: 400;
+      color: $blueColor;
+
+      @include for-sm {
+        font-size: 16px;
+      }
+    }
+
+    p {
+      padding-top: 8px;
+      font-size: 16px;
+      line-height: 160%;
+
+      @include for-sm {
+        padding-top: 16px;
+        font-size: 18px;
+      }
+    }
+
+    time {
+      display: inline-block;
+      padding-top: 8px;
+      font-size: 14px;
+      line-height: 160%;
+      color: $greySecondColor;
+
+      @include for-sm {
+        padding-top: 16px;
+        font-size: 16px;
+      }
+    }
+  }
+}
