@@ -9,6 +9,7 @@ import FarmGroups from './components/farmGroups/FarmGroups';
 import HeaderFixed from './components/HeaderFixed/HeaderFixed';
 import AlphabetSection from './components/AlphabetSection/AlphabetSection';
 import NewsBlock from './components/NewsBlock/NewsBlock';
+import CategorySection from './components/CategorySection/CategorySection';
 
 export default function Home() {
   const [openBurger, setOpenBurger] = useState(false);
@@ -40,6 +41,8 @@ export default function Home() {
         <AlphabetSection />
 
         <NewsBlock />
+
+        <CategorySection />
 
         <Footer />
       </main>

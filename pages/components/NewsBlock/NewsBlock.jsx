@@ -63,7 +63,7 @@ const CardNews = ({ image, alt, category, text }) => {
       <div className={styles.card__content}>
         <h3>{category}</h3>
         <p>{text}</p>
-        <time datetime="2021-02-01 00:00">2 марта 2021</time>
+        <time dateTime="2021-02-01 00:00">2 марта 2021</time>
       </div>
     </article>
   );
