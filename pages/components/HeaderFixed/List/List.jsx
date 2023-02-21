@@ -4,24 +4,20 @@ import Burger from '../../Burger/Burger';
 import ChangeLang from '../../ChangeLang/ChangeLang';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const List = ({ openBurger, onBurger }) => {
-  const [activeLink, setActiveLink] = useState(0);
+  const { pathname } = useRouter();
 
-  // const links = [
-  //   { id: 0, name: 'Головна', path: '/' },
-  //   { id: 1, name: 'Про нас', path: '/about' },
-  //   { id: 2, name: 'Наші послуги', path: '/services' },
-  //   { id: 3, name: 'Наші роботи', path: '/works' },
-  //   { id: 4, name: 'Контакти', path: '/contacts' },
-  //   { id: 5, name: 'Контакти', path: '/contacts' },
-  //   { id: 6, name: 'Контакти', path: '/contacts' },
-  // ];
-
-  const active = {
-    borderBottom: '1px solid #3b009a',
-    color: '#3b009a',
-  };
+  const navigation = [
+    { id: 0, title: 'ATХ класифікація', path: '/atx_classification' },
+    { id: 1, title: 'Активні речовини', path: '/active_substances' },
+    { id: 2, title: 'Алфавітний покажчик', path: '/alphabet' },
+    { id: 3, title: ' Виробники', path: '/manufacturers' },
+    { id: 4, title: 'Новини', path: '/news' },
+    { id: 5, title: 'Про нас', path: '/about' },
+    { id: 6, title: 'Контакти', path: '/' },
+  ];
 
   const burgerOpen = openBurger ? '0' : '-1000%';
 
@@ -53,13 +49,6 @@ const List = ({ openBurger, onBurger }) => {
     </svg>
   );
 
-  // const handleActive = () => {
-  //   const active = document.querySelector('li');
-
-  //   active.style.borderBottom = '2px solid #3b009a';
-  //   active.style.color = '#3b009a';
-  // };
-
   return (
     <ul className={styles.list} style={{ top: burgerOpen }}>
       <div className={styles.topList}>
@@ -74,45 +63,20 @@ const List = ({ openBurger, onBurger }) => {
           <Burger onBurger={onBurger} openBurger={openBurger} />
         </div>
       </div>
-      <li>
-        <Link href="/atx_classification" alt="ATХ класифікація">
-          ATХ класифікація
-        </Link>
-      </li>
-      <li>
-        <Link href="/active_substances" alt="Активні речовини">
-          Активні речовини
-        </Link>
-      </li>
-      <li>
-        <Link href="/alphabet" alt="Алфавітний покажчик">
-          Алфавітний покажчик
-        </Link>
-      </li>
-      <li>
-        <Link href="/manufacturers" alt="Виробники">
-          Виробники
-        </Link>
-      </li>
-      <li>
-        <Link href="/news" alt="Новини">
-          Новини
-        </Link>
-      </li>
-      <li>
-        <Link href="/about" alt="Про нас">
-          Про нас
-        </Link>
-      </li>
-      <li>
-        <Link href="/" alt="Контакти">
-          Контакти
-        </Link>
-      </li>
+      {navigation.map((item) => (
+        <li
+          key={item.id}
+          className={pathname === item.path ? styles.active : null}
+        >
+          <Link href={item.path} alt={item.title}>
+            {item.title}
+          </Link>
+        </li>
+      ))}
       <li className={styles.see}>
         <Link href="/" alt="Группы">
           <span>{lowSee}</span>
-          <span>Версия для слабовидящих</span>
+          <span>Версія для слабозорих</span>
         </Link>
       </li>
     </ul>

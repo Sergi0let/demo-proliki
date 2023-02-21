@@ -24,7 +24,7 @@ const HeaderFixed = ({ openBurger, onBurger, onClose }) => {
             </div>
             <div className={styles.top__buttons}>
               <div className={styles.forLowSee}>
-                <button>Для слабовидячих</button>
+                <button>Для слабозорих</button>
               </div>
               <ChangeLang />
               <Burger openBurger={openBurger} onBurger={onBurger} />

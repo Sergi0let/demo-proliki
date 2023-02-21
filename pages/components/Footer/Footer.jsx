@@ -9,9 +9,8 @@ const Footer = () => {
         <section className={styles.sectionsFooter}>
           <h2 className={styles.title}>ProLiki</h2>
           <p className={styles.textBlock}>
-            Cпециализированное медицинское интернет-издание для врачей,
-            провизоров, фармацевтов, студентов медицинских и фармацевтических
-            вузов
+            Спеціалізоване медичне інтернет-видання для лікарів, провізорів,
+            фармацевтів, студентів медичних та фармацевтичних вузів
           </p>
         </section>
         <section className={styles.sectionsFooter}>
@@ -61,7 +60,7 @@ const Footer = () => {
           </ul>
         </section>
         <section className={styles.sectionsFooter}>
-          <h2 className={styles.title}>Пользователю</h2>
+          <h2 className={styles.title}>Користувачеві</h2>
           <ul>
             <li className={styles.link}>
               <Link href="/contacts" alt="Контакти" className={styles.item}>
@@ -91,13 +90,13 @@ const Footer = () => {
           </ul>
         </section>
         <section className={styles.sectionsFooter}>
-          <h2 className={styles.title}>Пользователю</h2>
+          <h2 className={styles.title}>Соціальні мережі</h2>
           <p className={styles.textBlock}>
-            Подпишитесь на соцсети proliki.com.ua, чтобы получать последние
-            новости о лекарствах, предупреждения и обновления.
+            Підпишіться на соцмережі proliki.com.ua, щоб отримувати останні
+            новини про ліки, попередження та оновлення.
           </p>
           <div className={styles.socialLinks}>
-            <a href="#">
+            <a href="https://www.instagram.com/">
               <Image
                 className={styles.socialLink}
                 src="/img/link-social/instagram.png"
@@ -106,7 +105,7 @@ const Footer = () => {
                 height={32}
               />
             </a>
-            <a href="#">
+            <a href="https://uk-ua.facebook.com/">
               <Image
                 className={styles.socialLink}
                 src="/img/link-social/facebook.png"

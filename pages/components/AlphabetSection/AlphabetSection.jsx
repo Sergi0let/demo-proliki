@@ -5,7 +5,7 @@ const AlphabetSection = () => {
   return (
     <section className={styles.alphabetSection}>
       <div className={styles.alphabetSection__container}>
-        <h2>Алфавитный указатель</h2>
+        <h2>Алфавітний покажчик</h2>
         <div className={styles.alphabetSection__block}>
           <Tabs />
         </div>

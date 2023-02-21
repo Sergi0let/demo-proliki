@@ -62,7 +62,6 @@
 
     &:hover {
       color: $blueHoverColor;
-      border-bottom: 2px solid $blueHoverColor;
     }
   }
 
@@ -99,5 +98,13 @@
 
   @include for-tablet {
     display: none;
+  }
+}
+
+.active {
+  a {
+    color: $blueHoverColor;
+    border-bottom: 2px solid $blueHoverColor;
+    padding-bottom: 14px;
   }
 }
