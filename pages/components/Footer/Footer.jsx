@@ -94,7 +94,7 @@ const Footer = () => {
             className={(styles.sections__section, styles.sections__section_1)}
           >
             <TitleSmall title={'ProLiki'} />
-            <p className={styles.section__text}>
+            <p className={styles.sections__text}>
               Спеціалізоване медичне інтернет-видання для лікарів, провізорів,
               фармацевтів, студентів медичних та фармацевтичних вузів
             </p>
@@ -197,7 +197,7 @@ const Footer = () => {
           >
             <TitleSmall title={'Соціальні мережі'} />
 
-            <p className={styles.section__text}>
+            <p className={styles.sections__text}>
               Підпишіться на соцмережі proliki.com.ua, щоб отримувати останні
               новини про ліки, попередження та оновлення.
             </p>

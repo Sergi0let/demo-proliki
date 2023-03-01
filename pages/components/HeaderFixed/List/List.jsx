@@ -1,10 +1,10 @@
 import styles from './List.module.scss';
-import { useState } from 'react';
-import Burger from '../../Burger/Burger';
-import ChangeLang from '../../ChangeLang/ChangeLang';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Burger from '@/pages/common/Burger/Burger';
+import ChangeLang from '@/pages/common/ChangeLang/ChangeLang';
 
 const List = ({ openBurger, onBurger, onClose }) => {
   const { pathname } = useRouter();

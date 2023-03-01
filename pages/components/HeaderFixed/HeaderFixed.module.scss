@@ -6,7 +6,7 @@
   margin: 0 auto;
   width: 100%;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+
   margin-bottom: 12px;
 
   @include for-sm {
@@ -15,6 +15,7 @@
 
   &__top {
     position: fixed;
+    z-index: 100;
     margin: 0 auto;
     top: 0;
     left: 0px;
@@ -24,7 +25,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
 
     @include for-mm {
       height: 80px;
@@ -32,10 +32,6 @@
 
     @include for-md {
       left: 0;
-    }
-
-    @include for-tablet {
-      // box-shadow: none;
     }
   }
 
