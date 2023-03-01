@@ -6,7 +6,7 @@
   display: grid;
   gap: 24px;
   padding-top: 32px;
-  padding-bottom: 36px;
+  padding-bottom: 72px;
   border-bottom: 1px solid $strokeColor;
 
   &__section_1 {
@@ -58,6 +58,7 @@
 
   &__section {
     text-align: left;
+    max-width: 100%;
   }
 
   &__text {
@@ -110,6 +111,7 @@
 }
 
 .socials {
+  position: absolute;
   display: flex;
   justify-content: flex-start;
   align-items: center;

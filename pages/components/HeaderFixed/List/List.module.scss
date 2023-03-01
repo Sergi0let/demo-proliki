@@ -3,7 +3,6 @@
 
 .list {
   position: fixed;
-
   top: 0;
   right: 0;
   padding: 0px 15px;
@@ -17,7 +16,7 @@
 
   @include for-mm {
     margin-top: 0px;
-    z-index: 11;
+    z-index: 111;
     padding-top: 80px;
     width: 50%;
     right: 0;
@@ -38,6 +37,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 11;
   }
 
   li {
