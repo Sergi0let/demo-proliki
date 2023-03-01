@@ -1,10 +1,10 @@
-import styles from './HeaderFixed.module.scss';
-import Image from 'next/image';
-import ChangeLang from '../ChangeLang/ChangeLang';
-import Burger from '../Burger/Burger';
-import Search from '../Search/Search';
-import List from './List/List';
 import Link from 'next/link';
+import Image from 'next/image';
+import styles from './HeaderFixed.module.scss';
+import ChangeLang from '@/pages/common/ChangeLang/ChangeLang';
+import Burger from '@/pages/common/Burger/Burger';
+import Search from '@/pages/common/Search/Search';
+import List from './List/List';
 
 const HeaderFixed = ({ openBurger, onBurger, onClose }) => {
   const burgerOpen = openBurger ? '0' : '-1000%';

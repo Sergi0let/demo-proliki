@@ -56,15 +56,15 @@ const Search = () => {
   };
 
   return (
-    <form onSubmit={onSubmit} type="sumbit" className={styles.searchInput}>
+    <form onSubmit={onSubmit} type="sumbit" className={styles.search}>
       <input
-        className={styles.input}
+        className={styles.search__input}
         type="text"
         placeholder="Поиск..."
         onChange={handleSearch}
       />
-      <span className={styles.placeholder}>{searchIcon}</span>
-      <button className={styles.searchBtn}>{volumeIcon}</button>
+      <span className={styles.search__placeholder}>{searchIcon}</span>
+      <button className={styles.search__btn}>{volumeIcon}</button>
     </form>
   );
 };
