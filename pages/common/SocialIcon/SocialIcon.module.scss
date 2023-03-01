@@ -1,0 +1,20 @@
+@import '@/styles/variables.scss';
+@import '@/styles/breakpoints.scss';
+
+.styles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}

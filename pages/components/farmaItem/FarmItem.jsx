@@ -1,5 +1,5 @@
-import styles from './FarmItem.module.scss';
 import Image from 'next/image';
+import styles from './FarmItem.module.scss';
 
 const FarmItem = ({ children, card }) => {
   return (

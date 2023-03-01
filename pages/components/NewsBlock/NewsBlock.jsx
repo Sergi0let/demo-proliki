@@ -1,4 +1,8 @@
+import CardNews from '@/pages/common/CardNews/CardNews';
+import Container from '@/pages/common/Container/Container';
+import Title from '@/pages/common/Title/Title';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './NewsBlock.module.scss';
 
 const NewsBlock = () => {
@@ -25,46 +29,28 @@ const NewsBlock = () => {
   ];
 
   return (
-    <section className={styles.news}>
-      <div className={styles.news__header}>
-        <h2>Новини медицини та фармації</h2>
-        <a href="#">Усі новини</a>
+    <Container>
+      <div className={styles.news}>
+        <div className={styles.news__header}>
+          <Title title="Новини медицини та фармації" />
+          <Link className={styles.news__link} href="/news">
+            Усі новини
+          </Link>
+        </div>
+        <div className={styles.news__wrapper}>
+          {newsData.map((item, index) => (
+            <CardNews
+              key={index}
+              image={item.image}
+              alt={item.alt}
+              category={item.category}
+              text={item.text}
+            />
+          ))}
+        </div>
       </div>
-      <div className={styles.news__wrapper}>
-        {newsData.map((item, index) => (
-          <CardNews
-            key={index}
-            image={item.image}
-            alt={item.alt}
-            category={item.category}
-            text={item.text}
-          />
-        ))}
-      </div>
-    </section>
+    </Container>
   );
 };
 
 export default NewsBlock;
-
-const CardNews = ({ image, alt, category, text }) => {
-  return (
-    <article className={styles.card}>
-      <div className={styles.card__img_wrapper}>
-        <Image
-          src={`/img/news/${image}`}
-          width={360}
-          height={240}
-          alt={alt}
-          className={styles.card__img}
-        />
-      </div>
-
-      <div className={styles.card__content}>
-        <h3>{category}</h3>
-        <p>{text}</p>
-        <time dateTime="2021-02-01 00:00">2 марта 2021</time>
-      </div>
-    </article>
-  );
-};

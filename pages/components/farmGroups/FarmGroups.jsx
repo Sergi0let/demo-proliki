@@ -6,6 +6,7 @@ import phylogenetic from '../../../public/img/farmGroups/phylogenetic.svg';
 import substance from '../../../public/img/farmGroups/substance.svg';
 import alphabet from '../../../public/img/farmGroups/alphabet.svg';
 import medicine from '../../../public/img/farmGroups/medicine.svg';
+import Container from '@/pages/common/Container/Container';
 
 const farmGroupsData = [
   {
@@ -20,17 +21,17 @@ const farmGroupsData = [
 
 const FarmGroups = () => {
   return (
-    <section className={styles['farm-groups']}>
-      <div className={styles['farm-groups__row']}>
+    <Container>
+      <div className={styles.main}>
         {farmGroupsData.map(({ card, title, link }) => (
-          <Link href={link} key={title} className={styles['farm-groups__item']}>
+          <Link href={link} key={title} className={styles.main__item}>
             <FarmItem card={card} title={title}>
               {title}
             </FarmItem>
           </Link>
         ))}
       </div>
-    </section>
+    </Container>
   );
 };
 

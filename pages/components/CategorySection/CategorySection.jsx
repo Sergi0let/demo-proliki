@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { accordionData } from '@/public/utils/accordeon';
 
 import styles from './CategorySection.module.scss';
+import Title, { TitleSmall } from '@/pages/common/Title/Title';
 
 const minus = (
   <svg
@@ -56,7 +57,7 @@ const Accordion = ({ title, content }) => {
         className={styles['accordion-item__title']}
         onClick={() => setIsActive(!isActive)}
       >
-        <h4>{title}</h4>
+        <TitleSmall title={title} />
         <button>{isActive ? minus : plus}</button>
       </div>
       {isActive && (
@@ -74,7 +75,7 @@ const AccordionDesctop = ({ title, content }) => {
   return (
     <div className={styles['accordion-item']}>
       <div className={styles['accordion-item__title']}>
-        <h4>{title}</h4>
+        <TitleSmall title={title} />
       </div>
       {
         <ul className={styles['accordion-item__list']}>
@@ -90,7 +91,7 @@ const AccordionDesctop = ({ title, content }) => {
 const CategorySection = () => {
   return (
     <section className={styles.accordion}>
-      <h2>Популярные препараты по каттегориям</h2>
+      <Title title="Популярные препараты по каттегориям" />
       <div className={styles.accordion__mobile}>
         {accordionData.map(({ title, content }, index) => (
           <Accordion key={index} title={title} content={content} />

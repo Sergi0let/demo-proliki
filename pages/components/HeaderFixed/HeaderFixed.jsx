@@ -4,21 +4,25 @@ import ChangeLang from '../ChangeLang/ChangeLang';
 import Burger from '../Burger/Burger';
 import Search from '../Search/Search';
 import List from './List/List';
+import Link from 'next/link';
 
 const HeaderFixed = ({ openBurger, onBurger, onClose }) => {
-  const styleMenu = openBurger ? { display: 'block' } : { display: 'none' };
+  const burgerOpen = openBurger ? '0' : '-1000%';
 
   return (
     <header className={styles.header}>
       <nav>
         <div className={styles.header__top}>
           <div className={styles.top}>
-            <Image
-              src={'./img/logo/logo-l.svg'}
-              alt="Емблема сайту"
-              width={124}
-              height={32}
-            />
+            <Link href={'/'} onClick={() => onClose()}>
+              <Image
+                src={'./img/logo/logo-l.svg'}
+                alt="Емблема сайту"
+                width={124}
+                height={32}
+                className={styles.logo}
+              />
+            </Link>
             <div className={styles.search}>
               <Search />
             </div>
@@ -31,15 +35,16 @@ const HeaderFixed = ({ openBurger, onBurger, onClose }) => {
             </div>
           </div>
         </div>
+
         <div className={styles.header__bottom}>
           <div className={styles.searchBottom}>
             <Search />
           </div>
-          <List openBurger={openBurger} onBurger={onBurger} />
+          <List openBurger={openBurger} onBurger={onBurger} onClose={onClose} />
         </div>
         <div
           onClick={() => onClose()}
-          style={styleMenu}
+          style={{ top: burgerOpen }}
           className={styles.cover}
         ></div>
       </nav>

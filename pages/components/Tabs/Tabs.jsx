@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import Letter from '../AlphabetSection/Letter/Letter';
-import RadioButton from '../AlphabetSection/RadioButton/RadioButton';
+import { useState } from 'react';
+import Letter from '@/pages/common/Letter/Letter';
+import RadioButton from '@/pages/common/RadioButton/RadioButton';
 
 import styles from './Tabs.module.scss';
 
@@ -300,14 +300,16 @@ const Tabs = () => {
           <div key={i}>
             {currentTab === `${tab.id}` && (
               <div>
-                {tab.checkSearch.map((item, i) => (
-                  <RadioButton
-                    key={i}
-                    {...item}
-                    checked={checked[item.id]}
-                    onChange={handleCheck}
-                  />
-                ))}
+                <div className={styles.radiobuttons}>
+                  {tab.checkSearch.map((item, i) => (
+                    <RadioButton
+                      key={i}
+                      {...item}
+                      checked={checked[item.id]}
+                      onChange={handleCheck}
+                    />
+                  ))}
+                </div>
 
                 <div className={styles.links}>
                   {tab.checkSearch
