@@ -14,7 +14,7 @@
   transition: box-shadow 0.3s ease 0s;
 
   @include for-sm {
-    max-width: 264px;
+    width: 264px;
     max-height: 216;
     padding: 43px;
   }
