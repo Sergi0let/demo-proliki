@@ -1,10 +1,10 @@
+import { useState } from 'react';
+import Head from 'next/head';
+
 import HeaderFixed from '../HeaderFixed/HeaderFixed';
 import Footer from '../Footer/Footer';
 
-import styles from '@/styles/Home.module.scss';
-
-import { useState } from 'react';
-import Head from 'next/head';
+import MainContainer from '@/pages/common/MainContainer/MainContainer';
 
 const Layout = ({ children }) => {
   const [openBurger, setOpenBurger] = useState(false);
@@ -16,6 +16,7 @@ const Layout = ({ children }) => {
   const handleCloseBurger = () => {
     setOpenBurger(false);
   };
+
   return (
     <>
       <Head>
@@ -24,7 +25,7 @@ const Layout = ({ children }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
+      <MainContainer>
         <HeaderFixed
           openBurger={openBurger}
           onBurger={handleBurger}
@@ -32,7 +33,7 @@ const Layout = ({ children }) => {
         />
         {children}
         <Footer />
-      </main>
+      </MainContainer>
     </>
   );
 };

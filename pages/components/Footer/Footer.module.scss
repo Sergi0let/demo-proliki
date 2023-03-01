@@ -1,72 +1,82 @@
 @import '@/styles/variables.scss';
 @import '@/styles/breakpoints.scss';
 
-.footer {
-  background-color: $bgLightColor;
-  width: 100%;
-  .sections {
-    align-items: flex-start;
-    padding-top: 32px;
-    padding-bottom: 32px;
-    padding-left: 15px;
-    padding-right: 15px;
-    max-width: $desktop;
-    border-bottom: 1px solid $strokeColor;
-    margin: 0 auto;
+.sections {
+  text-align: left;
+  display: grid;
+  gap: 24px;
+  padding-top: 32px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid $strokeColor;
+
+  &__section_1 {
     @include for-sm {
-      display: flex;
-      justify-content: space-between;
-      padding-left: 32px;
-      padding-right: 32px;
-      flex-wrap: wrap;
-      gap: 15px;
-      padding-top: 64px;
-      padding-bottom: 64px;
+      order: 2;
     }
-
     @include for-mm {
-      flex-wrap: nowrap;
+      order: 1;
     }
   }
 
-  .sectionsFooter {
-    display: flex;
-    flex-direction: column;
-
-    max-width: 282px;
-    &:not(:last-child) {
-      margin-bottom: 32px;
+  &__section_2 {
+    @include for-sm {
+      order: 1;
     }
-    @include for-tablet {
-      max-width: 245px;
-      justify-content: space-between;
-      &:not(:last-child) {
-        margin-bottom: 0px;
-      }
-    }
-
-    ul {
-      gap: 20px;
+    @include for-mm {
+      order: 2;
     }
   }
 
-  .title {
-    color: $blackColor;
-    font-size: 16px;
+  &__section_3 {
+    @include for-sm {
+      order: 3;
+    }
+    @include for-mm {
+      order: 3;
+    }
+  }
+
+  &__section_4 {
+    @include for-sm {
+      order: 4;
+    }
+    @include for-mm {
+      order: 4;
+    }
+  }
+
+  @include for-sm {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  @include for-mm {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: none;
+    column-gap: 24px;
+  }
+
+  &__section {
+    text-align: left;
+  }
+
+  &__text {
+    font-size: 14px;
     line-height: 160%;
-    font-weight: 400;
-    padding-bottom: 16px;
+    color: $greyColor;
+
     @include for-mm {
-      font-size: 18px;
+      font-size: 16px;
     }
   }
 
-  .link {
+  &__item {
     &:not(:last-child) {
       margin-bottom: 16px;
     }
   }
-  .item {
+
+  &__link {
     text-decoration: none;
     color: $blueColor;
     line-height: 160%;
@@ -77,50 +87,32 @@
       color: $blueHoverColor;
       text-decoration: underline;
     }
-
-    @include for-mm {
-      font-size: 16px;
-    }
-  }
-  .textBlock {
-    line-height: 160%;
-    font-size: 14px;
-
-    @include for-mm {
-      font-size: 16px;
-    }
-  }
-
-  .socialLinks {
-    padding-top: 16px;
-  }
-
-  .socialLink {
-    margin-right: 16px;
-    transition: all 0.3s ease 0s;
-    &:hover {
-      transform: scale(-1, 1);
-    }
   }
 }
 
-.infoFooter {
-  .textBlock {
-    display: flex;
-    font-size: 14px;
-    padding-left: 15px;
-    padding-right: 15px;
-    line-height: 160%;
-    justify-content: center;
-    align-items: center;
-    padding-top: 16px;
-    padding-bottom: 31px;
-    color: $greyColor;
+.bottom {
+  display: flex;
+  font-size: 14px;
+  padding-left: 15px;
+  padding-right: 15px;
+  line-height: 160%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 16px;
+  padding-bottom: 31px;
+  color: $greyColor;
 
-    @include for-mm {
-      padding-top: 24px;
-      padding-bottom: 24px;
-      font-size: 16px;
-    }
+  @include for-mm {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    font-size: 16px;
   }
+}
+
+.socials {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  padding-top: 16px;
 }

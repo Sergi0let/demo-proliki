@@ -1,27 +1,2 @@
 @import '@/styles/variables.scss';
 @import '@/styles/breakpoints.scss';
-
-.alphabetSection {
-  max-width: $desktop;
-  width: 100%;
-  padding: 0px 16px;
-  margin-top: 24px;
-  // padding-bottom: 24px;
-
-  @include for-sm {
-    padding: 0px 32px;
-  }
-
-  h2 {
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 130%;
-    text-align: left;
-    color: $blackColor;
-    margin-bottom: 24px;
-
-    @include for-sm {
-      font-size: 32px;
-    }
-  }
-}

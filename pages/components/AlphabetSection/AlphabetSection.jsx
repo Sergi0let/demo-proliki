@@ -1,16 +1,13 @@
+import Container from '@/pages/common/Container/Container';
+import Title from '@/pages/common/Title/Title';
 import Tabs from '../Tabs/Tabs';
-import styles from './AlphabetSection.module.scss';
 
 const AlphabetSection = () => {
   return (
-    <section className={styles.alphabetSection}>
-      <div className={styles.alphabetSection__container}>
-        <h2>Алфавітний покажчик</h2>
-        <div className={styles.alphabetSection__block}>
-          <Tabs />
-        </div>
-      </div>
-    </section>
+    <Container>
+      <Title title="Алфавітний покажчик" />
+      <Tabs />
+    </Container>
   );
 };
 

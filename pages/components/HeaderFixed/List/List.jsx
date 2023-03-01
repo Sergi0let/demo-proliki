@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-const List = ({ openBurger, onBurger }) => {
+const List = ({ openBurger, onBurger, onClose }) => {
   const { pathname } = useRouter();
 
   const navigation = [
@@ -53,6 +53,7 @@ const List = ({ openBurger, onBurger }) => {
     <ul className={styles.list} style={{ top: burgerOpen }}>
       <div className={styles.topList}>
         <Image
+          onClick={() => onClose()}
           src={'./img/logo/logo-l.svg'}
           alt="Емблема сайту"
           width={124}
@@ -68,7 +69,7 @@ const List = ({ openBurger, onBurger }) => {
           key={item.id}
           className={pathname === item.path ? styles.active : null}
         >
-          <Link href={item.path} alt={item.title}>
+          <Link href={item.path} alt={item.title} onClick={() => onClose()}>
             {item.title}
           </Link>
         </li>

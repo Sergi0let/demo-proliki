@@ -32,9 +32,9 @@
   &__desktop {
     display: none;
     @include for-mm {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      column-gap: 10px;
     }
   }
 }

@@ -2,6 +2,7 @@
 @import '@/styles/breakpoints.scss';
 
 .header {
+  position: relative;
   margin: 0 auto;
   width: 100%;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
@@ -14,19 +15,27 @@
 
   &__top {
     position: fixed;
+    margin: 0 auto;
     top: 0;
-    left: 0;
+    left: 0px;
     right: 0;
     height: 52px;
     background-color: rgb(255, 255, 255);
-
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    // box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
 
     @include for-mm {
       height: 80px;
+    }
+
+    @include for-md {
+      left: 0;
+    }
+
+    @include for-tablet {
+      // box-shadow: none;
     }
   }
 
@@ -35,13 +44,13 @@
     padding: 0px 15px;
     margin-top: 52px;
     margin-bottom: 13px;
+    z-index: 10;
 
     @include for-mm {
       margin-top: 80px;
     }
 
     @include for-sm {
-      padding: 0px 32px;
     }
     @include for-tablet {
       padding: 0px 0px;
@@ -59,8 +68,12 @@
   justify-content: space-between;
   align-items: center;
 
-  @include for-sm {
+  @include for-mm {
     padding: 0px 32px;
+  }
+
+  @include for-md {
+    transform: translateX(12px);
   }
 
   &__buttons {
@@ -121,12 +134,13 @@
 }
 
 .cover {
+  transition: all 0.3s ease 0s;
   @include for-mm {
     position: fixed;
-    top: -100px;
+    top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    height: 100vh;
     width: 50%;
     background: #2259b4;
     opacity: 0.2;
@@ -134,5 +148,16 @@
   }
   @include for-tablet {
     display: none;
+  }
+}
+
+.logo {
+  width: 122.18px;
+  height: 32px;
+  cursor: pointer;
+
+  @include for-mm {
+    width: 183.28px;
+    height: 48px;
   }
 }

@@ -1,6 +1,3 @@
-// create a component that will be used in the AlphabetSection component  */  }
-//
-import React from 'react';
 import styles from './RadioButton.module.scss';
 
 const RadioButton = ({ name, id, value, onChange, checked, text }) => {
