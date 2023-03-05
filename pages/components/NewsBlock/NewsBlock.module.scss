@@ -2,13 +2,15 @@
 @import '@/styles/breakpoints.scss';
 
 .news {
-  padding: 48px 0;
-
+  padding-top: 48px;
+  padding-bottom: 48px;
   @include for-sm {
-    padding: 64px 0;
+    padding-top: 64px;
+    padding-bottom: 58px;
   }
 
   &__header {
+    margin-top: 5px;
     margin-bottom: 24px;
     display: flex;
     flex-direction: column;
@@ -41,7 +43,6 @@
     display: flex;
     column-gap: 16px;
     overflow-x: auto;
-    margin-right: -15px;
 
     @include for-mm {
       column-gap: 24px;

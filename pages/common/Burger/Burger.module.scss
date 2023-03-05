@@ -2,16 +2,24 @@
 @import '@/styles/breakpoints.scss';
 
 .burger {
+  order: 3;
+  justify-self: flex-end;
   background-color: $bgLightColor;
-  // background-color: red;
   border-radius: 8px;
   margin-left: 12px;
   flex-basis: 32px;
-  padding: 9px 8.5px;
+  padding: 2px 2px;
+  width: 32px;
+  height: 32px;
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @include for-mm {
+    padding: 9px 8.5px;
+    order: 4;
+  }
 
   svg {
     width: 30px;

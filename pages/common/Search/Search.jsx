@@ -37,7 +37,7 @@ const searchIcon = (
   </svg>
 );
 
-const Search = () => {
+const Search = ({ className }) => {
   const [search, setSearch] = useState('');
 
   if (search === 'привіт світ') {
@@ -56,7 +56,12 @@ const Search = () => {
   };
 
   return (
-    <form onSubmit={onSubmit} type="sumbit" className={styles.search}>
+    <form
+      onSubmit={onSubmit}
+      type="sumbit"
+      style={className}
+      className={styles.search}
+    >
       <input
         className={styles.search__input}
         type="text"

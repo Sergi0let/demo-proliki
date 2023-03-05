@@ -1,11 +1,19 @@
 @import '@/styles/variables.scss';
 @import '@/styles/breakpoints.scss';
 
+.footer {
+  background: $bgLightColor;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .sections {
   text-align: left;
   display: grid;
   gap: 24px;
-  padding-top: 32px;
+  padding-top: 66px;
   padding-bottom: 72px;
   border-bottom: 1px solid $strokeColor;
 
@@ -81,7 +89,7 @@
     text-decoration: none;
     color: $blueColor;
     line-height: 160%;
-    font-size: 14px;
+    font-size: 16px;
     transition: color 0.3s ease 0s;
 
     &:hover {
