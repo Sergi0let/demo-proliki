@@ -159,14 +159,115 @@
 // }
 
 .header {
-  height: 100px;
-  &__wrapper {
-    position: fixed;
-    top: 0;
-  }
-  &__top {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 24px;
+
+  @include for-mm {
+    margin-bottom: 41px;
   }
 
-  &__bottom {
+  @include for-tablet {
+    height: 133px;
   }
+
+  &__nav {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    max-width: $desktop;
+    padding: 0px 15px;
+    width: 100%;
+    height: inherit;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 4px 12px 100vmax white;
+    clip-path: inset(0 -100vmax);
+
+    @include for-mm {
+      padding: 0px 32px;
+    }
+  }
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 3px;
+      background: rgba(0, 0, 0, 0.2);
+      box-shadow: 0 10px 10px 100vmax rgba(0, 0, 0, 0.2);
+      clip-path: inset(0 -100vmax);
+    }
+  }
+
+  &__logo {
+    width: 122.18px;
+    height: 32px;
+    cursor: pointer;
+    margin-right: 37.73px;
+
+    @include for-mm {
+      width: 183.28px;
+      height: 48px;
+    }
+  }
+
+  &__btn_see {
+    display: none;
+    padding: 11px 16px;
+    margin: 0px 16px;
+    cursor: pointer;
+    color: $blueColor;
+    font-size: 16px;
+    line-height: 160%;
+    border-radius: 12px;
+    background: $bgLightColor;
+    transition: all 0.3s ease 0s;
+    white-space: nowrap;
+    transition: all 0.4s ease 0s;
+
+    @include for-tablet {
+      display: block;
+    }
+
+    &:hover {
+      color: $blueHoverColor;
+      text-decoration: underline;
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    @include for-tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 16px;
+      padding-bottom: 2px;
+      // height: 50px;
+
+      li {
+        padding-bottom: 16px;
+        border-bottom: 2px solid transparent;
+      }
+    }
+  }
+}
+
+.active {
+  padding-bottom: 16px;
+  border-bottom: 2px solid $blueHoverColor;
 }
