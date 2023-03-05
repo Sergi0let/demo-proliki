@@ -1,7 +1,7 @@
 import styles from './MainContainer.module.scss';
 
 const MainContainer = ({ children }) => {
-  return <div className={styles.main}>{children}</div>;
+  return <main className={styles.main}>{children}</main>;
 };
 
 export default MainContainer;

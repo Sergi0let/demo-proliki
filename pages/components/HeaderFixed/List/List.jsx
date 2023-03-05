@@ -80,6 +80,11 @@ const List = ({ openBurger, onBurger, onClose }) => {
           <span>Версія для слабозорих</span>
         </Link>
       </li>
+      <div
+        onClick={() => onClose()}
+        style={{ top: burgerOpen }}
+        className={styles.cover}
+      ></div>
     </ul>
   );
 };

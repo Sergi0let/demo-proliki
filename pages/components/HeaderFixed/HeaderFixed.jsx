@@ -71,6 +71,9 @@ const HeaderFixed = ({ openBurger, onBurger, onClose }) => {
     }
 
     function handleScroll() {
+      if (openBurger) {
+        return;
+      }
       setScroll(window.scrollY > 0);
     }
 
@@ -89,17 +92,7 @@ const HeaderFixed = ({ openBurger, onBurger, onClose }) => {
         window.removeEventListener('scroll', handleScroll);
       }
     };
-  }, [isSmallScreen]);
-
-  // const openMenu = (openBurger) => {
-  //   if (openBurger) {
-  //     return { display: 'block' };
-  //   } else {
-  //     return { display: 'none' };
-  //   }
-  // };
-
-  // const burgerOpen = openBurger ? '0' : '-1000%';
+  }, [isSmallScreen, openBurger]);
 
   const classActiveTab = {
     borderBottom: '2px solid #3B009A',
@@ -126,7 +119,7 @@ const HeaderFixed = ({ openBurger, onBurger, onClose }) => {
           </Link>
           <form
             style={
-              scroll
+              !openBurger && scroll
                 ? {
                     position: 'fixed',
                     top: '6px',
@@ -215,51 +208,6 @@ const HeaderFixed = ({ openBurger, onBurger, onClose }) => {
         </ul>
       </nav>
     </header>
-    // <header className={styles.header}>
-    //   <Container>
-    //     <nav>
-    //       <div className={styles.header__top}>
-    //         <div className={styles.top}>
-    //           <Link href={'/'} onClick={() => onClose()}>
-    //             <Image
-    //               src={'./img/logo/logo-l.svg'}
-    //               alt="Емблема сайту"
-    //               width={124}
-    //               height={32}
-    //               className={styles.logo}
-    //             />
-    //           </Link>
-    //           <div className={styles.search}>
-    //             <Search />
-    //           </div>
-    //           <div className={styles.top__buttons}>
-    //             <div className={styles.forLowSee}>
-    //               <button>Для слабозорих</button>
-    //             </div>
-    //             <ChangeLang />
-    //             <Burger openBurger={openBurger} onBurger={onBurger} />
-    //           </div>
-    //         </div>
-
-    //         <div className={styles.header__bottom}>
-    //           <div className={styles.searchBottom}>
-    //             <Search />
-    //           </div>
-    //           <List
-    //             openBurger={openBurger}
-    //             onBurger={onBurger}
-    //             onClose={onClose}
-    //           />
-    //         </div>
-    //       </div>
-    //       <div
-    //         onClick={() => onClose()}
-    //         style={{ top: burgerOpen }}
-    //         className={styles.cover}
-    //       ></div>
-    //     </nav>
-    //   </Container>
-    // </header>
   );
 };
 
