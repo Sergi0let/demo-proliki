@@ -15,7 +15,7 @@ const ChangeLang = () => {
   const disabledRU = isLang === 'RU' ? true : false;
 
   return (
-    <div className={style.langSwitch}>
+    <ul className={style.langSwitch}>
       <button
         disabled={disabledUA}
         style={{ color: colorUa }}
@@ -30,7 +30,7 @@ const ChangeLang = () => {
       >
         RU
       </button>
-    </div>
+    </ul>
   );
 };
 

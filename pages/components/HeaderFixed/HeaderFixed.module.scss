@@ -2,99 +2,94 @@
 @import '@/styles/breakpoints.scss';
 
 .header {
-  position: relative;
-  margin: 0 auto;
+  height: 104px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 24px;
 
-  margin-bottom: 12px;
-
-  @include for-sm {
+  @include for-mm {
     margin-bottom: 41px;
+    height: 80px;
   }
 
-  &__top {
+  @include for-tablet {
+    height: 135px;
+  }
+
+  &__nav {
     position: fixed;
     z-index: 100;
-    margin: 0 auto;
     top: 0;
-    left: 0px;
-    right: 0;
-    height: 52px;
-    background-color: rgb(255, 255, 255);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    max-width: $desktop;
+    padding: 0px 15px;
+    width: 100%;
+    height: inherit;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 4px 12px 100vmax white;
+    clip-path: inset(0 -100vmax);
 
     @include for-mm {
-      height: 80px;
-    }
-
-    @include for-md {
-      left: 0;
+      padding: 0px 32px;
     }
   }
-
-  &__bottom {
-    min-width: 100%;
-    padding: 0px 15px;
-    margin-top: 52px;
-    margin-bottom: 13px;
-    z-index: 10;
-
-    @include for-mm {
-      margin-top: 80px;
-    }
+  &__top {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 90px 60px;
+    grid-template-rows: 1fr 1fr;
+    padding-top: 12px;
 
     @include for-sm {
     }
-    @include for-tablet {
-      padding: 0px 0px;
-      margin-bottom: 0px;
+
+    @include for-mm {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 16px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: rgba(0, 0, 0, 0.2);
+      box-shadow: 0 10px 10px 100vmax rgba(0, 0, 0, 0.2);
+      clip-path: inset(0 -100vmax);
     }
   }
-}
 
-.top {
-  width: 100%;
-  color: rgb(255, 255, 255);
-  padding: 0px 15px;
-  max-width: $desktop;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  &__image {
+    text-align: left;
 
-  @include for-mm {
-    padding: 0px 32px;
+    @include for-mm {
+      order: none;
+    }
   }
 
-  @include for-md {
-    transform: translateX(12px);
+  &__logo {
+    width: 122.18px;
+    height: 32px;
+    cursor: pointer;
+
+    @include for-mm {
+      margin-right: 37.73px;
+      width: 183.28px;
+      height: 48px;
+    }
   }
 
-  &__buttons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-
-.search {
-  margin-right: 16px;
-  margin-left: 16px;
-  display: none;
-
-  @include for-mm {
-    display: block;
-    width: 100%;
-  }
-}
-
-.forLowSee {
-  display: none;
-
-  button {
+  &__btn_see {
+    display: none;
     padding: 11px 16px;
+    margin: 0px 16px;
     cursor: pointer;
     color: $blueColor;
     font-size: 16px;
@@ -103,57 +98,103 @@
     background: $bgLightColor;
     transition: all 0.3s ease 0s;
     white-space: nowrap;
-  }
+    transition: all 0.4s ease 0s;
 
-  @include for-tablet {
-    display: block;
-  }
+    @include for-mm {
+      order: 3;
+    }
 
-  &:hover {
-    button {
+    @include for-tablet {
+      display: block;
+    }
+
+    &:hover {
       color: $blueHoverColor;
+      text-decoration: underline;
+    }
+  }
+
+  &__menu {
+    display: none;
+    @include for-tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 24px;
+      padding-bottom: 0px;
+
+      li {
+        font-weight: 400;
+        font-size: 18px;
+        border-bottom: 2px solid transparent;
+      }
     }
   }
 }
 
-.searchBottom {
-  display: block;
-  height: 40px;
-
-  @include for-sm {
-    height: 49px;
-  }
+.search {
+  order: 4;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  width: 100%;
+  position: relative;
 
   @include for-mm {
-    display: none;
+    order: 2;
   }
-}
 
-.cover {
-  transition: all 0.3s ease 0s;
-  @include for-mm {
-    position: fixed;
-    top: 0;
-    left: 0;
+  &__input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid $blueColor;
+    border-radius: 12px;
+    padding-left: 40px;
+    font-size: 14px;
+    line-height: 160%;
+    color: $blackColor;
+    outline: none;
+    transition: all 0.3s ease;
+    overflow: hidden;
+
+    &::placeholder {
+      color: $greyColor;
+    }
+
+    @include for-mm {
+      height: 48px;
+    }
+  }
+
+  &__placeholder {
+    position: absolute;
+    top: 53%;
+    left: 16px;
+    transform: translateY(-45%);
+    font-size: 14px;
+    line-height: 160%;
+    transition: all 0.3s ease;
+  }
+
+  &__btn {
+    position: absolute;
+    top: 50%;
     right: 0;
-    height: 100vh;
-    width: 50%;
-    background: #2259b4;
-    opacity: 0.2;
-    z-index: 101;
-  }
-  @include for-tablet {
-    display: none;
-  }
-}
-
-.logo {
-  width: 122.18px;
-  height: 32px;
-  cursor: pointer;
-
-  @include for-mm {
-    width: 183.28px;
+    transform: translateY(-50%);
+    width: 48px;
     height: 48px;
+    border: none;
+    background-color: transparent;
+    border-radius: 12px;
+    cursor: pointer;
+
+    svg {
+      transition: fill 0.3s ease;
+    }
+
+    &:hover {
+      svg {
+        fill: $blueHoverColor;
+      }
+    }
   }
 }

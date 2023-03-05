@@ -5,6 +5,7 @@ import HeaderFixed from '../HeaderFixed/HeaderFixed';
 import Footer from '../Footer/Footer';
 
 import MainContainer from '@/pages/common/MainContainer/MainContainer';
+import List from '../HeaderFixed/List/List';
 
 const Layout = ({ children }) => {
   const [openBurger, setOpenBurger] = useState(false);
@@ -27,6 +28,11 @@ const Layout = ({ children }) => {
       </Head>
       <MainContainer>
         <HeaderFixed
+          openBurger={openBurger}
+          onBurger={handleBurger}
+          onClose={handleCloseBurger}
+        />
+        <List
           openBurger={openBurger}
           onBurger={handleBurger}
           onClose={handleCloseBurger}
