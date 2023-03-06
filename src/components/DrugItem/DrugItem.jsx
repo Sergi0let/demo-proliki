@@ -8,7 +8,6 @@ import green from '/public/img/icons/green.svg';
 import yellow from '/public/img/icons/yellow.svg';
 import red from '/public/img/icons/red.svg';
 
-// er
 const DrugItem = () => {
   const assentData = [
     {

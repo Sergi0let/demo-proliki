@@ -43,9 +43,12 @@ const searchIcon = (
   </svg>
 );
 
-const HeaderFixed = ({ openBurger, onBurger, onClose }) => {
+const HeaderFixed = ({ openBurger, onBurger }) => {
   const { pathname } = useRouter();
   const [search, setSearch] = useState('');
+
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [scroll, setScroll] = useState(false);
 
   if (search === 'привіт світ') {
     prompt('Я поки не народився для цього ще достатньо багато роботи та часу');
@@ -61,9 +64,6 @@ const HeaderFixed = ({ openBurger, onBurger, onClose }) => {
     alert(`Я цього поки не можу знайти: ${search} спробуйте "Привіт світ"`);
     setSearch('');
   };
-
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
-  const [scroll, setScroll] = useState(false);
 
   useEffect(() => {
     function handleResize() {
@@ -101,9 +101,9 @@ const HeaderFixed = ({ openBurger, onBurger, onClose }) => {
   };
 
   return (
-    <header style={scroll ? { height: '58px' } : {}} className={styles.header}>
+    <header style={scroll ? { height: '63px' } : {}} className={styles.header}>
       <nav className={styles.header__nav}>
-        <ul className={styles.header__top} er>
+        <ul className={styles.header__top}>
           <Link
             href="/"
             className={styles.header__image}
