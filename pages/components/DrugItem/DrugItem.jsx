@@ -66,7 +66,7 @@ const DrugItem = () => {
   return (
     <Container>
       <article className={styles.item}>
-        {/* <ul className={styles.item__crumbreads}>
+        <ul className={styles.item__crumbreads}>
           <li>
             <Link href="/">Proliki</Link>
           </li>
@@ -333,7 +333,7 @@ const DrugItem = () => {
               <li>Останній триместр вагітності.</li>
             </ul>
           </div>
-        </section> */}
+        </section>
 
         <section className={styles.analogs}>
           <h2>Аналоги Ібупрофен (16)</h2>
@@ -491,6 +491,66 @@ const DrugItem = () => {
             </svg>
             <span>Показати ще</span>
           </button>
+        </section>
+
+        <section className={styles.analogs}>
+          <h2>Другие формы выпуска Ибупрофен (3)</h2>
+          <ul>
+            <li>
+              <Image
+                src="/img/drugs/analogs/item-1.jpg"
+                width={136}
+                height={136}
+                alt="item-1"
+              />
+              <a href="#">Ніфуроксазід</a>
+              <h5>
+                таблетки, покриті плівковою оболонкою 200 мг блістер у пачці, №
+                10, 20
+              </h5>
+              <p>Киевмедпрепарат</p>
+              <div>
+                <button className={styles.analogs__insturction}>
+                  Інструкція
+                </button>
+              </div>
+            </li>
+            <li>
+              <Image
+                src="/img/drugs/analogs/item-2.jpg"
+                width={136}
+                height={136}
+                alt="item-1"
+              />
+              <a href="#">Ніфуроксазід</a>
+              <h5>таблетки, вкриті оболонкою 0,1 г блістер № 30</h5>
+              <p>Юнифарма</p>
+              <div>
+                <button className={styles.analogs__insturction}>
+                  Інструкція
+                </button>
+              </div>
+            </li>
+            <li>
+              <Image
+                src="/img/drugs/analogs/item-3.jpg"
+                width={136}
+                height={136}
+                alt="item-1"
+              />
+              <a href="#">Ніфуроксазід</a>
+              <h5>
+                таблетки, покрытые пленочной оболочкой 200 мг блистер в пачке, №
+                10, 20
+              </h5>
+              <p>Киевмедпрепарат</p>
+              <div>
+                <button className={styles.analogs__insturction}>
+                  Інструкція
+                </button>
+              </div>
+            </li>
+          </ul>
         </section>
       </article>
     </Container>

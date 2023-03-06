@@ -63,7 +63,6 @@ const HeaderFixed = ({ openBurger, onBurger, onClose }) => {
 
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [scroll, setScroll] = useState(false);
-  console.log('isSmallScreen', isSmallScreen);
 
   useEffect(() => {
     function handleResize() {
@@ -101,7 +100,7 @@ const HeaderFixed = ({ openBurger, onBurger, onClose }) => {
   };
 
   return (
-    <header style={scroll ? { height: '52px' } : {}} className={styles.header}>
+    <header style={scroll ? { height: '58px' } : {}} className={styles.header}>
       <nav className={styles.header__nav}>
         <ul className={styles.header__top} er>
           <Link
