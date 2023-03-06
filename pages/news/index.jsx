@@ -1,5 +1,4 @@
-import React from 'react';
-import NewsBlock from '../components/NewsBlock/NewsBlock';
+import NewsBlock from '@/src/components/NewsBlock/NewsBlock';
 
 const News = () => {
   return <NewsBlock />;

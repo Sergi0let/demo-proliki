@@ -1,0 +1,13 @@
+@import './src/styles/breakpoints.scss';
+@import './src/styles/variables.scss';
+
+.main {
+  max-width: $desktop;
+  padding: 0px 15px;
+  width: 100%;
+  text-align: center;
+
+  @include for-mm {
+    padding: 0px 32px;
+  }
+}

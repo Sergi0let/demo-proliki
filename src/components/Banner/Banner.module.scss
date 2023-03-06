@@ -1,0 +1,46 @@
+@import './src/styles/breakpoints.scss';
+@import './src/styles/variables.scss';
+
+.banner {
+  height: 244px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 24px;
+  overflow: hidden;
+  background: url('../../../public/img/bg/bg320.jpg') center/cover no-repeat;
+
+  @include for-sm {
+    background: url('../../../public/img/bg/bg768.jpg') center/cover no-repeat;
+  }
+
+  @include for-tablet {
+    background: url('../../../public/img/bg/bg1024.jpg') center/cover no-repeat;
+  }
+
+  @include for-ld {
+    background: url('../../../public/img/bg/bg1128.jpg') center/cover no-repeat;
+  }
+
+  @include for-tablet {
+    margin-top: 0;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 130%;
+    padding: 0px 15px;
+
+    @include for-sm {
+      font-size: 32px;
+      max-width: 450px;
+    }
+
+    @include for-tablet {
+      max-width: 660px;
+      font-size: 40px;
+    }
+  }
+}

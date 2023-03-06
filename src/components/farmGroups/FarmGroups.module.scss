@@ -1,0 +1,29 @@
+@import './src/styles/breakpoints.scss';
+@import './src/styles/variables.scss';
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+  margin-top: 14px;
+  padding: 10px 0px;
+  column-gap: 8px;
+
+  @include for-mm {
+    column-gap: 24px;
+  }
+
+  @include for-tablet {
+    margin-top: 30px;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}

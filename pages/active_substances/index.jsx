@@ -1,5 +1,4 @@
-import React from 'react';
-import DrugItem from '../components/DrugItem/DrugItem';
+import DrugItem from '@/src/components/DrugItem/DrugItem';
 
 const Substances = () => {
   return <DrugItem />;
