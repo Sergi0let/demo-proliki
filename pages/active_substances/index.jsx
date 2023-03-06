@@ -1,7 +1,8 @@
 import React from 'react';
+import DrugItem from '../components/DrugItem/DrugItem';
 
 const Substances = () => {
-  return <div>active substances</div>;
+  return <DrugItem />;
 };
 
 export default Substances;

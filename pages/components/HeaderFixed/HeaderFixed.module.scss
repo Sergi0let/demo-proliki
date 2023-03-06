@@ -42,7 +42,7 @@
     align-items: center;
     grid-template-columns: 1fr 90px 60px;
     grid-template-rows: 1fr 1fr;
-    padding-top: 12px;
+    padding-top: 8px;
 
     @include for-sm {
     }
@@ -136,6 +136,7 @@
   order: 4;
   grid-column-start: 1;
   grid-column-end: 4;
+  padding-top: 4px;
   width: 100%;
   position: relative;
 
