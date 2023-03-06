@@ -1,2 +1,526 @@
 @import '@/styles/variables.scss';
 @import '@/styles/breakpoints.scss';
+
+.item {
+  margin-top: -17px;
+  text-align: left;
+
+  @include for-mm {
+    margin-top: -9px;
+  }
+
+  &__crumbreads {
+    margin-bottom: 16px;
+
+    li {
+      display: inline-block;
+      font-size: 16px;
+      line-height: 160%;
+      color: $blueColor;
+
+      &:not(:last-child) {
+        margin-right: 8px;
+      }
+
+      svg {
+        position: relative;
+        top: -3px;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 130%;
+    margin-bottom: 24px;
+
+    @include for-mm {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__nav {
+    background: $bgLightColor;
+    box-shadow: 0 0px 0px 100vmax $bgLightColor;
+    clip-path: inset(0 -100vmax);
+    display: flex;
+    align-items: center;
+    column-gap: 32px;
+
+    a {
+      display: inline-block;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 160%;
+      color: $blueColor;
+      transition: all 0.3s ease 0s;
+      padding: 9px 0px;
+      white-space: nowrap;
+      overflow: auto;
+
+      @include for-mm {
+        padding: 16px 0px;
+      }
+
+      &:hover {
+        color: $blueHoverColor;
+      }
+    }
+  }
+}
+
+.drug {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid $strokeColor;
+
+  @include for-mm {
+    padding-top: 48px;
+    padding-bottom: 48px;
+    display: grid;
+    column-gap: 24px;
+    grid-template-columns: 0.4fr 0.6fr;
+  }
+
+  @include for-tablet {
+    column-gap: 48px;
+    grid-template-columns: 0.36fr 0.7fr;
+  }
+
+  @include for-md {
+  }
+
+  picture {
+    &__img {
+    }
+    a {
+      position: relative;
+      display: block;
+      padding: 16px;
+      width: 56px;
+      height: 56px;
+      background-color: $bgLightColor;
+      bottom: 80px;
+      left: 0;
+
+      svg {
+        width: 24px;
+        height: 24px;
+        transition: transform 0.3s ease 0s;
+
+        path {
+          transition: fill 0.3s ease 0s;
+        }
+      }
+    }
+  }
+
+  &__link {
+    &:hover {
+      svg {
+        transform: scale(1.1);
+      }
+      path {
+        fill: $blueHoverColor;
+      }
+    }
+  }
+
+  ul {
+    grid-column: 2 / 3;
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 18px 32px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 100%;
+
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+
+      @include for-mm {
+        display: inline-block;
+        width: auto;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__price-btn {
+    margin-right: 24px;
+    background: $blueColor;
+    color: #fff;
+    transition: background 0.3s ease 0s;
+
+    &:hover {
+      background: $blueHoverColor;
+    }
+
+    &:active {
+      background: $btnActive;
+    }
+  }
+  &__analog-btn {
+    background: $bgColor;
+    color: $blueColor;
+    transition: all 0.3s ease 0s;
+
+    span {
+      display: inline-block;
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s ease 0s;
+    }
+
+    &:hover {
+      color: $blueHoverColor;
+      span {
+        border-bottom: 1px solid $blueHoverColor;
+      }
+    }
+
+    &:active {
+      background: $bgLightColor;
+    }
+  }
+}
+
+.table {
+  margin-top: -76px;
+
+  @include for-mm {
+    margin-top: 0;
+  }
+  &__row {
+    margin-bottom: 16px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 160%;
+
+    @include for-mm {
+      margin-bottom: 24px;
+    }
+  }
+
+  h4 {
+    display: block;
+    font-weight: 400;
+    color: #9f9f9f;
+
+    @include for-mm {
+      margin-right: 16px;
+    }
+
+    @include for-tablet {
+      display: inline-block;
+    }
+  }
+
+  p {
+    display: inline-block;
+  }
+
+  a {
+    color: $blueColor;
+    margin-right: 8px;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      color: $blueHoverColor;
+      text-decoration: underline;
+    }
+  }
+}
+
+.assent {
+  padding: 24px 0px;
+  display: grid;
+  row-gap: 16px;
+  border-bottom: 1px solid $strokeColor;
+
+  @include for-sm {
+    padding: 32px 0px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+  }
+  @include for-mm {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 16px;
+
+    @include for-sm {
+      display: block;
+      align-items: center;
+      column-gap: 0;
+    }
+  }
+
+  h5 {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 160%;
+    color: $greyColor;
+    margin-bottom: 0;
+    @include for-sm {
+      margin-bottom: 8px;
+    }
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+  }
+
+  p {
+    padding-left: 12px;
+    font-size: 18px;
+    line-height: 160%;
+  }
+}
+
+.instruction {
+  padding: 48px 0px;
+
+  @include for-sm {
+    padding: 64px 0px;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+
+    @include for-sm {
+      font-size: 28px;
+    }
+  }
+
+  &__list {
+    padding-top: 24px;
+    padding-bottom: 32px;
+    list-style: disc;
+    display: grid;
+    transform: translateX(22px);
+    grid-template-columns: 1fr;
+
+    @include for-sm {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 30px;
+    }
+
+    li {
+      transition: all 0.3s ease 0s;
+      color: $blueColor;
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+
+      &:hover {
+        color: $blueHoverColor;
+        text-decoration: underline;
+      }
+    }
+
+    a {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 160%;
+    }
+
+    @include for-sm {
+      padding-top: 32px;
+      padding-bottom: 48px;
+    }
+  }
+
+  &__sub-title {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+
+    @include for-sm {
+      font-size: 28px;
+    }
+  }
+
+  &__info {
+    padding-top: 24px;
+    padding-bottom: 32px;
+
+    @include for-sm {
+      padding-top: 32px;
+      padding-bottom: 48px;
+    }
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 16px;
+
+        @include for-sm {
+          margin-bottom: 24px;
+        }
+      }
+    }
+  }
+
+  &__contraindication {
+    ul {
+      padding-top: 24px;
+      list-style: disc;
+      padding-left: 22px;
+
+      @include for-sm {
+        padding-top: 32px;
+      }
+      li {
+        &:not(:last-child) {
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+}
+
+.analogs {
+  padding-bottom: 32px;
+
+  @include for-sm {
+    padding-bottom: 64px;
+  }
+  h2 {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+
+    @include for-sm {
+      font-size: 32px;
+    }
+  }
+
+  ul {
+    padding-top: 24px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @include for-sm {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+    @include for-mm {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    @include for-tablet {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+
+  li {
+    border-bottom: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    display: grid;
+    grid-template-rows: auto auto auto 1fr auto;
+    @include for-sm {
+      border: 1px solid #e5e5e5;
+      padding: 32px;
+    }
+  }
+  a {
+    display: block;
+    color: $blueColor;
+    padding-top: 16px;
+    font-size: 16px;
+    line-height: 160%;
+    cursor: pointer;
+
+    @include for-sm {
+      padding-top: 24px;
+      font-size: 18px;
+    }
+  }
+
+  h5 {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+    height: auto;
+
+    @include for-sm {
+      font-size: 16px;
+    }
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+    color: $greyColor;
+
+    @include for-sm {
+      font-size: 16px;
+    }
+  }
+
+  &__insturction {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 4px 16px;
+    background-color: $blueColor;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      background-color: $blueHoverColor;
+    }
+
+    @include for-sm {
+      margin-top: 24px;
+    }
+  }
+
+  &__more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 16px;
+    cursor: pointer;
+    padding-bottom: 16px;
+    padding-right: 32px;
+    padding-left: 32px;
+    background: $bgColor;
+    border-radius: 12px;
+    color: $blueColor;
+    font-size: 18px;
+    line-height: 160%;
+    font-weight: 600;
+    transition: color 0.3s ease 0s;
+    span {
+      padding-left: 8px;
+    }
+    svg {
+      transition: fill 0.3s ease 0s;
+    }
+    &:hover {
+      color: $blueHoverColor;
+      text-decoration: underline;
+      svg {
+        path {
+          fill: $blueHoverColor;
+        }
+      }
+    }
+  }
+}
