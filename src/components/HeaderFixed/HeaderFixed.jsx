@@ -45,14 +45,11 @@ const searchIcon = (
 
 const HeaderFixed = ({ openBurger, onBurger }) => {
   const { pathname } = useRouter();
+  const router = useRouter();
   const [search, setSearch] = useState('');
 
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [scroll, setScroll] = useState(false);
-
-  if (search === 'привіт світ') {
-    prompt('Я поки не народився для цього ще достатньо багато роботи та часу');
-  }
 
   const handleSearch = (e) => {
     const normSearch = e.target.value.toLowerCase();
@@ -61,8 +58,8 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    alert(`Я цього поки не можу знайти: ${search} спробуйте "Привіт світ"`);
-    setSearch('');
+    router.push(`/drugItem?search=${search}`);
+    // setSearch('');
   };
 
   useEffect(() => {

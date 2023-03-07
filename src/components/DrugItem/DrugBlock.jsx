@@ -7,8 +7,15 @@ import styles from './DrugBlock.module.scss';
 import green from '/public/img/icons/green.svg';
 import yellow from '/public/img/icons/yellow.svg';
 import red from '/public/img/icons/red.svg';
+import { useEffect, useState } from 'react';
 
-const DrugBlock = () => {
+const DrugBlock = ({ data }) => {
+  const [item, setItem] = useState({});
+
+  useEffect(() => {
+    setItem(data[0]);
+  }, [data]);
+
   const assentData = [
     {
       id: 1,
@@ -86,7 +93,7 @@ const DrugBlock = () => {
             <Link href="#">Лікарські препарати</Link>
           </li>
         </ul>
-        <h1 className={styles.item__title}>Ібупрофен</h1>
+        <h1 className={styles.item__title}>{item && item.name}</h1>
         <ul className={styles.item__nav}>
           <li>
             <a style={{ color: '#4D5156', cursor: 'not-allowed' }} href="#">

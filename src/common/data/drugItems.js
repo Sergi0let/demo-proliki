@@ -1,4 +1,4 @@
-const dragItems = [
+const drugItems = [
   {
     id: 1,
     name: 'Ібупрофен',
@@ -1086,3 +1086,5 @@ const dragItems = [
     ],
   },
 ];
+
+export default drugItems;
