@@ -3,12 +3,12 @@ import Link from 'next/link';
 
 import Container from '@/src/common/Container/Container';
 
-import styles from './DrugItem.module.scss';
+import styles from './DrugBlock.module.scss';
 import green from '/public/img/icons/green.svg';
 import yellow from '/public/img/icons/yellow.svg';
 import red from '/public/img/icons/red.svg';
 
-const DrugItem = () => {
+const DrugBlock = () => {
   const assentData = [
     {
       id: 1,
@@ -340,13 +340,15 @@ const DrugItem = () => {
           <h2>Аналоги Ібупрофен (16)</h2>
           <ul>
             <li>
-              <Image
-                src="/img/drugs/analogs/item-1.jpg"
-                width={136}
-                height={136}
-                alt="item-1"
-              />
-              <a href="#">Ніфуроксазід</a>
+              <a href="#" style={{ paddingTop: '0' }}>
+                <Image
+                  src="/img/drugs/analogs/item-1.jpg"
+                  width={136}
+                  height={136}
+                  alt="item-1"
+                />
+                <h4>Ніфуроксазід</h4>
+              </a>
               <h5>
                 таблетки, покриті плівковою оболонкою 200 мг блістер у пачці, №
                 10, 20
@@ -557,4 +559,4 @@ const DrugItem = () => {
     </Container>
   );
 };
-export default DrugItem;
+export default DrugBlock;
