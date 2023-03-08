@@ -6,7 +6,8 @@ import { useEffect, useState } from 'react';
 const DrugItem = () => {
   const router = useRouter();
   const { search } = router.query;
-  const [drug, setDrug] = useState({});
+  const [drug, setDrug] = useState(null);
+  const [allDrug, setAllDrug] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,12 +18,14 @@ const DrugItem = () => {
       );
 
       setDrug(currentItem);
-      setLoading(false);
+      setAllDrug(response);
     };
     fetchData();
   }, [search]);
 
-  return <DrugBlock data={drug} />;
+  if (!drug) return <div>loading...</div>;
+
+  return <DrugBlock data={drug} allDrug={allDrug} />;
 };
 
 export default DrugItem;

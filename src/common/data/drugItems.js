@@ -3,7 +3,7 @@ const drugItems = [
     id: 1,
     name: 'Ібупрофен',
     image: {
-      small: 'ibuprofen-320.jpg',
+      small: 'analogs/ibuprofen-320.jpg',
       medium: 'ibuprofen-768.jpg',
       large: 'ibuprofen-992.jpg',
     },
@@ -11,25 +11,23 @@ const drugItems = [
 
     analogs: ['Ніфуроксазід'],
 
-    characteristics: [
-      {
-        id: 1,
-        producer: 'ПАО НПЦ &quot;Борщаговский ХФЗ&quot;',
-        release: 'таблетки, вкриті плівковою оболонкою',
-        registration: 'UA/3304/01/01 №84 от 14.01.2023',
-        atx: {
-          numbers: 'M01A E01',
-          name: 'Ибупрофен',
-        },
-        substance: {
-          en: 'Ibuprofen',
-          ua: 'Ібупрофен',
-        },
-        release: 'Без рецепта',
-        dosage: '200 мг',
-        quantity: '50 шт ',
+    characteristics: {
+      id: 1,
+      producer: 'ПАО НПЦ "Борщаговский ХФЗ"',
+      character: 'таблетки, вкриті плівковою оболонкою',
+      registration: 'UA/3304/01/01 №84 от 14.01.2023',
+      atx: {
+        numbers: 'M01A E01',
+        name: 'Ибупрофен',
       },
-    ],
+      substance: {
+        en: 'Ibuprofen',
+        ua: 'Ібупрофен',
+      },
+      release: 'Без рецепта',
+      dosage: '200 мг',
+      quantity: '50 шт ',
+    },
 
     instraction: [
       {
@@ -98,7 +96,7 @@ const drugItems = [
     characteristics: {
       id: 1,
       producer: 'Киевмедпрепарат',
-      release: 'таблетки, вкриті плівковою оболонкою',
+      charact: 'таблетки, вкриті плівковою оболонкою',
       registration: 'UA/3304/01/01 №84 от 14.01.2023',
       short:
         'таблетки, покриті плівковою оболонкою 200 мг блістер у пачці, № 10, 20',
@@ -182,7 +180,7 @@ const drugItems = [
     characteristics: {
       id: 1,
       producer: 'Darnitsa',
-      release: 'таблетки',
+      charact: 'таблетки',
       registration: 'UA/5207/01/01 от 04.01.2023',
       short: 'таблетки 500 мг, № 20',
       atx: {
@@ -266,7 +264,7 @@ const drugItems = [
     characteristics: {
       id: 1,
       producer: 'Darnitsa',
-      release: 'таблетки',
+      charact: 'таблетки',
       registration: 'UA/5207/01/01 от 04.01.2023',
       short: 'таблетки 500 мг, № 20',
       atx: {
@@ -350,7 +348,7 @@ const drugItems = [
     characteristics: {
       id: 1,
       producer: 'Юнифарма',
-      release: 'таблетки, вкриті плівковою оболонкою',
+      charact: 'таблетки, вкриті плівковою оболонкою',
       registration: 'UA/3304/01/01 №84 от 14.01.2023',
       short: 'таблетки, вкриті оболонкою 0,1 г блістер № 30',
       atx: {
@@ -433,7 +431,7 @@ const drugItems = [
     characteristics: {
       id: 1,
       producer: 'Киевмедпрепарат',
-      release: 'таблетки, вкриті плівковою оболонкою',
+      charact: 'таблетки, вкриті плівковою оболонкою',
       registration: 'UA/3304/01/01 №84 от 14.01.2023',
       short:
         'таблетки, покрытые пленочной оболочкой 200 мг блистер в пачке, № 10, 20',
@@ -517,7 +515,7 @@ const drugItems = [
     characteristics: {
       id: 1,
       producer: 'Киевмедпрепарат',
-      release: 'таблетки, вкриті плівковою оболонкою',
+      charact: 'таблетки, вкриті плівковою оболонкою',
       registration: 'UA/3304/01/01 №84 от 14.01.2023',
       short:
         'суспензия оральная 220 мг/5 мл флакон полимерный 100 мл с дозирующей ложкой, в пачке, № 1',
@@ -684,7 +682,7 @@ const drugItems = [
     characteristics: {
       id: 1,
       producer: 'Alkaloid',
-      release: 'таблетки, вкриті плівковою оболонкою',
+      charact: 'таблетки, вкриті плівковою оболонкою',
       registration: 'UA/3304/01/01 №84 от 14.01.2023',
       short:
         'таблетки, покрытые пленочной оболочкой 200 мг блистер в пачке, № 10, 20',

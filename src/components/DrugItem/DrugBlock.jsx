@@ -7,14 +7,9 @@ import styles from './DrugBlock.module.scss';
 import green from '/public/img/icons/green.svg';
 import yellow from '/public/img/icons/yellow.svg';
 import red from '/public/img/icons/red.svg';
-import { useEffect, useState } from 'react';
 
-const DrugBlock = ({ data }) => {
-  const [item, setItem] = useState({});
-
-  useEffect(() => {
-    setItem(data[0]);
-  }, [data]);
+const DrugBlock = ({ data, allDrug }) => {
+  const item = data[0];
 
   const assentData = [
     {
@@ -71,6 +66,12 @@ const DrugBlock = ({ data }) => {
       </li>
     ));
   };
+
+  const showAnalogs = () => {
+    return allDrug.map((drug) => drug.name === item.name).length;
+  };
+
+  console.log('data', allDrug);
   return (
     <Container>
       <article className={styles.item}>
@@ -93,7 +94,7 @@ const DrugBlock = ({ data }) => {
             <Link href="#">Лікарські препарати</Link>
           </li>
         </ul>
-        <h1 className={styles.item__title}>{item && item.name}</h1>
+        <h1 className={styles.item__title}>{item.name}</h1>
         <ul className={styles.item__nav}>
           <li>
             <a style={{ color: '#4D5156', cursor: 'not-allowed' }} href="#">
@@ -104,7 +105,9 @@ const DrugBlock = ({ data }) => {
             <a href="#">Інструкція</a>
           </li>
           <li>
-            <a href="#">Аналоги (16)</a>
+            {item.analogs.length > 0 ? (
+              <a href="#">Аналоги ({showAnalogs()})</a>
+            ) : null}
           </li>
           <li>
             <a href="#">Форма випуску (3)</a>
@@ -113,25 +116,25 @@ const DrugBlock = ({ data }) => {
         <section className={styles.drug}>
           <picture>
             <Image
-              src="/img/drugs/ibuprofen/ibuprofen-992.jpg"
+              src={`/img/drugs/${item.image.small}`}
               width={360}
               height={360}
               alt="Ібупрофен"
-              layout="responsive"
-              srcSet={[
-                {
-                  src: '/img/drugs/ibuprofen/ibuprofen-320.jpg',
-                  width: 640,
-                },
-                {
-                  src: '/img/drugs/ibuprofen/ibuprofen-768.jpg',
-                  width: 768,
-                },
-                {
-                  src: '/img/drugs/ibuprofen/ibuprofen-992.jpg',
-                  width: 1024,
-                },
-              ]}
+              // layout="responsive"
+              // srcSet={[
+              //   {
+              //     src: '/img/drugs/ibuprofen/ibuprofen-320.jpg',
+              //     width: 640,
+              //   },
+              //   {
+              //     src: '/img/drugs/ibuprofen/ibuprofen-768.jpg',
+              //     width: 768,
+              //   },
+              //   {
+              //     src: '/img/drugs/ibuprofen/ibuprofen-992.jpg',
+              //     width: 1024,
+              //   },
+              // ]}
               className={styles.drug__img}
             />
             <a className={styles.drug__link} href="#">
@@ -150,41 +153,41 @@ const DrugBlock = ({ data }) => {
           <div className={styles.table}>
             <div className={styles.table__row}>
               <h4>Виробник:</h4>
-              <a href="#">ПАО НПЦ &quot;Борщаговский ХФЗ&quot;</a>
+              <a href="#">{item.characteristics.producer}</a>
             </div>
             <div className={styles.table__row}>
               <h4>Форма випуску:</h4>
-              <p>таблетки, вкриті плівковою оболонкою</p>
+              <p>{item.characteristics.release}</p>
             </div>
             <div className={styles.table__row}>
               <h4>Реєстраційний №:</h4>
-              <p>UA/3304/01/01 №84 от 14.01.2023</p>
+              <p>{item.characteristics.registration}</p>
             </div>
             <div className={styles.table__row}>
               <h4>АТХ-група</h4>
               <p>
-                <a href="#">M01A E01</a>
-                (Ибупрофен)
+                <a href="#">{item.characteristics.atx.numbers}</a>
+                {item.characteristics.atx.name}
               </p>
             </div>
             <div className={styles.table__row}>
               <h4>Активна речовина:</h4>
               <p>
-                <a href="#">Ibuprofenum</a>
-                (Ібупрофен)
+                <a href="#">{item.characteristics.substance.en}</a>(
+                {item.characteristics.substance.ua})
               </p>
             </div>
             <div className={styles.table__row}>
               <h4>Умови відпустки:</h4>
-              <p>Без рецепта</p>
+              <p>{item.characteristics.release}</p>
             </div>
             <div className={styles.table__row}>
               <h4>Дозування:</h4>
-              <p>200мг</p>
+              <p>{item.characteristics.dosage}</p>
             </div>
             <div className={styles.table__row}>
               <h4>Кількість в упаковці:</h4>
-              <p>50 шт</p>
+              <p>{item.characteristics.quantity}</p>
             </div>
           </div>
 
@@ -201,7 +204,7 @@ const DrugBlock = ({ data }) => {
 
         <section className={styles.instruction}>
           <h2 className={styles.instruction__title}>
-            Инструкция по применению Ибупрофен
+            Инструкция по применению {item.name}
           </h2>
           <ul className={styles.instruction__list}>
             <li>
@@ -232,7 +235,20 @@ const DrugBlock = ({ data }) => {
               <a href="#">Передозування</a>
             </li>
           </ul>
-          <h3 className={styles['instruction__sub-title']}>Склад</h3>
+          {item.instraction.map((elem) => (
+            <>
+              <h3 key={elem.id} className={styles['instruction__sub-title']}>
+                {elem.title}
+              </h3>
+              <div className={styles.instruction__info}>
+                {elem.text.map((paragraph) => (
+                  <p key={paragraph.id}>{paragraph}</p>
+                ))}
+              </div>
+            </>
+          ))}
+
+          {/* <h3 className={styles['instruction__sub-title']}>Склад</h3>
           <div className={styles.instruction__info}>
             <p>речовина, що діє: ібупрофен;</p>
             <p>
@@ -340,7 +356,7 @@ const DrugBlock = ({ data }) => {
               <li>Активне запальне захворювання кишок.</li>
               <li>Останній триместр вагітності.</li>
             </ul>
-          </div>
+          </div> */}
         </section>
 
         <section className={styles.analogs}>
