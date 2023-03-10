@@ -106,15 +106,25 @@
   }
 
   picture {
+    img {
+      max-width: 100%;
+      height: auto;
+
+      @include for-mm {
+        max-width: none;
+      }
+    }
     a {
-      position: relative;
       display: block;
       padding: 16px;
       width: 56px;
       height: 56px;
+      position: relative;
       background-color: $bgLightColor;
       bottom: 80px;
       left: 0;
+      @include for-mm {
+      }
 
       svg {
         width: 24px;
@@ -126,6 +136,12 @@
         }
       }
     }
+  }
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__link {
@@ -303,10 +319,11 @@
 }
 
 .instruction {
-  padding: 48px 0px;
+  padding-top: 32px;
 
   @include for-sm {
-    padding: 64px 0px;
+    padding-top: 64px;
+    padding-bottom: 16px;
   }
 
   &__title {
@@ -407,11 +424,12 @@
 }
 
 .analogs {
-  padding-bottom: 32px;
+  padding-bottom: 48px;
 
   @include for-sm {
     padding-bottom: 64px;
   }
+
   h2 {
     font-weight: 400;
     font-size: 20px;
@@ -423,17 +441,18 @@
   }
 
   ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
     margin-top: 24px;
     margin-bottom: 24px;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
     @include for-sm {
+      gap: 0;
       margin-top: 32px;
       margin-bottom: 32px;
       border-left: 1px solid #e5e5e5;
-      border-bottom: 1px solid #e5e5e5;
+      border-top: 1px solid #e5e5e5;
     }
     @include for-mm {
       grid-template-columns: 1fr 1fr 1fr;
@@ -444,8 +463,8 @@
   }
 
   li {
+    // gap: 16px;
     border-bottom: 1px solid #e5e5e5;
-    border-top: 1px solid #e5e5e5;
     padding-top: 24px;
     padding-bottom: 24px;
     display: grid;
@@ -453,8 +472,9 @@
     @include for-sm {
       border: 1px solid #e5e5e5;
       padding: 32px;
-      border-bottom: none;
+
       border-left: none;
+      border-top: none;
     }
 
     img {
@@ -504,23 +524,28 @@
   }
 
   &__insturction {
-    display: inline-block;
+    display: block;
+    width: 100%;
     margin-top: 16px;
-    padding: 4px 16px;
+    padding: 0px 16px;
     background-color: $blueColor;
+    font-weight: 600;
     color: #fff;
     border: none;
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
-    line-height: 160%;
+    line-height: 34px;
 
     &:hover {
       background-color: $blueHoverColor;
     }
 
     @include for-sm {
+      display: inline-block;
+      width: auto;
       margin-top: 24px;
+      font-size: 16px;
     }
   }
 
@@ -560,5 +585,46 @@
     @include for-sm {
       width: auto;
     }
+  }
+}
+
+.diagnosis {
+  margin-bottom: 48px;
+  border-bottom: 1px solid #d3dce9;
+
+  @include for-sm {
+    margin-bottom: 64px;
+  }
+
+  a {
+    display: block;
+  }
+
+  ul {
+    padding-top: 32px;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    border-top: 1px solid #d3dce9;
+    height: 92px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+
+    @include for-sm {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      height: 61px;
+      font-size: 18px;
+    }
+  }
+
+  .link {
+    color: $blueColor;
   }
 }

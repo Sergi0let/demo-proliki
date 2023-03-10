@@ -7,6 +7,7 @@ import styles from './DrugBlock.module.scss';
 import green from '/public/img/icons/green.svg';
 import yellow from '/public/img/icons/yellow.svg';
 import red from '/public/img/icons/red.svg';
+import { TitleMedium } from '@/src/common/Title/Title';
 
 const DrugBlock = ({ data, allDrug }) => {
   const item = data[0];
@@ -121,33 +122,22 @@ const DrugBlock = ({ data, allDrug }) => {
             ) : null}
           </li>
           <li>
+            <a href="#">Діагнози</a>
+          </li>
+          <li>
             <a href="#">Форма випуску (3)</a>
           </li>
         </ul>
         <section className={styles.drug}>
           <picture>
-            <Image
-              src={`/img/drugs/${item.image.small}`}
-              width={360}
-              height={360}
-              alt="Ібупрофен"
-              // layout="responsive"
-              // srcSet={[
-              //   {
-              //     src: '/img/drugs/ibuprofen/ibuprofen-320.jpg',
-              //     width: 640,
-              //   },
-              //   {
-              //     src: '/img/drugs/ibuprofen/ibuprofen-768.jpg',
-              //     width: 768,
-              //   },
-              //   {
-              //     src: '/img/drugs/ibuprofen/ibuprofen-992.jpg',
-              //     width: 1024,
-              //   },
-              // ]}
-              className={styles.drug__img}
-            />
+            <div className={styles.drug__img}>
+              <Image
+                src={`/img/drugs/${item.image.small}`}
+                width={360}
+                height={360}
+                alt="Ібупрофен"
+              />
+            </div>
             <a className={styles.drug__link} href="#">
               <svg>
                 <path
@@ -214,9 +204,12 @@ const DrugBlock = ({ data, allDrug }) => {
         <ul className={styles.assent}>{showAssent()}</ul>
 
         <section className={styles.instruction}>
-          <h2 className={styles.instruction__title}>
-            Инструкция по применению {item.name}
-          </h2>
+          <TitleMedium
+            level="2"
+            name={item.name}
+            title="Инструкция по применению"
+          />
+
           <ul className={styles.instruction__list}>
             <li>
               <a href="#">Фармакологічні властивості</a>
@@ -371,7 +364,7 @@ const DrugBlock = ({ data, allDrug }) => {
         </section>
 
         <section className={styles.analogs}>
-          <h2>Аналоги Ібупрофен (16)</h2>
+          <TitleMedium level="2" title="Аналоги Ібупрофен (16)" />
           <ul>
             <li>
               <a href="#" style={{ paddingTop: '0' }}>
@@ -530,8 +523,61 @@ const DrugBlock = ({ data, allDrug }) => {
           </button>
         </section>
 
+        <section className={styles.diagnosis}>
+          <TitleMedium
+            level="2"
+            title="Диагнозы при которых применяют"
+            name="Ибупрофен"
+          />
+          <ul>
+            <li>
+              <a className={styles.link} href="#">
+                Другая вирусная пневмония
+              </a>
+              <span>МКБ J12.9</span>
+            </li>
+
+            <li>
+              <a href="#">Другие плацентарные нарушения</a>
+              <span>МКБ J12.8</span>
+            </li>
+
+            <li>
+              <a href="#">Другие формы холецистита</a>
+              <span>МКБ J12.0</span>
+            </li>
+            <li>
+              <a className={styles.link} href="#">
+                Нестабильная стенокардия
+              </a>
+              <span>МКБ J12.0</span>
+            </li>
+            <li>
+              <a className={styles.link} href="#">
+                Другая вирусная пневмония
+              </a>
+              <span>МКБ J12.9</span>
+            </li>
+            <li>
+              <a href="#">Другие плацентарные нарушения</a>
+              <span>МКБ J12.8</span>
+            </li>
+            <li>
+              <a href="#">Другие формы холецистита</a>
+              <span>МКБ J12.0</span>
+            </li>
+            <li>
+              <a className={styles.link} href="#">
+                Нестабильная стенокардия
+              </a>
+              <span>МКБ J12.0</span>
+            </li>
+          </ul>
+        </section>
+
         <section className={styles.analogs}>
-          <h2>Другие формы выпуска Ибупрофен (3)</h2>
+          <TitleMedium level="2" title="Другие формы выпуска Ибупрофен (3)" />
+
           <ul>
             <li>
               <Image
