@@ -9,7 +9,7 @@ import yellow from '/public/img/icons/yellow.svg';
 import red from '/public/img/icons/red.svg';
 
 const DrugBlock = ({ data, allDrug }) => {
-  // const item = data[0];
+  const item = data[0];
 
   const assentData = [
     {
@@ -101,7 +101,14 @@ const DrugBlock = ({ data, allDrug }) => {
         <h1 className={styles.item__title}>{item.name}</h1>
         <ul className={styles.item__nav}>
           <li>
-            <a style={{ color: '#4D5156', cursor: 'not-allowed' }} href="#">
+            <a
+              style={{
+                color: '#4D5156',
+                cursor: 'not-allowed',
+                background: '#EAF2FA',
+              }}
+              href="#"
+            >
               Про препарат
             </a>
           </li>

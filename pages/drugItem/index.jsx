@@ -20,21 +20,21 @@ const DrugItem = () => {
     setDrug(searchDrug);
   }, [search]);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const response = drugItems;
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = drugItems;
 
-  //     const currentItem = response.filter(
-  //       (item) => item.name.toLowerCase().includes(search) && item
-  //     );
+      const currentItem = response.filter(
+        (item) => item.name.toLowerCase().includes(search) && item
+      );
 
-  //     setDrug(currentItem);
-  //     setAllDrug(response);
-  //   };
-  //   fetchData();
-  // }, [search]);
+      setDrug(currentItem);
+      setAllDrug(response);
+    };
+    fetchData();
+  }, [search]);
 
-  // if (!drug) return <div>loading...</div>;
+  if (!drug) return <div>loading...</div>;
 
   return <DrugBlock data={drug} allDrug={allDrug} />;
 };

@@ -13,9 +13,19 @@
   text-align: left;
   display: grid;
   gap: 24px;
-  padding-top: 66px;
-  padding-bottom: 72px;
+  padding-top: 32px;
+  padding-bottom: 36px;
   border-bottom: 1px solid $strokeColor;
+
+  @include for-sm {
+    padding-top: 48px;
+    padding-bottom: 36px;
+  }
+
+  @include for-tablet {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
 
   &__section_1 {
     @include for-sm {
@@ -73,7 +83,7 @@
     font-size: 14px;
     line-height: 160%;
     color: $greyColor;
-
+    margin-top: 16px;
     @include for-mm {
       font-size: 16px;
     }
@@ -83,6 +93,10 @@
     &:not(:last-child) {
       margin-bottom: 16px;
     }
+  }
+
+  ul {
+    margin-top: 16px;
   }
 
   &__link {
@@ -119,10 +133,17 @@
 }
 
 .socials {
-  position: absolute;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 16px;
-  padding-top: 16px;
+  display: grid;
+  grid-template-columns: 40px 40px 40px 40px;
+  gap: 20px;
+  padding-top: 20px;
+
+  @include for-mm {
+    grid-template-columns: 40px 40px;
+    gap: 24px;
+  }
+
+  @include for-tablet {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
