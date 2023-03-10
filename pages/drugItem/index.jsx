@@ -8,22 +8,33 @@ const DrugItem = () => {
   const { search } = router.query;
   const [drug, setDrug] = useState(null);
   const [allDrug, setAllDrug] = useState(null);
+  console.log('search', search);
+  console.log('drug', drug);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = drugItems;
-
-      const currentItem = response.filter(
-        (item) => item.name.toLowerCase().includes(search) && item
-      );
-
-      setDrug(currentItem);
-      setAllDrug(response);
-    };
-    fetchData();
+    const searchDrug = drugItems.filter(
+      (drug) =>
+        drug.name.toLowerCase().includes(search) ||
+        drug.characteristics.producer.toLowerCase().includes(search)
+    );
+    setDrug(searchDrug);
   }, [search]);
 
-  if (!drug) return <div>loading...</div>;
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const response = drugItems;
+
+  //     const currentItem = response.filter(
+  //       (item) => item.name.toLowerCase().includes(search) && item
+  //     );
+
+  //     setDrug(currentItem);
+  //     setAllDrug(response);
+  //   };
+  //   fetchData();
+  // }, [search]);
+
+  // if (!drug) return <div>loading...</div>;
 
   return <DrugBlock data={drug} allDrug={allDrug} />;
 };

@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import ChangeLang from '@/src/common/ChangeLang/ChangeLang';
 import Burger from '@/src/common/Burger/Burger';
 import styles from '@/src/components/HeaderFixed/HeaderFixed.module.scss';
+import drugItems from '@/src/common/data/drugItems';
 
 const volumeIcon = (
   <svg
@@ -47,7 +48,6 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
   const { pathname } = useRouter();
   const router = useRouter();
   const [search, setSearch] = useState('');
-
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [scroll, setScroll] = useState(false);
 
@@ -58,8 +58,11 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    router.push(`/drugItem?search=${search}`);
-    // setSearch('');
+    if (!search) return;
+
+    router.push(`/drugItem/?search=${search}`);
+
+    setSearch('');
   };
 
   useEffect(() => {
@@ -100,7 +103,10 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
   return (
     <header style={scroll ? { height: '63px' } : {}} className={styles.header}>
       <nav className={styles.header__nav}>
-        <ul className={styles.header__top}>
+        <ul
+          style={scroll ? { gridTemplateRows: '40px' } : {}}
+          className={styles.header__top}
+        >
           <Link
             href="/"
             className={styles.header__image}
@@ -122,10 +128,10 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
                     top: '6px',
                     left: '0%',
                     right: '0%',
-
+                    paddingTop: '4px',
                     margin: '0 auto',
-                    width: '97% ',
-
+                    paddingLeft: '15px',
+                    paddingRight: '15px',
                     zIndex: '101',
                   }
                 : {}
@@ -135,14 +141,23 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
             className={styles.search}
           >
             <input
-              style={scroll ? {} : {}}
               className={styles.search__input}
               type="text"
               placeholder="Шукати ліки"
               onChange={handleSearch}
             />
-            <span className={styles.search__placeholder}>{searchIcon}</span>
-            <button className={styles.search__btn}>{volumeIcon}</button>
+            <span
+              style={scroll ? { left: '30px' } : {}}
+              className={styles.search__placeholder}
+            >
+              {searchIcon}
+            </span>
+            <button
+              style={scroll ? { right: '15px' } : {}}
+              className={styles.search__btn}
+            >
+              {volumeIcon}
+            </button>
           </form>
           <button className={styles.header__btn_see}>Для слабозорих</button>
           <ChangeLang />

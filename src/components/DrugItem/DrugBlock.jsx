@@ -9,7 +9,7 @@ import yellow from '/public/img/icons/yellow.svg';
 import red from '/public/img/icons/red.svg';
 
 const DrugBlock = ({ data, allDrug }) => {
-  const item = data[0];
+  // const item = data[0];
 
   const assentData = [
     {
@@ -72,6 +72,10 @@ const DrugBlock = ({ data, allDrug }) => {
   };
 
   console.log('data', allDrug);
+
+  if (!data || !allDrug) {
+    return <div>H</div>;
+  }
   return (
     <Container>
       <article className={styles.item}>
