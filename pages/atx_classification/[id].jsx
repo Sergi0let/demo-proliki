@@ -4,16 +4,23 @@ import MenuSortHuge from '@/src/common/MenuSortHuge/MenuSortHuge';
 import Title, { TitleBig } from '@/src/common/Title/Title';
 
 import DrugsTable from '@/src/components/DrugsTable/DrugsTable';
+import Pagination from '@/src/components/Pagination/Pagination';
 import atx_classification from '@/src/data/atx_classification';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from '../../src/components/ClassificationMain/ClassificationMain.module.scss';
 
 const ClassificationPage = () => {
   const router = useRouter();
   const { id } = router.query;
   const data = atx_classification.find((item) => item.letter === id);
+
+  const [drugData, setDrugData] = useState([]);
+
+  useEffect(() => {
+    setDrugData(data.group);
+  }, [data]);
 
   const [drugsSort, setDrugsSort] = useState('По популярности');
   const [openSort, setOpenSort] = useState(false);
@@ -55,8 +62,8 @@ const ClassificationPage = () => {
           />
         </div>
         <ul className={styles.classification__list}>
-          {data.group &&
-            data.group.map((item) => (
+          {drugData &&
+            drugData.map((item) => (
               <li key={item.id} className={styles.itemClassification}>
                 <span>{item.letter}</span>
                 <Link href={`/atx_classification/${id}/${item.letter}}`}>
@@ -77,6 +84,7 @@ const ClassificationPage = () => {
           />
           <DrugsTable />
         </div>
+        <Pagination />
       </div>
       <MenuSort
         openSort={openSort}

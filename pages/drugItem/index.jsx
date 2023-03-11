@@ -1,5 +1,5 @@
-import drugItems from '@/src/common/data/drugItems';
 import DrugBlock from '@/src/components/DrugItem/DrugBlock';
+import drugItems from '@/src/data/drugItems';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 

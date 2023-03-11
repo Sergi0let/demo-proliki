@@ -68,18 +68,3 @@
     }
   }
 }
-.active {
-  .line {
-    &:nth-child(1) {
-      top: 50%;
-      transform: translateY(-50%) rotate(45deg);
-    }
-    &:nth-child(2) {
-      opacity: 0;
-    }
-    &:nth-child(3) {
-      bottom: 50%;
-      transform: translateY(50%) rotate(-45deg);
-    }
-  }
-}
