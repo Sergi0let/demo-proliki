@@ -1,5 +1,7 @@
+import DrugsList from '@/src/components/DrugsList/DrugsList';
+
 const Manufacturers = () => {
-  return <div>Manufacturers</div>;
+  return <DrugsList />;
 };
 
 export default Manufacturers;

@@ -78,8 +78,10 @@
   }
 
   &__insturction {
-    display: block;
-    width: 100%;
+    display: inline-block;
+    width: auto;
+    margin-top: 24px;
+
     margin-top: 16px;
     padding: 0px 16px;
     background-color: $blueColor;
@@ -94,12 +96,6 @@
 
     &:hover {
       background-color: $blueHoverColor;
-    }
-
-    @include for-sm {
-      display: inline-block;
-      width: auto;
-      margin-top: 24px;
     }
   }
 }

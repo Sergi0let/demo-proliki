@@ -20,3 +20,13 @@ export const TitleMedium = ({ level = '3', title, name }) => {
     </HeadingTag>
   );
 };
+
+export const TitleBig = ({ level = '1', title }) => {
+  const HeadingTag = `h${level}`;
+  return <HeadingTag className={styles.bigTitle}>{title}</HeadingTag>;
+};
+
+export const TittleIntermidiate = ({ level = '3', title }) => {
+  const HeadingTag = `h${level}`;
+  return <HeadingTag className={styles.intermidiateTitle}>{title}</HeadingTag>;
+};

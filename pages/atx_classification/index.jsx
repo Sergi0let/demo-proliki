@@ -1,7 +1,7 @@
-import DrugsList from '@/src/components/DrugsList/DrugsList';
+import ClassificationPage from '@/src/components/ClassificationPage/ClassificationPage';
 
 const Classification = () => {
-  return <DrugsList />;
+  return <ClassificationPage />;
 };
 
 export default Classification;

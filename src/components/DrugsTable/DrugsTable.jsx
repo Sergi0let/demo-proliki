@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from './DrugsTable.module.scss';
 
-const DrugsTagle = () => {
+const DrugsTable = () => {
   return (
     <ul className={styles.table}>
       <li>
@@ -130,4 +130,4 @@ const DrugsTagle = () => {
   );
 };
 
-export default DrugsTagle;
+export default DrugsTable;

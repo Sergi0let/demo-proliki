@@ -3,12 +3,16 @@ import styles from './DrugsControler.module.scss';
 import sort from 'public/img/icons/sort.svg';
 import Image from 'next/image';
 
-const DrugsControler = () => {
-  const [drugsSort, setDrugsSort] = useState('По популярности');
-  console.log(drugsSort);
-
+const DrugsControler = ({ drugsSort, onDrugsSort, onOpenSort }) => {
+  const [drugsLocalSort, setDrugsLocalSort] = useState(drugsSort);
   const handleDrugsSort = (e) => {
-    setDrugsSort(e.target.textContent);
+    setDrugsLocalSort(e.target.textContent);
+    onDrugsSort(e.target.textContent);
+  };
+
+  const handleOpenSort = () => {
+    console.log('first');
+    onOpenSort();
   };
 
   const activeStyle = {
@@ -18,30 +22,36 @@ const DrugsControler = () => {
   };
   return (
     <div className={styles.controler}>
-      <h4>Сортировать:</h4>
-      <button
-        onClick={handleDrugsSort}
-        style={drugsSort === 'По популярности' ? activeStyle : null}
-      >
-        По популярности
-      </button>
-      <button
-        onClick={handleDrugsSort}
-        style={drugsSort === 'А-я' ? activeStyle : null}
-      >
-        А-я
-      </button>
-      <button
-        onClick={handleDrugsSort}
-        style={drugsSort === 'Я-а' ? activeStyle : null}
-      >
-        Я-а
+      <div className={styles['desktop-controler']}>
+        <h4>Сортировать:</h4>
+        <button
+          onClick={handleDrugsSort}
+          style={drugsLocalSort === 'По популярности' ? activeStyle : null}
+        >
+          По популярности
+        </button>
+        <button
+          onClick={handleDrugsSort}
+          style={drugsLocalSort === 'А-я' ? activeStyle : null}
+        >
+          А-я
+        </button>
+        <button
+          onClick={handleDrugsSort}
+          style={drugsLocalSort === 'Я-а' ? activeStyle : null}
+        >
+          Я-а
+        </button>
+      </div>
+      <button onClick={handleOpenSort} className={styles['mobile-controler']}>
+        <Image
+          src={sort}
+          alt="sort"
+          className={styles['mobile-controler__btn']}
+        />
+        <span className={styles['mobile-controler__select']}>{drugsSort}</span>
       </button>
     </div>
-    // <div className={styles.controler}>
-    //   <Image src={sort} alt="sort" className={styles.controler_} />
-    //   <Image src={sort} alt="sort" className={styles.controler_} />
-    // </div>
   );
 };
 

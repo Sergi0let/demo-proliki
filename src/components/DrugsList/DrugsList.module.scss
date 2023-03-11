@@ -2,13 +2,6 @@
 @import './src/styles/variables.scss';
 
 .list {
-  text-align: left;
-  margin-top: -14px;
-
-  @include for-mm {
-    margin-top: -42px;
-  }
-
   &__crumbreads {
     margin-top: 24px;
     margin-bottom: 16px;
@@ -74,5 +67,103 @@
     @include for-tablet {
       font-size: 40px;
     }
+  }
+}
+
+.summary {
+  padding-top: 48px;
+  padding-bottom: 48px;
+
+  @include for-sm {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  a {
+    display: block;
+    color: $blueColor;
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    @include for-sm {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+  }
+
+  p {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    @include for-sm {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+  }
+
+  li {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+
+    @include for-sm {
+      font-size: 18px;
+    }
+  }
+
+  &__find-substance {
+    border-top: 1px solid $strokeColor;
+    border-bottom: 1px solid $strokeColor;
+    @include for-sm {
+      border: 1px solid $strokeColor;
+      border-radius: 24px 24px 0px 0px;
+    }
+  }
+
+  &__substance {
+    border-bottom: 1px solid $strokeColor;
+    @include for-sm {
+      border: 1px solid $strokeColor;
+      border-radius: 0px 0px 24px 24px;
+      border-top: none;
+    }
+  }
+}
+
+.menu-sort {
+  position: fixed;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 102;
+  height: 100%;
+
+  &__bg {
+    min-height: calc(100% - 174px);
+    background: #2259b4;
+    opacity: 0.2;
+  }
+
+  &__list {
+    background: #fff;
+    height: 174px;
+  }
+
+  li {
+    color: $blueColor;
+    margin-right: 15px;
+    margin-left: 15px;
+    line-height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $strokeColor;
+    }
+  }
+  svg {
+    visibility: visible;
   }
 }

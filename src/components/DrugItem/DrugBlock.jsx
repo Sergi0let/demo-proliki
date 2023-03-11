@@ -239,7 +239,7 @@ const DrugBlock = ({ data, allDrug }) => {
               <a href="#">Передозування</a>
             </li>
           </ul>
-          {item.instraction.map((elem) => (
+          {/* {item.instraction.map((elem) => (
             <>
               <h3 key={elem.id} className={styles['instruction__sub-title']}>
                 {elem.title}
@@ -250,9 +250,9 @@ const DrugBlock = ({ data, allDrug }) => {
                 ))}
               </div>
             </>
-          ))}
+          ))} */}
 
-          {/* <h3 className={styles['instruction__sub-title']}>Склад</h3>
+          <h3 className={styles['instruction__sub-title']}>Склад</h3>
           <div className={styles.instruction__info}>
             <p>речовина, що діє: ібупрофен;</p>
             <p>
@@ -360,7 +360,7 @@ const DrugBlock = ({ data, allDrug }) => {
               <li>Активне запальне захворювання кишок.</li>
               <li>Останній триместр вагітності.</li>
             </ul>
-          </div> */}
+          </div>
         </section>
 
         <section className={styles.analogs}>

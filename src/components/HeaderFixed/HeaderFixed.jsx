@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react';
 import ChangeLang from '@/src/common/ChangeLang/ChangeLang';
 import Burger from '@/src/common/Burger/Burger';
 import styles from '@/src/components/HeaderFixed/HeaderFixed.module.scss';
-import drugItems from '@/src/common/data/drugItems';
 
 const volumeIcon = (
   <svg
@@ -51,19 +50,19 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [scroll, setScroll] = useState(false);
 
-  const handleSearch = (e) => {
-    const normSearch = e.target.value.toLowerCase();
-    setSearch(normSearch);
-  };
+  // const handleSearch = (e) => {
+  //   const normSearch = e.target.value.toLowerCase();
+  //   setSearch(normSearch);
+  // };
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    if (!search) return;
+  // const onSubmit = (e) => {
+  //   e.preventDefault();
+  //   if (!search) return;
 
-    router.push(`/drugItem/?search=${search}`);
+  //   router.push(`/drugItem/?search=${search}`);
 
-    setSearch('');
-  };
+  //   setSearch('');
+  // };
 
   useEffect(() => {
     function handleResize() {
@@ -136,7 +135,6 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
                   }
                 : {}
             }
-            onSubmit={onSubmit}
             type="sumbit"
             className={styles.search}
           >
@@ -144,7 +142,6 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
               className={styles.search__input}
               type="text"
               placeholder="Шукати ліки"
-              onChange={handleSearch}
             />
             <span
               style={scroll ? { left: '30px' } : {}}

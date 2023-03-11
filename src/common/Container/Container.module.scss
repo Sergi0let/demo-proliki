@@ -5,9 +5,10 @@
   max-width: $desktop;
   padding: 0px 15px;
   width: 100%;
-  text-align: center;
+  margin-top: -14px;
 
   @include for-mm {
     padding: 0px 32px;
+    margin-top: -42px;
   }
 }
