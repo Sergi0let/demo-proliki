@@ -9,8 +9,37 @@ import yellow from '/public/img/icons/yellow.svg';
 import red from '/public/img/icons/red.svg';
 import { TitleMedium } from '@/src/common/Title/Title';
 
-const DrugBlock = ({ data, allDrug }) => {
-  const item = data[0];
+const DrugBlock = () => {
+  const item = {
+    id: 1,
+    name: 'Ібупрофен',
+    image: {
+      small: 'analogs/ibuprofen-320.jpg',
+      medium: 'ibuprofen-768.jpg',
+      large: 'ibuprofen-992.jpg',
+    },
+    link: null,
+
+    analogs: ['Ніфуроксазід'],
+
+    characteristics: {
+      id: 1,
+      producer: 'ПАО НПЦ "Борщаговский ХФЗ"',
+      character: 'таблетки, вкриті плівковою оболонкою',
+      registration: 'UA/3304/01/01 №84 от 14.01.2023',
+      atx: {
+        numbers: 'M01A E01',
+        name: 'Ибупрофен',
+      },
+      substance: {
+        en: 'Ibuprofen',
+        ua: 'Ібупрофен',
+      },
+      release: 'Без рецепта',
+      dosage: '200 мг',
+      quantity: '50 шт ',
+    },
+  };
 
   const assentData = [
     {
@@ -50,33 +79,31 @@ const DrugBlock = ({ data, allDrug }) => {
     },
   ];
 
-  const showAssent = () => {
-    return assentData.map((item) => (
-      <li key={item.id}>
-        <h5>{item.title}</h5>
-        <span>
-          {item.text === 'заборонено' ? (
-            <Image src={red} alt="red" />
-          ) : item.text === 'дозволено' ? (
-            <Image src={green} alt="green" />
-          ) : (
-            <Image src={yellow} alt="yellow" />
-          )}
-          <p>{item.text}</p>
-        </span>
-      </li>
-    ));
-  };
+  // const showAssent = () => {
+  //   return assentData.map((item) => (
+  //     <li key={item.id}>
+  //       <h5>{item.title}</h5>
+  //       <span>
+  //         {item.text === 'заборонено' ? (
+  //           <Image src={red} alt="red" />
+  //         ) : item.text === 'дозволено' ? (
+  //           <Image src={green} alt="green" />
+  //         ) : (
+  //           <Image src={yellow} alt="yellow" />
+  //         )}
+  //         <p>{item.text}</p>
+  //       </span>
+  //     </li>
+  //   ));
+  // };
 
-  const showAnalogs = () => {
-    return allDrug.map((drug) => drug.name === item.name).length;
-  };
+  // const showAnalogs = () => {
+  //   return allDrug.map((drug) => drug.name === item.name).length;
+  // };
 
-  console.log('data', allDrug);
-
-  if (!data || !allDrug) {
-    return <div>H</div>;
-  }
+  // if (!data || !allDrug) {
+  //   return <div>H</div>;
+  // }
   return (
     <Container>
       <article className={styles.item}>
@@ -117,9 +144,7 @@ const DrugBlock = ({ data, allDrug }) => {
             <a href="#">Інструкція</a>
           </li>
           <li>
-            {item.analogs.length > 0 ? (
-              <a href="#">Аналоги ({showAnalogs()})</a>
-            ) : null}
+            {item.analogs.length > 0 ? <a href="#">Аналоги (11)</a> : null}
           </li>
           <li>
             <a href="#">Діагнози</a>
@@ -201,7 +226,7 @@ const DrugBlock = ({ data, allDrug }) => {
             </button>
           </ul>
         </section>
-        <ul className={styles.assent}>{showAssent()}</ul>
+        <ul className={styles.assent}>{}</ul>
 
         <section className={styles.instruction}>
           <TitleMedium
