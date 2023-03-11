@@ -1,7 +1,7 @@
-import ClassificationPage from '@/src/components/ClassificationPage/ClassificationPage';
+import ClassificationMain from '@/src/components/ClassificationMain/ClassificationMain';
 
 const Classification = () => {
-  return <ClassificationPage />;
+  return <ClassificationMain />;
 };
 
 export default Classification;

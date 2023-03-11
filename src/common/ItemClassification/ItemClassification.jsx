@@ -1,10 +1,13 @@
+import Link from 'next/link';
 import styles from './ItemClassification.module.scss';
 
 const ItemClassification = ({ item }) => {
   return (
     <li className={styles.itemClassification}>
       <span>{item.letter}</span>
-      <a href={item.link}>{item.title}</a>
+      <Link href={`/atx_classification/first/${item.letter}`}>
+        {item.title}
+      </Link>
     </li>
   );
 };
