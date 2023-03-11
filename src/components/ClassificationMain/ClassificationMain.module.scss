@@ -11,6 +11,8 @@
   }
 
   &__crumbreads {
+    margin-bottom: 16px;
+
     li {
       display: inline-block;
       font-size: 14px;
@@ -23,6 +25,11 @@
 
       &:not(:last-child) {
         margin-right: 8px;
+      }
+
+      svg {
+        position: relative;
+        top: -3px;
       }
     }
   }
@@ -74,6 +81,20 @@
   &__block-text_list {
     display: flex;
     align-items: flex-start;
+  }
+
+  &__advantage {
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    @include for-mm {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+
+    // &:last-child {
+    //   padding-bottom: 0;
+    // }
   }
 }
 
