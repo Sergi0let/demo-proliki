@@ -1,0 +1,36 @@
+@import './src/styles/breakpoints.scss';
+@import './src/styles/variables.scss';
+
+.controler {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  border: 1px solid $strokeColor;
+  border-bottom: none;
+  border-radius: 0;
+  border-radius: 24px 24px 0px 0px;
+  height: 82px;
+
+  h4 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+  }
+
+  button {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    color: $blueColor;
+    line-height: 34px;
+    background: transparent;
+    transition: all 0.3s ease 0s;
+    padding: 0 8px;
+
+    &:hover {
+      color: $blueHoverColor;
+    }
+  }
+}

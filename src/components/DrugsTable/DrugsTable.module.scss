@@ -1,0 +1,105 @@
+@import './src/styles/breakpoints.scss';
+@import './src/styles/variables.scss';
+
+.table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  @include for-sm {
+    gap: 0;
+    border-left: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
+  }
+  @include for-mm {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @include for-tablet {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  li {
+    border-bottom: 1px solid #e5e5e5;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    display: grid;
+    grid-template-rows: auto auto auto 1fr auto;
+    @include for-sm {
+      border: 1px solid #e5e5e5;
+      padding: 32px;
+      border-left: none;
+      border-top: none;
+    }
+
+    img {
+      transition: all 0.3s ease 0s;
+    }
+    &:hover {
+      img {
+        opacity: 0.7;
+        transform: scale(1.07);
+      }
+    }
+  }
+  a {
+    display: block;
+    color: $blueColor;
+    padding-top: 16px;
+    font-size: 16px;
+    line-height: 160%;
+    cursor: pointer;
+
+    @include for-sm {
+      padding-top: 24px;
+      font-size: 18px;
+    }
+  }
+
+  h5 {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+    height: auto;
+
+    @include for-sm {
+      font-size: 16px;
+    }
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+    color: $greyColor;
+
+    @include for-sm {
+      font-size: 16px;
+    }
+  }
+
+  &__insturction {
+    display: block;
+    width: 100%;
+    margin-top: 16px;
+    padding: 0px 16px;
+    background-color: $blueColor;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    line-height: 34px;
+    font-size: 16px;
+
+    &:hover {
+      background-color: $blueHoverColor;
+    }
+
+    @include for-sm {
+      display: inline-block;
+      width: auto;
+      margin-top: 24px;
+    }
+  }
+}

@@ -88,30 +88,59 @@
   padding-top: 24px;
   padding-bottom: 24px;
   border-bottom: 1px solid $strokeColor;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
 
   @include for-mm {
     padding-top: 48px;
     padding-bottom: 48px;
     display: grid;
     column-gap: 24px;
-    grid-template-columns: 0.4fr 0.6fr;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
   }
 
   @include for-tablet {
     column-gap: 48px;
-    grid-template-columns: 0.36fr 0.7fr;
+    grid-template-columns: 1fr 2fr;
   }
 
   @include for-md {
   }
 
-  picture {
+  &__image-block {
+    margin: 0 auto;
+    width: 290px;
+    height: 290px;
+    position: relative;
+    margin-bottom: 24px;
+
+    @include for-sm {
+      margin-bottom: 0px;
+    }
+
+    @include for-mm {
+      width: 249px;
+      height: 249px;
+    }
+
+    @include for-tablet {
+      width: 345px;
+      height: 345px;
+    }
+
+    @include for-md {
+      width: 360px;
+      height: 360px;
+    }
+
+    &__img {
+    }
+
     img {
       max-width: 100%;
       height: auto;
-
       @include for-mm {
-        max-width: none;
       }
     }
     a {
@@ -119,10 +148,11 @@
       padding: 16px;
       width: 56px;
       height: 56px;
-      position: relative;
+      position: absolute;
       background-color: $bgLightColor;
-      bottom: 80px;
+      bottom: 0px;
       left: 0;
+      cursor: pointer;
       @include for-mm {
       }
 
@@ -218,8 +248,6 @@
 }
 
 .table {
-  margin-top: -76px;
-
   @include for-mm {
     margin-top: 0;
   }
@@ -229,7 +257,7 @@
     font-size: 18px;
     line-height: 160%;
 
-    @include for-mm {
+    @include for-tablet {
       margin-bottom: 24px;
     }
   }
@@ -610,16 +638,21 @@
     justify-content: center;
     gap: 4px;
     border-top: 1px solid #d3dce9;
-    height: 92px;
+
+    padding: 16px 0px;
     font-weight: 400;
     font-size: 16px;
     line-height: 160%;
+
+    span {
+      white-space: nowrap;
+    }
 
     @include for-sm {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      height: 61px;
+
       font-size: 18px;
     }
   }

@@ -1,5 +1,7 @@
+import DrugsList from '@/src/components/DrugsList/DrugsList';
+
 const Classification = () => {
-  return <div>atx_classification</div>;
+  return <DrugsList />;
 };
 
 export default Classification;

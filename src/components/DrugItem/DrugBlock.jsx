@@ -129,7 +129,7 @@ const DrugBlock = ({ data, allDrug }) => {
           </li>
         </ul>
         <section className={styles.drug}>
-          <picture>
+          <div className={styles['drug__image-block']}>
             <div className={styles.drug__img}>
               <Image
                 src={`/img/drugs/${item.image.small}`}
@@ -149,7 +149,7 @@ const DrugBlock = ({ data, allDrug }) => {
                 />
               </svg>
             </a>
-          </picture>
+          </div>
 
           <div className={styles.table}>
             <div className={styles.table__row}>
@@ -532,7 +532,10 @@ const DrugBlock = ({ data, allDrug }) => {
           <ul>
             <li>
               <a className={styles.link} href="#">
-                Другая вирусная пневмония
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Aliquam porro dolore rerum. Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Asperiores velit repudiandae
+                quaerat, laudantium distinctio vitae nisi rem doloribus ipsum
               </a>
               <span>МКБ J12.9</span>
             </li>
