@@ -20,7 +20,12 @@ const ClassificationMain = () => {
         <ul className={styles.classification__list}>
           {atx_classification &&
             atx_classification.map((item) => (
-              <ItemClassification key={item.id} item={item} />
+              <li key={item.id} className={styles.itemClassification}>
+                <span>{item.letter}</span>
+                <Link href={`/atx_classification/${item.letter}`}>
+                  {item.title}
+                </Link>
+              </li>
             ))}
         </ul>
         <Title title="Классификационная система ATC (Anatomical Therapeutic Chemical (АТС) classification system)" />
