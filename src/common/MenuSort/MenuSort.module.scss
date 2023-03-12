@@ -1,0 +1,41 @@
+@import './src/styles/breakpoints.scss';
+@import './src/styles/variables.scss';
+
+.menu-sort {
+  position: fixed;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 102;
+  height: 100%;
+
+  &__bg {
+    min-height: calc(100% - 174px);
+    background: #2259b4;
+    opacity: 0.2;
+  }
+
+  &__list {
+    background: #fff;
+    height: 174px;
+  }
+
+  li {
+    color: $blueColor;
+    margin-right: 15px;
+    margin-left: 15px;
+    line-height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $strokeColor;
+    }
+  }
+  svg {
+    visibility: visible;
+  }
+}

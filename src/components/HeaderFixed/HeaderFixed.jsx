@@ -45,25 +45,24 @@ const searchIcon = (
 
 const HeaderFixed = ({ openBurger, onBurger }) => {
   const { pathname } = useRouter();
+  const router = useRouter();
   const [search, setSearch] = useState('');
-
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [scroll, setScroll] = useState(false);
 
-  if (search === 'привіт світ') {
-    prompt('Я поки не народився для цього ще достатньо багато роботи та часу');
-  }
+  // const handleSearch = (e) => {
+  //   const normSearch = e.target.value.toLowerCase();
+  //   setSearch(normSearch);
+  // };
 
-  const handleSearch = (e) => {
-    const normSearch = e.target.value.toLowerCase();
-    setSearch(normSearch);
-  };
+  // const onSubmit = (e) => {
+  //   e.preventDefault();
+  //   if (!search) return;
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    alert(`Я цього поки не можу знайти: ${search} спробуйте "Привіт світ"`);
-    setSearch('');
-  };
+  //   router.push(`/drugItem/?search=${search}`);
+
+  //   setSearch('');
+  // };
 
   useEffect(() => {
     function handleResize() {
@@ -103,7 +102,10 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
   return (
     <header style={scroll ? { height: '63px' } : {}} className={styles.header}>
       <nav className={styles.header__nav}>
-        <ul className={styles.header__top}>
+        <ul
+          style={scroll ? { gridTemplateRows: '40px' } : {}}
+          className={styles.header__top}
+        >
           <Link
             href="/"
             className={styles.header__image}
@@ -125,27 +127,34 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
                     top: '6px',
                     left: '0%',
                     right: '0%',
-
+                    paddingTop: '4px',
                     margin: '0 auto',
-                    width: '97% ',
-
+                    paddingLeft: '15px',
+                    paddingRight: '15px',
                     zIndex: '101',
                   }
                 : {}
             }
-            onSubmit={onSubmit}
             type="sumbit"
             className={styles.search}
           >
             <input
-              style={scroll ? {} : {}}
               className={styles.search__input}
               type="text"
               placeholder="Шукати ліки"
-              onChange={handleSearch}
             />
-            <span className={styles.search__placeholder}>{searchIcon}</span>
-            <button className={styles.search__btn}>{volumeIcon}</button>
+            <span
+              style={scroll ? { left: '30px' } : {}}
+              className={styles.search__placeholder}
+            >
+              {searchIcon}
+            </span>
+            <button
+              style={scroll ? { right: '15px' } : {}}
+              className={styles.search__btn}
+            >
+              {volumeIcon}
+            </button>
           </form>
           <button className={styles.header__btn_see}>Для слабозорих</button>
           <ChangeLang />

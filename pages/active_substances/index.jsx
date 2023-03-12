@@ -1,7 +1,7 @@
-import DrugItem from '@/src/components/DrugItem/DrugItem';
+import ActiveSubstances from '@/src/components/ActiveSubstances/ActiveSubstances';
 
 const Substances = () => {
-  return <DrugItem />;
+  return <ActiveSubstances />;
 };
 
 export default Substances;

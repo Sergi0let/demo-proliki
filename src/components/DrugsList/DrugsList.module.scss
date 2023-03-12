@@ -1,0 +1,130 @@
+@import './src/styles/breakpoints.scss';
+@import './src/styles/variables.scss';
+
+.list {
+  &__crumbreads {
+    margin-top: 24px;
+    margin-bottom: 16px;
+
+    @include for-sm {
+      margin-top: 32px;
+    }
+
+    li {
+      display: inline-block;
+      font-size: 14px;
+      line-height: 160%;
+      color: $blueColor;
+
+      @include for-sm {
+        font-size: 16px;
+      }
+
+      &:not(:last-child) {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  &__header {
+    margin-bottom: 24px;
+
+    p {
+      font-size: 16px;
+      line-height: 160%;
+      color: $blackSecondColor;
+      white-space: nowrap;
+    }
+
+    @include for-sm {
+      margin-bottom: 32px;
+    }
+    @include for-mm {
+    }
+
+    @include for-tablet {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    @include for-md {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 130%;
+    margin-bottom: 16px;
+
+    @include for-mm {
+      font-size: 32px;
+      white-space: nowrap;
+    }
+
+    @include for-tablet {
+      font-size: 40px;
+    }
+  }
+}
+
+.summary {
+  padding-top: 48px;
+  padding-bottom: 48px;
+
+  @include for-sm {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  a {
+    display: block;
+    color: $blueColor;
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    @include for-sm {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+  }
+
+  p {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    @include for-sm {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+  }
+
+  li {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+
+    @include for-sm {
+      font-size: 18px;
+    }
+  }
+
+  &__find-substance {
+    border-top: 1px solid $strokeColor;
+    border-bottom: 1px solid $strokeColor;
+    @include for-sm {
+      border: 1px solid $strokeColor;
+      border-radius: 24px 24px 0px 0px;
+    }
+  }
+
+  &__substance {
+    border-bottom: 1px solid $strokeColor;
+    @include for-sm {
+      border: 1px solid $strokeColor;
+      border-radius: 0px 0px 24px 24px;
+      border-top: none;
+    }
+  }
+}

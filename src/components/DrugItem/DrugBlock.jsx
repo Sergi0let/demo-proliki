@@ -3,12 +3,44 @@ import Link from 'next/link';
 
 import Container from '@/src/common/Container/Container';
 
-import styles from './DrugItem.module.scss';
+import styles from './DrugBlock.module.scss';
 import green from '/public/img/icons/green.svg';
 import yellow from '/public/img/icons/yellow.svg';
 import red from '/public/img/icons/red.svg';
+import { TitleMedium } from '@/src/common/Title/Title';
 
-const DrugItem = () => {
+const DrugBlock = () => {
+  const item = {
+    id: 1,
+    name: 'Ібупрофен',
+    image: {
+      small: 'analogs/ibuprofen-320.jpg',
+      medium: 'ibuprofen-768.jpg',
+      large: 'ibuprofen-992.jpg',
+    },
+    link: null,
+
+    analogs: ['Ніфуроксазід'],
+
+    characteristics: {
+      id: 1,
+      producer: 'ПАО НПЦ "Борщаговский ХФЗ"',
+      character: 'таблетки, вкриті плівковою оболонкою',
+      registration: 'UA/3304/01/01 №84 от 14.01.2023',
+      atx: {
+        numbers: 'M01A E01',
+        name: 'Ибупрофен',
+      },
+      substance: {
+        en: 'Ibuprofen',
+        ua: 'Ібупрофен',
+      },
+      release: 'Без рецепта',
+      dosage: '200 мг',
+      quantity: '50 шт ',
+    },
+  };
+
   const assentData = [
     {
       id: 1,
@@ -47,23 +79,31 @@ const DrugItem = () => {
     },
   ];
 
-  const showAssent = () => {
-    return assentData.map((item) => (
-      <li key={item.id}>
-        <h5>{item.title}</h5>
-        <span>
-          {item.text === 'заборонено' ? (
-            <Image src={red} alt="red" />
-          ) : item.text === 'дозволено' ? (
-            <Image src={green} alt="green" />
-          ) : (
-            <Image src={yellow} alt="yellow" />
-          )}
-          <p>{item.text}</p>
-        </span>
-      </li>
-    ));
-  };
+  // const showAssent = () => {
+  //   return assentData.map((item) => (
+  //     <li key={item.id}>
+  //       <h5>{item.title}</h5>
+  //       <span>
+  //         {item.text === 'заборонено' ? (
+  //           <Image src={red} alt="red" />
+  //         ) : item.text === 'дозволено' ? (
+  //           <Image src={green} alt="green" />
+  //         ) : (
+  //           <Image src={yellow} alt="yellow" />
+  //         )}
+  //         <p>{item.text}</p>
+  //       </span>
+  //     </li>
+  //   ));
+  // };
+
+  // const showAnalogs = () => {
+  //   return allDrug.map((drug) => drug.name === item.name).length;
+  // };
+
+  // if (!data || !allDrug) {
+  //   return <div>H</div>;
+  // }
   return (
     <Container>
       <article className={styles.item}>
@@ -86,10 +126,17 @@ const DrugItem = () => {
             <Link href="#">Лікарські препарати</Link>
           </li>
         </ul>
-        <h1 className={styles.item__title}>Ібупрофен</h1>
+        <h1 className={styles.item__title}>{item.name}</h1>
         <ul className={styles.item__nav}>
           <li>
-            <a style={{ color: '#4D5156', cursor: 'not-allowed' }} href="#">
+            <a
+              style={{
+                color: '#4D5156',
+                cursor: 'not-allowed',
+                background: '#EAF2FA',
+              }}
+              href="#"
+            >
               Про препарат
             </a>
           </li>
@@ -97,36 +144,25 @@ const DrugItem = () => {
             <a href="#">Інструкція</a>
           </li>
           <li>
-            <a href="#">Аналоги (16)</a>
+            {item.analogs.length > 0 ? <a href="#">Аналоги (11)</a> : null}
+          </li>
+          <li>
+            <a href="#">Діагнози</a>
           </li>
           <li>
             <a href="#">Форма випуску (3)</a>
           </li>
         </ul>
         <section className={styles.drug}>
-          <picture>
-            <Image
-              src="/img/drugs/ibuprofen/ibuprofen-992.jpg"
-              width={360}
-              height={360}
-              alt="Ібупрофен"
-              layout="responsive"
-              srcSet={[
-                {
-                  src: '/img/drugs/ibuprofen/ibuprofen-320.jpg',
-                  width: 640,
-                },
-                {
-                  src: '/img/drugs/ibuprofen/ibuprofen-768.jpg',
-                  width: 768,
-                },
-                {
-                  src: '/img/drugs/ibuprofen/ibuprofen-992.jpg',
-                  width: 1024,
-                },
-              ]}
-              className={styles.drug__img}
-            />
+          <div className={styles['drug__image-block']}>
+            <div className={styles.drug__img}>
+              <Image
+                src={`/img/drugs/${item.image.small}`}
+                width={360}
+                height={360}
+                alt="Ібупрофен"
+              />
+            </div>
             <a className={styles.drug__link} href="#">
               <svg>
                 <path
@@ -138,46 +174,46 @@ const DrugItem = () => {
                 />
               </svg>
             </a>
-          </picture>
+          </div>
 
           <div className={styles.table}>
             <div className={styles.table__row}>
               <h4>Виробник:</h4>
-              <a href="#">ПАО НПЦ &quot;Борщаговский ХФЗ&quot;</a>
+              <a href="#">{item.characteristics.producer}</a>
             </div>
             <div className={styles.table__row}>
               <h4>Форма випуску:</h4>
-              <p>таблетки, вкриті плівковою оболонкою</p>
+              <p>{item.characteristics.release}</p>
             </div>
             <div className={styles.table__row}>
               <h4>Реєстраційний №:</h4>
-              <p>UA/3304/01/01 №84 от 14.01.2023</p>
+              <p>{item.characteristics.registration}</p>
             </div>
             <div className={styles.table__row}>
               <h4>АТХ-група</h4>
               <p>
-                <a href="#">M01A E01</a>
-                (Ибупрофен)
+                <a href="#">{item.characteristics.atx.numbers}</a>
+                {item.characteristics.atx.name}
               </p>
             </div>
             <div className={styles.table__row}>
               <h4>Активна речовина:</h4>
               <p>
-                <a href="#">Ibuprofenum</a>
-                (Ібупрофен)
+                <a href="#">{item.characteristics.substance.en}</a>(
+                {item.characteristics.substance.ua})
               </p>
             </div>
             <div className={styles.table__row}>
               <h4>Умови відпустки:</h4>
-              <p>Без рецепта</p>
+              <p>{item.characteristics.release}</p>
             </div>
             <div className={styles.table__row}>
               <h4>Дозування:</h4>
-              <p>200мг</p>
+              <p>{item.characteristics.dosage}</p>
             </div>
             <div className={styles.table__row}>
               <h4>Кількість в упаковці:</h4>
-              <p>50 шт</p>
+              <p>{item.characteristics.quantity}</p>
             </div>
           </div>
 
@@ -190,12 +226,15 @@ const DrugItem = () => {
             </button>
           </ul>
         </section>
-        <ul className={styles.assent}>{showAssent()}</ul>
+        <ul className={styles.assent}>{}</ul>
 
         <section className={styles.instruction}>
-          <h2 className={styles.instruction__title}>
-            Инструкция по применению Ибупрофен
-          </h2>
+          <TitleMedium
+            level="2"
+            name={item.name}
+            title="Инструкция по применению"
+          />
+
           <ul className={styles.instruction__list}>
             <li>
               <a href="#">Фармакологічні властивості</a>
@@ -225,6 +264,19 @@ const DrugItem = () => {
               <a href="#">Передозування</a>
             </li>
           </ul>
+          {/* {item.instraction.map((elem) => (
+            <>
+              <h3 key={elem.id} className={styles['instruction__sub-title']}>
+                {elem.title}
+              </h3>
+              <div className={styles.instruction__info}>
+                {elem.text.map((paragraph) => (
+                  <p key={paragraph.id}>{paragraph}</p>
+                ))}
+              </div>
+            </>
+          ))} */}
+
           <h3 className={styles['instruction__sub-title']}>Склад</h3>
           <div className={styles.instruction__info}>
             <p>речовина, що діє: ібупрофен;</p>
@@ -337,16 +389,18 @@ const DrugItem = () => {
         </section>
 
         <section className={styles.analogs}>
-          <h2>Аналоги Ібупрофен (16)</h2>
+          <TitleMedium level="2" title="Аналоги Ібупрофен (16)" />
           <ul>
             <li>
-              <Image
-                src="/img/drugs/analogs/item-1.jpg"
-                width={136}
-                height={136}
-                alt="item-1"
-              />
-              <a href="#">Ніфуроксазід</a>
+              <a href="#" style={{ paddingTop: '0' }}>
+                <Image
+                  src="/img/drugs/analogs/item-1.jpg"
+                  width={136}
+                  height={136}
+                  alt="item-1"
+                />
+                <h4>Ніфуроксазід</h4>
+              </a>
               <h5>
                 таблетки, покриті плівковою оболонкою 200 мг блістер у пачці, №
                 10, 20
@@ -494,8 +548,64 @@ const DrugItem = () => {
           </button>
         </section>
 
+        <section className={styles.diagnosis}>
+          <TitleMedium
+            level="2"
+            title="Диагнозы при которых применяют"
+            name="Ибупрофен"
+          />
+          <ul>
+            <li>
+              <a className={styles.link} href="#">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Aliquam porro dolore rerum. Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Asperiores velit repudiandae
+                quaerat, laudantium distinctio vitae nisi rem doloribus ipsum
+              </a>
+              <span>МКБ J12.9</span>
+            </li>
+
+            <li>
+              <a href="#">Другие плацентарные нарушения</a>
+              <span>МКБ J12.8</span>
+            </li>
+
+            <li>
+              <a href="#">Другие формы холецистита</a>
+              <span>МКБ J12.0</span>
+            </li>
+            <li>
+              <a className={styles.link} href="#">
+                Нестабильная стенокардия
+              </a>
+              <span>МКБ J12.0</span>
+            </li>
+            <li>
+              <a className={styles.link} href="#">
+                Другая вирусная пневмония
+              </a>
+              <span>МКБ J12.9</span>
+            </li>
+            <li>
+              <a href="#">Другие плацентарные нарушения</a>
+              <span>МКБ J12.8</span>
+            </li>
+            <li>
+              <a href="#">Другие формы холецистита</a>
+              <span>МКБ J12.0</span>
+            </li>
+            <li>
+              <a className={styles.link} href="#">
+                Нестабильная стенокардия
+              </a>
+              <span>МКБ J12.0</span>
+            </li>
+          </ul>
+        </section>
+
         <section className={styles.analogs}>
-          <h2>Другие формы выпуска Ибупрофен (3)</h2>
+          <TitleMedium level="2" title="Другие формы выпуска Ибупрофен (3)" />
+
           <ul>
             <li>
               <Image
@@ -557,4 +667,4 @@ const DrugItem = () => {
     </Container>
   );
 };
-export default DrugItem;
+export default DrugBlock;

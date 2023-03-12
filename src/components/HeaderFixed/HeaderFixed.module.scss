@@ -27,11 +27,12 @@
     max-width: $desktop;
     padding: 0px 15px;
     width: 100%;
-    height: inherit;
     text-align: center;
     background-color: white;
     box-shadow: 0 4px 12px 100vmax white;
     clip-path: inset(0 -100vmax);
+
+    height: auto; // 104px
 
     @include for-mm {
       padding: 0px 32px;
@@ -43,8 +44,11 @@
     grid-template-columns: 1fr 90px 60px;
     grid-template-rows: 1fr 1fr;
     padding-top: 8px;
+    padding-bottom: 12px;
 
-    @include for-sm {
+    @include for-tablet {
+      padding-top: 12px;
+      padding-bottom: 0px;
     }
 
     @include for-mm {
@@ -52,19 +56,21 @@
       justify-content: space-between;
       align-items: center;
       padding-top: 16px;
+      // padding-bottom: 16px;
     }
 
     &::after {
       content: '';
       position: absolute;
-      bottom: 3px;
+      bottom: 0px;
       width: 100%;
       height: 1px;
-      // box-shadow: 0px 0px 4px 12px rgba(0, 0, 0, 0.1);
-
       background: rgba(0, 0, 0, 0.2);
       box-shadow: 0 10px 10px 100vmax rgba(0, 0, 0, 0.2);
       clip-path: inset(0 -100vmax);
+
+      @include for-mm {
+      }
     }
   }
 
@@ -123,7 +129,7 @@
       justify-content: space-between;
       align-items: center;
       padding-top: 24px;
-      padding-bottom: 0px;
+      padding-bottom: 16px;
 
       li {
         font-weight: 400;
@@ -138,11 +144,12 @@
   order: 4;
   grid-column-start: 1;
   grid-column-end: 4;
-  padding-top: 4px;
+  padding-top: 6px;
   width: 100%;
   position: relative;
 
   @include for-mm {
+    padding-top: 0px;
     order: 2;
   }
 
@@ -158,6 +165,7 @@
     outline: none;
     transition: all 0.3s ease;
     overflow: hidden;
+    position: relative;
 
     &::placeholder {
       color: $greyColor;
@@ -170,19 +178,23 @@
 
   &__placeholder {
     position: absolute;
-    top: 53%;
+    top: 37%;
     left: 16px;
-    transform: translateY(-45%);
+
     font-size: 14px;
     line-height: 160%;
     transition: all 0.3s ease;
+
+    @include for-mm {
+      top: 53%;
+      transform: translateY(-45%);
+    }
   }
 
   &__btn {
     position: absolute;
-    top: 50%;
     right: 0;
-    transform: translateY(-50%);
+    top: 5%;
     width: 48px;
     height: 48px;
     border: none;
@@ -192,6 +204,11 @@
 
     svg {
       transition: fill 0.3s ease;
+    }
+
+    @include for-mm {
+      top: 50%;
+      transform: translateY(-50%);
     }
 
     &:hover {

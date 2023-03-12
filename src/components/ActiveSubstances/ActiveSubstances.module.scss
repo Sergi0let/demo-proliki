@@ -1,0 +1,230 @@
+@import './src/styles/breakpoints.scss';
+@import './src/styles/variables.scss';
+
+.active-substances {
+  padding-top: 24px;
+  padding-bottom: 48px;
+
+  @include for-mm {
+    padding-top: 32px;
+    padding-bottom: 64px;
+  }
+
+  &__crumbreads {
+    margin-bottom: 16px;
+
+    li {
+      display: inline-block;
+      font-size: 14px;
+      line-height: 160%;
+      color: $blueColor;
+
+      @include for-sm {
+        font-size: 16px;
+      }
+
+      &:not(:last-child) {
+        margin-right: 8px;
+      }
+
+      svg {
+        position: relative;
+        top: -3px;
+      }
+    }
+  }
+
+  &__title {
+    padding-bottom: 24px;
+    border-bottom: 1px solid $strokeColor;
+
+    @include for-mm {
+      padding-bottom: 32px;
+    }
+  }
+
+  &__list {
+    padding-top: 24px;
+    padding-bottom: 48px;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include for-mm {
+      padding-top: 40px;
+      padding-bottom: 64px;
+      column-gap: 40px;
+      grid-template-columns: 50% 50%;
+    }
+
+    li {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 160%;
+
+      color: $blueColor;
+
+      &:not(:last-child) {
+        margin-bottom: 16px;
+
+        @include for-mm {
+          margin-bottom: 24px;
+        }
+      }
+
+      span {
+        color: $blackColor;
+      }
+
+      @include for-mm {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__block-text {
+    padding-top: 24px;
+    padding-bottom: 32px;
+
+    @include for-mm {
+      padding-top: 32px;
+      padding-bottom: 48px;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    p {
+      line-height: 160%;
+      &:not(:last-child) {
+        margin-bottom: 16px;
+
+        @include for-sm {
+          margin-bottom: 24px;
+        }
+      }
+    }
+    span {
+      margin-right: 16px;
+      line-height: 0;
+      font-size: 21px;
+    }
+  }
+
+  &__block-text_list {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__advantage {
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    @include for-mm {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+  }
+}
+
+.content {
+  padding-top: 24px;
+  border-bottom: 1px solid $strokeColor;
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+
+    padding: 10px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    background: $bgLightColor;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease 0s;
+
+    @include for-mm {
+      margin-top: 16px;
+      padding: 24px 25px;
+      gap: 10px;
+    }
+
+    span {
+      display: block;
+      padding: 10px;
+      border-radius: 12px;
+      font-size: 16px;
+      line-height: 160%;
+      color: $blueColor;
+      transition: color 0.3s ease 0s;
+
+      &:hover {
+        background: $bgColor;
+        span {
+          color: $blueHoverColor;
+        }
+      }
+
+      @include for-mm {
+        padding: 4px 8px;
+      }
+    }
+  }
+}
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  margin-bottom: 24px;
+  width: 100%;
+  border-bottom: 1px solid $strokeColor;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.tabs button {
+  background: $bgColor;
+  border-radius: 12px 12px 0px 0px;
+  color: $blackColor;
+  cursor: pointer;
+  padding: 8px 24px;
+  transition: all 0.3s ease-out;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+  white-space: nowrap;
+
+  @include for-sm {
+    font-size: 16px;
+  }
+}
+
+.tabs button:hover {
+  color: white;
+  background: $blueHoverColor;
+}
+
+.tabs button:disabled {
+  background: $blackSecondColor;
+  color: white;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  padding-top: 24px;
+  transition: all 0.3s ease 0s;
+
+  div {
+    color: $blackColor;
+  }
+}
+
+.radiobuttons {
+  display: flex;
+}

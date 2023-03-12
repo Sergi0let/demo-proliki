@@ -88,7 +88,7 @@ const links = [
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <Container>
+      <div className={styles.footer__container}>
         <div className={styles.sections}>
           <section
             className={(styles.sections__section, styles.sections__section_1)}
@@ -219,7 +219,7 @@ const Footer = () => {
             веб-ресурсах «ProLiki», розміщена з метою загального інформування.
           </p>
         </div>
-      </Container>
+      </div>
     </footer>
   );
 };

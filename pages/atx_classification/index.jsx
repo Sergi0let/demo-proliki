@@ -1,5 +1,10 @@
+import ClassificationMain from '@/src/components/ClassificationMain/ClassificationMain';
+import { useRouter } from 'next/router';
+
 const Classification = () => {
-  return <div>atx_classification</div>;
+  const router = useRouter();
+
+  return <ClassificationMain />;
 };
 
 export default Classification;

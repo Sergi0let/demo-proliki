@@ -1,0 +1,62 @@
+@import './src/styles/breakpoints.scss';
+@import './src/styles/variables.scss';
+
+.controler {
+  border-radius: 0;
+  height: 54px;
+  border-top: 1px solid $strokeColor;
+  border-bottom: 1px solid $strokeColor;
+
+  @include for-sm {
+    border: 1px solid $strokeColor;
+    border-radius: 24px 24px 0px 0px;
+    border-bottom: none;
+    display: flex;
+    height: 82px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  h4 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+  }
+
+  button {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    color: $blueColor;
+    line-height: 34px;
+    background: transparent;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      color: $blueHoverColor;
+    }
+
+    @include for-sm {
+      padding: 0 8px;
+    }
+  }
+}
+
+.mobile-controler {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  height: 100%;
+  @include for-sm {
+    display: none;
+  }
+}
+
+.desktop-controler {
+  display: none;
+  @include for-sm {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+}

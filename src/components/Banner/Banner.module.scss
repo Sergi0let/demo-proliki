@@ -1,6 +1,14 @@
 @import './src/styles/breakpoints.scss';
 @import './src/styles/variables.scss';
 
+.wrapper {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  @include for-mm {
+    padding: 40px 0;
+  }
+}
+
 .banner {
   height: 244px;
   display: flex;
@@ -32,6 +40,7 @@
     font-weight: 400;
     line-height: 130%;
     padding: 0px 15px;
+    text-align: center;
 
     @include for-sm {
       font-size: 32px;

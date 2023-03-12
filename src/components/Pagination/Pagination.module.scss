@@ -1,0 +1,7 @@
+@import './src/styles/breakpoints.scss';
+@import './src/styles/variables.scss';
+
+.pagination {
+  display: flex;
+  gap: 1rem;
+}

@@ -1,5 +1,8 @@
+import DrugItem from '@/src/common/DrugItem/DrugItem';
+import DrugBlock from '@/src/components/DrugItem/DrugBlock';
+
 const Alfphabet = () => {
-  return <div>Alfphabet</div>;
+  return <DrugBlock />;
 };
 
 export default Alfphabet;
