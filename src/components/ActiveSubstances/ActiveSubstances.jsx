@@ -11,6 +11,7 @@ import styles from './ActiveSubstances.module.scss';
 const ActiveSubstances = () => {
   const [currentLetter, setCurrentLetter] = useState('А');
   const [substances, setSubstances] = useState([]);
+  const [dataLetter, setDataLetter] = useState([]);
 
   const [currentTab, setCurrentTab] = useState('1');
   const [checked, setChecked] = useState({
@@ -18,8 +19,15 @@ const ActiveSubstances = () => {
     abc: false,
   });
 
+  console.log('dataLetter', dataLetter);
+  console.log('substances', substances);
   useEffect(() => {
     const filtered = active_substances[currentLetter];
+    if (!filtered) return;
+    const firstTwoLetter = Array.from(
+      new Set(filtered.map((item) => item.ua.slice(0, 2).toUpperCase()))
+    );
+    setDataLetter(firstTwoLetter);
     setSubstances(filtered);
   }, [currentLetter, substances]);
 
@@ -159,75 +167,11 @@ const ActiveSubstances = () => {
               ))}
           </div>
           <ul className={styles.content__links}>
-            <li>
-              <span>АБ</span>
-            </li>
-            <li>
-              <span>АВ</span>
-            </li>
-            <li>
-              <span>АГ</span>
-            </li>
-            <li>
-              <span>АД</span>
-            </li>
-            <li>
-              <span>АЕ</span>
-            </li>
-            <li>
-              <span>АЗ</span>
-            </li>
-            <li>
-              <span>АИ</span>
-            </li>
-            <li>
-              <span>АЙ</span>
-            </li>
-            <li>
-              <span>АК</span>
-            </li>
-            <li>
-              <span>АЛ</span>
-            </li>
-            <li>
-              <span>АМ</span>
-            </li>
-            <li>
-              <span>АН</span>
-            </li>
-            <li>
-              <span>АП</span>
-            </li>
-            <li>
-              <span>АР</span>
-            </li>
-            <li>
-              <span>АС</span>
-            </li>
-            <li>
-              <span>АТ</span>
-            </li>
-            <li>
-              <span>АУ</span>
-            </li>
-            <li>
-              <span>АФ</span>
-            </li>
-            <li>
-              <span>АХ</span>
-            </li>
-            <li>
-              <span>АЦ</span>
-            </li>
-            <li>
-              <span>АЧ</span>
-            </li>
-            <li>
-              <span>АШ</span>
-            </li>
-            <li>
-              <span>АЄ</span>
-            </li>
+            {dataLetter.map((item, i) => (
+              <li key={i}>
+                <span>{item}</span>
+              </li>
+            ))}
           </ul>
         </div>
         <ul className={styles['active-substances__list']}>

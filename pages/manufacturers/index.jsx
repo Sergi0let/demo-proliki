@@ -1,7 +1,7 @@
-import DrugsList from '@/src/components/DrugsList/DrugsList';
+import Manufacture from '@/src/components/Manufacture/Manufacture';
 
-const Manufacturers = () => {
-  return <div>Soon</div>;
+const Manufactures = () => {
+  return <Manufacture />;
 };
 
-export default Manufacturers;
+export default Manufactures;
