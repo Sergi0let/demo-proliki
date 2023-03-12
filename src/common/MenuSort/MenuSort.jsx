@@ -18,8 +18,8 @@ const MenuSort = ({
       <path
         d="M3.33398 10.2615L8.04803 14.9755L17.4761 5.54743"
         stroke="#4D5156"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
     </svg>
   );

@@ -1,5 +1,7 @@
+import DrugBlock from '@/src/components/DrugItem/DrugBlock';
+
 const About = () => {
-  return <div>Про Нас</div>;
+  return <DrugBlock />;
 };
 
 export default About;

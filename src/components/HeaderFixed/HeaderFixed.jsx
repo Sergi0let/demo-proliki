@@ -7,6 +7,8 @@ import ChangeLang from '@/src/common/ChangeLang/ChangeLang';
 import Burger from '@/src/common/Burger/Burger';
 import styles from '@/src/components/HeaderFixed/HeaderFixed.module.scss';
 
+import logo from '../../../public/img/logo/logo-l.svg';
+
 const volumeIcon = (
   <svg
     width="14"
@@ -112,7 +114,7 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
             style={scroll ? { display: 'none' } : {}}
           >
             <Image
-              src={'./img/logo/logo-l.svg'}
+              src={logo}
               alt="Емблема сайту"
               width={124}
               height={32}
@@ -210,7 +212,10 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
             </Link>
           </li>
           <li>
-            <Link style={pathname === '/' ? classActiveTab : {}} href="/">
+            <Link
+              style={pathname === '/contacts' ? classActiveTab : {}}
+              href="/contacts"
+            >
               Контакти
             </Link>
           </li>

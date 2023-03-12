@@ -10,9 +10,8 @@ import styles from './ActiveSubstances.module.scss';
 
 const ActiveSubstances = () => {
   const [currentLetter, setCurrentLetter] = useState('А');
-  const [substances, setSubstances] = useState([]); // active_substances
-  console.log('currentLetter', currentLetter);
-  console.log('substances', substances);
+  const [substances, setSubstances] = useState([]);
+
   const [currentTab, setCurrentTab] = useState('1');
   const [checked, setChecked] = useState({
     абв: true,
@@ -28,10 +27,10 @@ const ActiveSubstances = () => {
     .filter((key) => checked[key])
     .toString();
 
-  const handleTabClick = (e) => {
-    setCurrentTab(e.target.id);
-    setChecked({ абв: true, abc: false, 123: false });
-  };
+  // const handleTabClick = (e) => {
+  //   setCurrentTab(e.target.id);
+  //   setChecked({ абв: true, abc: false, 123: false });
+  // };
 
   const handleCheck = (id) => {
     if (id === 'абв') {
@@ -235,9 +234,9 @@ const ActiveSubstances = () => {
           {substances &&
             substances.map((item, i) => (
               <li key={i}>
-                <a href="#">
+                <Link href={`/active_substances/${item.eng}`}>
                   {item.ua} <span>({item.eng})</span>
-                </a>
+                </Link>
               </li>
             ))}
         </ul>

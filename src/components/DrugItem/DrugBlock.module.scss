@@ -2,11 +2,12 @@
 @import './src/styles/variables.scss';
 
 .item {
-  margin-top: 0px;
+  padding-top: 24px;
   text-align: left;
 
   @include for-mm {
     margin-top: -18px;
+    padding-top: 48px;
   }
 
   @include for-tablet {
@@ -345,10 +346,11 @@
 
 .instruction {
   padding-top: 32px;
+  padding-bottom: 48px;
 
   @include for-sm {
     padding-top: 64px;
-    padding-bottom: 16px;
+    padding-bottom: 64px;
   }
 
   &__title {
@@ -549,8 +551,6 @@
   }
 
   &__insturction {
-    display: block;
-    width: 100%;
     margin-top: 16px;
     padding: 0px 16px;
     background-color: $blueColor;

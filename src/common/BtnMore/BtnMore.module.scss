@@ -1,0 +1,40 @@
+@import './src/styles/breakpoints.scss';
+@import './src/styles/variables.scss';
+
+.btn-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 16px;
+  cursor: pointer;
+  padding-bottom: 16px;
+  padding-right: 32px;
+  padding-left: 32px;
+  background: $bgColor;
+  border-radius: 12px;
+  color: $blueColor;
+  font-size: 18px;
+  line-height: 160%;
+  font-weight: 600;
+  transition: color 0.3s ease 0s;
+  span {
+    padding-left: 8px;
+  }
+  svg {
+    transition: fill 0.3s ease 0s;
+  }
+  &:hover {
+    color: $blueHoverColor;
+    text-decoration: underline;
+    svg {
+      path {
+        fill: $blueHoverColor;
+      }
+    }
+  }
+
+  @include for-sm {
+    width: auto;
+  }
+}

@@ -1,9 +1,6 @@
 const active_substances = {
   А: [
-    {
-      ua: 'Абакавір ',
-      eng: 'Abakavir',
-    },
+    { ua: 'Абакавір ', eng: 'Abakavir' },
     { ua: 'Амоксицилін', eng: 'Amoxicillin' },
     { ua: 'Азитроміцин', eng: 'Azithromycin' },
     { ua: 'Ацетамінорен', eng: 'Acetaminophen' },
