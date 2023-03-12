@@ -6,7 +6,18 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  min-height: 100%;
   background-color: $bgLightColor;
+
+  &__container {
+    max-width: $desktop;
+    padding: 0px 15px;
+    width: 100%;
+
+    @include for-mm {
+      padding: 0px 32px;
+    }
+  }
 }
 
 .sections {
