@@ -45,13 +45,13 @@
 
   &__list {
     padding-top: 24px;
-    padding-bottom: 48px;
+
     display: grid;
     grid-template-columns: 1fr;
 
     @include for-mm {
       padding-top: 40px;
-      padding-bottom: 64px;
+
       column-gap: 40px;
       grid-template-columns: 50% 50%;
     }
