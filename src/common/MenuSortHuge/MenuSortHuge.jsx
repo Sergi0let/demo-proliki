@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 const MenuSortHuge = ({ drugsSort, onDrugsSort, onOpenSort }) => {
   const [drugsLocalSort, setDrugsLocalSort] = useState(drugsSort);
+
   const handleDrugsSort = (e) => {
     setDrugsLocalSort(e.target.textContent);
     onDrugsSort(e.target.textContent);

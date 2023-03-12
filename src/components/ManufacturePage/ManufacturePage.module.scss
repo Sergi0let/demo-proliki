@@ -1,0 +1,68 @@
+@import './src/styles/breakpoints.scss';
+@import './src/styles/variables.scss';
+
+.manufacture-page {
+  padding-top: 24px;
+  padding-bottom: 48px;
+
+  @include for-mm {
+    padding-top: 32px;
+    padding-bottom: 64px;
+  }
+
+  &__crumbreads {
+    li {
+      display: inline-block;
+      font-size: 14px;
+      line-height: 160%;
+      color: $blueColor;
+
+      @include for-sm {
+        font-size: 16px;
+      }
+
+      &:not(:last-child) {
+        margin-right: 8px;
+      }
+
+      svg {
+        position: relative;
+        top: -3px;
+      }
+    }
+  }
+
+  &__header {
+    padding-top: 16px;
+    padding-bottom: 24px;
+
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    @include for-mm {
+      padding-bottom: 32px;
+    }
+
+    h1 {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 130%;
+
+      @include for-sm {
+        font-size: 40px;
+      }
+    }
+    p {
+      display: inline-block;
+    }
+  }
+
+  &__pagination {
+    padding-top: 24px;
+
+    @include for-mm {
+      padding-top: 32px;
+    }
+  }
+}
