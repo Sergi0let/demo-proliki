@@ -10,6 +10,16 @@
     padding-bottom: 64px;
   }
 
+  @include for-tablet {
+    display: grid;
+    column-gap: 24px;
+    grid-template-columns: 61.6% 36%;
+  }
+
+  @include for-md {
+    grid-template-columns: 65.9% 32%;
+  }
+
   &__crumbreads {
     margin-bottom: 16px;
 
@@ -33,4 +43,140 @@
       }
     }
   }
+
+  &__title {
+    padding-bottom: 24px;
+
+    @include for-mm {
+      padding-bottom: 32px;
+    }
+  }
+
+  &__news {
+  }
+
+  &__aside-block {
+    padding-top: 64px;
+
+    @include for-tablet {
+      padding-top: 0;
+    }
+    aside {
+      margin-bottom: 32px;
+
+      @include for-tablet {
+        margin-bottom: 53px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    h3 {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 130%;
+      padding-bottom: 24px;
+      color: $blackColor;
+
+      @include for-sm {
+        font-size: 24px;
+      }
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0px;
+      border-bottom: 1px solid $strokeColor;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 160%;
+
+      @include for-mm {
+        font-size: 18px;
+      }
+
+      &:first-child {
+        border-top: 1px solid $strokeColor;
+      }
+
+      a {
+        color: $blueColor;
+      }
+    }
+  }
 }
+
+// .news {
+//   padding-top: 24px;
+//   padding-bottom: 48px;
+
+//   @include for-mm {
+//     padding-top: 32px;
+//     padding-bottom: 64px;
+//   }
+
+//   @include for-tablet {
+//     display: grid;
+//     column-gap: 24px;
+//     grid-template-columns: 61.6% 36%;
+//   }
+
+//   @include for-md {
+//     grid-template-columns: 65.9% 32%;
+//   }
+
+//   &__crumbreads {
+//     margin-bottom: 16px;
+
+//     li {
+//       display: inline-block;
+//       font-size: 14px;
+//       line-height: 160%;
+//       color: $blueColor;
+
+//       @include for-sm {
+//         font-size: 16px;
+//       }
+
+//       &:not(:last-child) {
+//         margin-right: 8px;
+//       }
+
+//       svg {
+//         position: relative;
+//         top: -3px;
+//       }
+//     }
+//   }
+
+//   main {
+//     padding-bottom: 64px;
+
+//     @include for-mm {
+//       padding-bottom: 0;
+//     }
+//   }
+
+//   &__article-main {
+//     padding-top: 24px;
+//     padding-bottom: 32px;
+
+//     @include for-mm {
+//       padding-top: 32px;
+//       padding-bottom: 48px;
+
+//       font-size: 24px;
+//     }
+
+//     @include for-tablet {
+//       font-size: 28px;
+//     }
+
+//     @include for-md {
+//       font-size: 32px;
+//     }
+//   }
+// }
