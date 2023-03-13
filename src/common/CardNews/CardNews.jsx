@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import styles from './CardNews.module.scss';
 
-const CardNews = ({ image, alt, category, text }) => {
+const CardNews = ({ image, alt, category, text, type }) => {
+  const styleMainLink =
+    type === 'main' ? styles.card__text_link : styles.card__text_linkMain;
   return (
     <article className={styles.card}>
       <a href="#" className={styles.card__img_wrapper}>
@@ -18,7 +20,7 @@ const CardNews = ({ image, alt, category, text }) => {
         <a className={styles.card__category} href="#">
           {category}
         </a>
-        <a className={styles.card__text_link} href="#">
+        <a className={styleMainLink} href="#">
           {text}
         </a>
         <p className={styles.card__text_link}>

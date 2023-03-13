@@ -76,4 +76,22 @@
       color: $blueHoverColor;
     }
   }
+
+  &__text_linkMain {
+    display: block;
+    transition: color 0.3s ease 0s;
+    text-align: left;
+    padding-top: 8px;
+    font-size: 18px;
+    line-height: 160%;
+
+    @include for-sm {
+      padding-top: 16px;
+      font-size: 24px;
+    }
+
+    &:hover {
+      color: $blueHoverColor;
+    }
+  }
 }
