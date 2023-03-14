@@ -1,0 +1,108 @@
+@import './src/styles/breakpoints.scss';
+@import './src/styles/variables.scss';
+
+.agreement {
+  padding-top: 24px;
+  padding-bottom: 48px;
+
+  @include for-mm {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 48px;
+    padding-top: 32px;
+    padding-bottom: 64px;
+  }
+
+  &__crumbreads {
+    margin-bottom: 16px;
+
+    li {
+      display: inline-block;
+      font-size: 14px;
+      line-height: 160%;
+      color: $blueColor;
+
+      @include for-sm {
+        font-size: 16px;
+      }
+
+      &:not(:last-child) {
+        margin-right: 8px;
+      }
+
+      svg {
+        position: relative;
+        top: -3px;
+      }
+    }
+  }
+
+  &__title {
+    padding-bottom: 24px;
+
+    @include for-mm {
+      padding-bottom: 32px;
+    }
+  }
+
+  &__block-text {
+    padding-top: 24px;
+    padding-bottom: 32px;
+
+    @include for-mm {
+      padding-top: 32px;
+      padding-bottom: 48px;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+    a {
+      color: $blueColor;
+      transition: all 0.3s ease 0s;
+
+      &:hover {
+        text-decoration: underline;
+        color: $blueHoverColor;
+      }
+    }
+  }
+  p {
+    line-height: 160%;
+    &:not(:last-child) {
+      margin-bottom: 16px;
+
+      @include for-sm {
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  &__aside {
+    padding-top: 32px;
+    font-weight: 400;
+    font-size: 18px;
+
+    @include for-mm {
+      padding-top: 130px;
+    }
+
+    @include for-tablet {
+    }
+
+    li {
+      line-height: 40px;
+      padding-left: 28px;
+      display: flex;
+      align-items: center;
+      color: $blueColor;
+      border-left: 2px solid $strokeColor;
+      transition: all 0.3s ease 0s;
+
+      &:hover {
+        color: $blueHoverColor;
+        border-color: $blueHoverColor;
+      }
+    }
+  }
+}
