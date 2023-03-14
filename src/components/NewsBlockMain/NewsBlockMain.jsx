@@ -1,5 +1,6 @@
 import Container from '@/src/common/Container/Container';
 import { TitleBig } from '@/src/common/Title/Title';
+import Image from 'next/image';
 import Link from 'next/link';
 import styles from './NewsBlockMain.module.scss';
 
@@ -16,6 +17,30 @@ const NewsBlockMain = () => {
           <div className={styles['news-block__title']}>
             <TitleBig title="Новости медицины и фармации" />
           </div>
+          <article className={styles.card}>
+            <a href="#" className={styles.card__img_wrapper}>
+              <Image
+                src={`/img/news/news-1.jpg`}
+                width={360}
+                height={240}
+                alt="main news"
+                className={styles.card__img}
+              />
+            </a>
+
+            <div className={styles.card__content}>
+              <a className={styles.card__category} href="#">
+                Категория
+              </a>
+              <a className={styles.card__text_link} href="#">
+                Препараты от изжоги как новое средство для контроля уровня
+                глюкозы в крови при сахарном диабете
+              </a>
+              <p className={styles.card__text_link}>
+                <time dateTime="2021-02-01 00:00">2 марта 2021</time>
+              </p>
+            </div>
+          </article>
           <div className={styles['news-block__news-item']}>
             Lorem ipsum dolor sit amet.
           </div>
