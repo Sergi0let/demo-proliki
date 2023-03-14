@@ -55,6 +55,14 @@
   &__news {
   }
 
+  &__list-news {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+    row-gap: 48px;
+    padding-bottom: 48px;
+  }
+
   &__aside-block {
     padding-top: 64px;
 
@@ -110,19 +118,23 @@
 }
 
 .card {
-  flex-basis: 33.333%;
+  padding-bottom: 32px;
+
+  @include for-mm {
+    padding-bottom: 48px;
+  }
 
   &__img_wrapper {
-    display: block;
     cursor: pointer;
-    min-width: 157px;
-    min-height: 105px;
   }
 
   &__img {
     width: 100%;
-    height: 100%;
+    height: auto;
+    max-height: 360px;
     object-fit: cover;
+    border-radius: 24px;
+    overflow: hidden;
     transition: all 0.3s ease 0s;
 
     &:hover {
@@ -132,9 +144,8 @@
   }
 
   &__content {
-    padding-top: 8px;
+    padding-top: 24px;
     @include for-sm {
-      padding-top: 24px;
     }
 
     time {
@@ -172,12 +183,12 @@
     transition: color 0.3s ease 0s;
     text-align: left;
     padding-top: 8px;
-    font-size: 16px;
-    line-height: 160%;
+    font-size: 18px;
+    line-height: 130%;
 
     @include for-sm {
       padding-top: 16px;
-      font-size: 18px;
+      font-size: 24px;
     }
 
     &:hover {

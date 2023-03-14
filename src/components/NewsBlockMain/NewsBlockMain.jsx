@@ -1,7 +1,10 @@
+import CardNews from '@/src/common/CardNews/CardNews';
 import Container from '@/src/common/Container/Container';
 import { TitleBig } from '@/src/common/Title/Title';
+import newsData from '@/src/data/news_block-main';
 import Image from 'next/image';
 import Link from 'next/link';
+import Pagination from '../Pagination/Pagination';
 import styles from './NewsBlockMain.module.scss';
 
 const NewsBlockMain = () => {
@@ -20,14 +23,13 @@ const NewsBlockMain = () => {
           <article className={styles.card}>
             <a href="#" className={styles.card__img_wrapper}>
               <Image
-                src={`/img/news/news-1.jpg`}
+                src={`/img/news/news-main-1.jpg`}
                 width={360}
                 height={240}
                 alt="main news"
                 className={styles.card__img}
               />
             </a>
-
             <div className={styles.card__content}>
               <a className={styles.card__category} href="#">
                 Категория
@@ -41,10 +43,14 @@ const NewsBlockMain = () => {
               </p>
             </div>
           </article>
-          <div className={styles['news-block__news-item']}>
-            Lorem ipsum dolor sit amet.
-          </div>
+          <ul className={styles['news-block__list-news']}>
+            {newsData &&
+              newsData.map((news) => <CardNews key={news.id} {...news} />)}
+          </ul>
+
+          <Pagination />
         </div>
+
         <div className={styles['news-block__aside-block']}>
           <aside>
             <h3>Категории</h3>
@@ -115,37 +121,6 @@ const NewsBlockMain = () => {
               </li>
             </ul>
           </aside>
-        </div>
-
-        <div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-          impedit voluptate aliquid, illo mollitia minus, molestiae eum sapiente
-          eveniet vitae delectus at atque, facilis deserunt possimus
-          consequuntur placeat. Consectetur, expedita. Ad explicabo aut
-          accusamus aspernatur debitis rerum quasi at fugiat minus maxime? Eos
-          dolorum, optio a velit labore quos! Doloremque id expedita atque autem
-          dolore tenetur quibusdam dolores, labore fuga. Fugit, distinctio Lorem
-          ipsum dolor sit amet consectetur adipisicing elit. Commodi impedit
-          voluptate aliquid, illo mollitia minus, molestiae eum sapiente eveniet
-          vitae delectus at atque, facilis deserunt possimus consequuntur
-          placeat. Consectetur, expedita. Ad explicabo aut accusamus aspernatur
-          debitis rerum quasi at fugiat minus maxime? Eos dolorum, optio a velit
-          labore quos! Doloremque id expedita atque autem dolore tenetur
-          quibusdam dolores, labore fuga. Fugit, distinctio Lorem ipsum dolor
-          sit amet consectetur adipisicing elit. Commodi impedit voluptate
-          aliquid, illo mollitia minus, molestiae eum sapiente eveniet vitae
-          delectus at atque, facilis deserunt possimus consequuntur placeat.
-          Consectetur, expedita. Ad explicabo aut accusamus aspernatur debitis
-          rerum quasi at fugiat minus maxime? Eos dolorum, optio a velit labore
-          quos! Doloremque id expedita atque autem dolore tenetur quibusdam
-          dolores, labore fuga. Fugit, distinctio Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Commodi impedit voluptate aliquid, illo
-          mollitia minus, molestiae eum sapiente eveniet vitae delectus at
-          atque, facilis deserunt possimus consequuntur placeat. Consectetur,
-          expedita. Ad explicabo aut accusamus aspernatur debitis rerum quasi at
-          fugiat minus maxime? Eos dolorum, optio a velit labore quos!
-          Doloremque id expedita atque autem dolore tenetur quibusdam dolores,
-          labore fuga. Fugit, distinctio
         </div>
       </main>
     </Container>
