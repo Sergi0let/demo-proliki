@@ -1,0 +1,98 @@
+@import './src/styles/breakpoints.scss';
+@import './src/styles/variables.scss';
+.form {
+  background: $bgColor;
+  padding: 32px;
+  border-radius: 24px;
+
+  &__input {
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 16px;
+    background: transparent;
+
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+
+  &__icon.invalid {
+    background: $errorColor;
+  }
+  &__icon.valid {
+    background: $blueColor;
+  }
+
+  &__btn {
+    width: 100%;
+    text-align: center;
+    border-radius: 12px;
+    color: #fff;
+    background: $blueColor;
+    line-height: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background 0.3s ease 0s;
+
+    &:hover {
+      background: $blueHoverColor;
+    }
+
+    &:active {
+      background: $btnActive;
+    }
+  }
+
+  .valid_btn {
+    background-color: $btnActive;
+  }
+
+  h4 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 130%;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    border: 1px solid #d3dce9;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-family: inherit;
+    font-size: 16px;
+    color: $secondaryColor;
+  }
+
+  input {
+    height: 50px;
+  }
+  textarea:focus,
+  input:focus {
+    outline: none;
+    border-color: $blueColor;
+  }
+
+  .invalid input {
+    border-color: $errorColor;
+  }
+
+  textarea {
+    height: 140px;
+    resize: none;
+  }
+}

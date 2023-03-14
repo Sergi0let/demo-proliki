@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Container from '@/src/common/Container/Container';
 import { TitleSmall } from '@/src/common/Title/Title';
 import SocialIcon from '@/src/common/SocialIcon/SocialIcon';
 
@@ -176,19 +175,28 @@ const Footer = () => {
                 </Link>
               </li>
               <li className={styles.sections__item}>
-                <a href="#" className={styles.sections__link}>
+                <Link
+                  href="/service_page/agreement"
+                  className={styles.sections__link}
+                >
                   Cоглашение
-                </a>
+                </Link>
               </li>
               <li className={styles.sections__item}>
-                <a href="#" className={styles.sections__link}>
+                <Link
+                  href="/service_page/confidentiality"
+                  className={styles.sections__link}
+                >
                   Конфиденциальность
-                </a>
+                </Link>
               </li>
               <li className={styles.sections__item}>
-                <a href="#" className={styles.sections__link}>
+                <Link
+                  href="/service_page/cookie"
+                  className={styles.sections__link}
+                >
                   Обработка cookie
-                </a>
+                </Link>
               </li>
             </ul>
           </section>
