@@ -38,6 +38,10 @@
       padding: 0px 32px;
     }
   }
+
+  .noFixed {
+    position: relative;
+  }
   &__top {
     display: grid;
     align-items: center;
