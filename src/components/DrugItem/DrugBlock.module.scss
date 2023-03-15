@@ -2,6 +2,7 @@
 @import './src/styles/variables.scss';
 
 .item {
+  height: 100%;
   padding-top: 24px;
   text-align: left;
 
@@ -55,28 +56,29 @@
   }
 
   &__nav {
+    border-bottom: 1px solid $strokeColor;
+    border-top: 1px solid $strokeColor;
     background: $bgLightColor;
-    box-shadow: 0 0px 0px 100vmax $bgLightColor;
-    clip-path: inset(0 -100vmax);
+    // box-shadow: 0 0px 0px 100vmax $bgLightColor;
+    // clip-path: inset(0 -100vmax);
     display: flex;
     align-items: center;
     column-gap: 32px;
     overflow-x: auto;
 
+    z-index: 102;
+    position: sticky;
+    top: 0px;
+
     a {
       display: inline-block;
       font-weight: 600;
-      font-size: 14px;
+      font-size: 18px;
       color: $blueColor;
       transition: all 0.3s ease 0s;
-      line-height: 54px;
+      line-height: 58px;
       white-space: nowrap;
-      overflow: auto;
-
-      @include for-sm {
-        font-size: 16px;
-        line-height: 58px;
-      }
+      // overflow: auto;
 
       &:hover {
         color: $blueHoverColor;
@@ -89,50 +91,44 @@
   padding-top: 24px;
   padding-bottom: 24px;
   border-bottom: 1px solid $strokeColor;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
+  display: flex;
+  flex-direction: column-reverse;
 
   @include for-mm {
     padding-top: 48px;
     padding-bottom: 48px;
     display: grid;
     column-gap: 24px;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
+  }
+
+  h2 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 130%;
+    margin-bottom: 24px;
+
+    @include for-sm {
+      margin-bottom: 32px;
+      font-size: 32px;
+    }
   }
 
   @include for-tablet {
     column-gap: 48px;
-    grid-template-columns: 1fr 2fr;
-  }
-
-  @include for-md {
+    grid-template-columns: 2fr 1fr;
   }
 
   &__image-block {
     margin: 0 auto;
     width: 290px;
-    height: 290px;
-    position: relative;
+    height: auto;
+    // position: relative;
     margin-bottom: 24px;
 
-    @include for-sm {
-      margin-bottom: 0px;
-    }
-
     @include for-mm {
-      width: 249px;
-      height: 249px;
-    }
-
-    @include for-tablet {
-      width: 345px;
-      height: 345px;
-    }
-
-    @include for-md {
-      width: 360px;
-      height: 360px;
+      margin-bottom: 0px;
     }
 
     img {
@@ -141,46 +137,12 @@
       @include for-mm {
       }
     }
-    a {
-      display: block;
-      padding: 16px;
-      width: 56px;
-      height: 56px;
-      position: absolute;
-      background-color: $bgLightColor;
-      bottom: 0px;
-      left: 0;
-      cursor: pointer;
-      @include for-mm {
-      }
-
-      svg {
-        width: 24px;
-        height: 24px;
-        transition: transform 0.3s ease 0s;
-
-        path {
-          transition: fill 0.3s ease 0s;
-        }
-      }
-    }
   }
 
   &__img {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-  &__link {
-    &:hover {
-      svg {
-        transform: scale(1.1);
-      }
-      path {
-        fill: $blueHoverColor;
-      }
-    }
   }
 
   ul {
@@ -206,43 +168,6 @@
       }
     }
   }
-
-  &__price-btn {
-    margin-right: 24px;
-    background: $blueColor;
-    color: #fff;
-    transition: background 0.3s ease 0s;
-
-    &:hover {
-      background: $blueHoverColor;
-    }
-
-    &:active {
-      background: $btnActive;
-    }
-  }
-  &__analog-btn {
-    background: $bgColor;
-    color: $blueColor;
-    transition: all 0.3s ease 0s;
-
-    span {
-      display: inline-block;
-      border-bottom: 1px solid transparent;
-      transition: all 0.3s ease 0s;
-    }
-
-    &:hover {
-      color: $blueHoverColor;
-      span {
-        border-bottom: 1px solid $blueHoverColor;
-      }
-    }
-
-    &:active {
-      background: $bgLightColor;
-    }
-  }
 }
 
 .table {
@@ -258,6 +183,10 @@
     @include for-tablet {
       margin-bottom: 24px;
     }
+  }
+
+  &__icons {
+    margin-right: 8px;
   }
 
   h4 {
@@ -280,67 +209,13 @@
 
   a {
     color: $blueColor;
-    margin-right: 8px;
+
     transition: all 0.3s ease 0s;
 
     &:hover {
       color: $blueHoverColor;
       text-decoration: underline;
     }
-  }
-}
-
-.assent {
-  padding: 24px 0px;
-  display: grid;
-  row-gap: 16px;
-  border-bottom: 1px solid $strokeColor;
-
-  @include for-sm {
-    padding: 32px 0px;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 32px;
-  }
-  @include for-mm {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-  li {
-    // display: flex;
-    // align-items: center;
-    // justify-content: space-between;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 16px;
-
-    @include for-sm {
-      display: block;
-      align-items: center;
-      column-gap: 0;
-    }
-  }
-
-  h5 {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 160%;
-    color: $greyColor;
-    margin-bottom: 0;
-    @include for-sm {
-      margin-bottom: 8px;
-    }
-  }
-
-  span {
-    display: flex;
-    align-items: center;
-    text-align: left;
-  }
-
-  p {
-    padding-left: 12px;
-    font-size: 18px;
-    line-height: 160%;
-    white-space: nowrap;
   }
 }
 
@@ -656,5 +531,42 @@
 
   .link {
     color: $blueColor;
+  }
+}
+
+.share {
+  display: flex;
+  padding-top: 16px;
+  li {
+    padding: 12px 20px;
+    border: 1px solid $blueColor;
+    color: $blueColor;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 160%;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease 0s;
+
+    &:first-child {
+      border-right: none;
+      &:hover {
+        border-radius: 12px 0 0 12px;
+      }
+    }
+
+    &:last-child {
+      &:hover {
+        border-radius: 0 12px 12px 0;
+      }
+    }
+
+    &:hover {
+      color: $blueHoverColor;
+      text-decoration: underline;
+    }
   }
 }

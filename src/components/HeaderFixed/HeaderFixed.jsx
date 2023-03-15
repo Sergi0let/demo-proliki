@@ -46,25 +46,13 @@ const searchIcon = (
 );
 
 const HeaderFixed = ({ openBurger, onBurger }) => {
-  const { pathname } = useRouter();
-  const router = useRouter();
+  const { pathname, route } = useRouter();
+  // const router = useRouter();
   const [search, setSearch] = useState('');
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [scroll, setScroll] = useState(false);
 
-  // const handleSearch = (e) => {
-  //   const normSearch = e.target.value.toLowerCase();
-  //   setSearch(normSearch);
-  // };
-
-  // const onSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (!search) return;
-
-  //   router.push(`/drugItem/?search=${search}`);
-
-  //   setSearch('');
-  // };
+  console.log('router', route);
 
   useEffect(() => {
     function handleResize() {
@@ -101,9 +89,13 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
     color: '#3B009A',
   };
 
+  const styleFixedHeader = `${styles.header__nav} ${
+    route === '/about' ? styles.noFixed : ''
+  }`;
+
   return (
     <header style={scroll ? { height: '63px' } : {}} className={styles.header}>
-      <nav className={styles.header__nav}>
+      <nav className={styleFixedHeader}>
         <ul
           style={scroll ? { gridTemplateRows: '40px' } : {}}
           className={styles.header__top}
