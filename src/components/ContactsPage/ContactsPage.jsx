@@ -1,5 +1,10 @@
 import Container from '@/src/common/Container/Container';
-import Title, { TitleBig, TittleIntermidiate } from '@/src/common/Title/Title';
+import Title, {
+  H1Title,
+  H2Title,
+  TitleBig,
+  TittleIntermidiate,
+} from '@/src/common/Title/Title';
 import Image from 'next/image';
 import Link from 'next/link';
 import FormBlock from '../FormBlock/FormBlock';
@@ -20,12 +25,12 @@ const ContactsPage = () => {
           </li>
         </ul>
         <div className={styles.contacts__title}>
-          <TitleBig title="Контакти" />
+          <H1Title title="Контакти" />
         </div>
 
         <div className={styles.contacts__block}>
           <div className={styles.contacts__content}>
-            <TittleIntermidiate title="Ми будемо раді почути Вас і відповісти на будь-які запитання або пропозиції." />
+            <H2Title title="Ми будемо раді почути Вас і відповісти на будь-які запитання або пропозиції." />
             <p className={styles.contacts__info}>
               Надішліть нам повідомлення через форму зворотного зв&apos;язку на
               цій сторінці або скористайтеся одним із наших зазначених способів

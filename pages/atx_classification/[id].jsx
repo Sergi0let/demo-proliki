@@ -1,7 +1,7 @@
 import Container from '@/src/common/Container/Container';
 import MenuSort from '@/src/common/MenuSort/MenuSort';
 import MenuSortHuge from '@/src/common/MenuSortHuge/MenuSortHuge';
-import Title, { TitleBig } from '@/src/common/Title/Title';
+import Title, { H1Title, H2Title, TitleBig } from '@/src/common/Title/Title';
 
 import DrugsTable from '@/src/components/DrugsTable/DrugsTable';
 import Pagination from '@/src/components/Pagination/Pagination';
@@ -56,7 +56,7 @@ const ClassificationPage = () => {
           </li>
         </ul>
         <div className={styles.classification__title}>
-          <TitleBig
+          <H1Title
             title="Препараты влияющие на пищеварительную систему и обмен веществ"
             variable={id}
           />
@@ -72,7 +72,7 @@ const ClassificationPage = () => {
               </li>
             ))}
         </ul>
-        <Title
+        <H2Title
           title="Препараты влияющие на пищеварительную систему и обмен веществ"
           variable={id}
         />

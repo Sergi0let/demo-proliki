@@ -1,6 +1,7 @@
 import Container from '@/src/common/Container/Container';
 import MenuSort from '@/src/common/MenuSort/MenuSort';
 import MenuSortHuge from '@/src/common/MenuSortHuge/MenuSortHuge';
+import { H1Title } from '@/src/common/Title/Title';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
@@ -54,7 +55,7 @@ const ManufacturePage = () => {
           </li>
         </ul>
         <div className={styles['manufacture-page__header']}>
-          <h1 className={styles['manufacture-page__title']}>{id}</h1>
+          <H1Title title={id} />
           <p> 14 препаратов, 1 активное вещество</p>
         </div>
         <MenuSortHuge

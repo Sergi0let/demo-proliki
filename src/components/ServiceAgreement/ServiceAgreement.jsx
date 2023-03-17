@@ -1,8 +1,8 @@
 import Container from '@/src/common/Container/Container';
-import Title, { TitleBig } from '@/src/common/Title/Title';
+import { H1Title, H2Title } from '@/src/common/Title/Title';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+
 import styles from './ServiceAgreement.module.scss';
 
 const ServiceAgreement = () => {
@@ -26,7 +26,7 @@ const ServiceAgreement = () => {
               <Link href="/">Proliki</Link>
             </li>
           </ul>
-          <TitleBig title="Угода користувача" />
+          <H1Title title="Угода користувача" />
           <div className={styles['agreement__block-text']}>
             <p>
               Викладений нижче текст Угоди користувача (надалі – «Угода»),
@@ -48,7 +48,7 @@ const ServiceAgreement = () => {
             </p>
           </div>
 
-          <Title title="1. Терміни та визначення" />
+          <H2Title title="1. Терміни та визначення" />
           <div className={styles['agreement__block-text']}>
             <p>
               1.1. «Веб-сайт» (надалі – «Сайт») – інформаційний ресурс в мережі
@@ -87,7 +87,7 @@ const ServiceAgreement = () => {
             </p>
           </div>
 
-          <Title title="2. Загальні положення" />
+          <H2Title title="2. Загальні положення" />
           <div className={styles['agreement__block-text']}>
             <p>
               2.1. Користувач шляхом переходу на Сайт Власника надає свою згоду

@@ -5,6 +5,7 @@ import warning from '../../../public/img/icons/warning.svg';
 import check from '../../../public/img/icons/check.svg';
 
 import styles from './FormBlock.module.scss';
+import { H4Title } from '@/src/common/Title/Title';
 
 const FormBlock = () => {
   const [formIsValid, setFormIsValid] = useState(false);
@@ -91,7 +92,7 @@ const FormBlock = () => {
 
   return (
     <form onSubmit={submitHandler} className={styles.form}>
-      <h4>Не соромтеся зв&apos;язатися з нами!</h4>
+      <H4Title title="Не соромтеся зв'язатися з нами!" />
       <div
         className={`${styles.form__input} ${
           nameIsValid === false ? styles.invalid : ''

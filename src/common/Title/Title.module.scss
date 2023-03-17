@@ -1,61 +1,6 @@
 @import './src/styles/breakpoints.scss';
 @import './src/styles/variables.scss';
 
-.mainTitle {
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 130%;
-  text-align: left;
-  color: $blackColor;
-
-  @include for-sm {
-    font-size: 32px;
-  }
-}
-
-.secondaryTitle {
-  color: $blackColor;
-  font-size: 16px;
-  line-height: 160%;
-  font-weight: 400;
-
-  @include for-mm {
-    font-size: 18px;
-  }
-}
-
-.mediumTitle {
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 130%;
-
-  @include for-sm {
-    font-size: 32px;
-  }
-}
-
-.bigTitle {
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 130%;
-
-  @include for-sm {
-    font-size: 40px;
-  }
-}
-
-.intermidiateTitle {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 130%;
-
-  @include for-sm {
-    font-size: 28px;
-  }
-}
-
-// ---------------------------------- //
-
 .h1Title {
   font-weight: 400;
   font-size: 24px;
@@ -86,6 +31,12 @@
   @include for-sm {
     font-size: 28px;
   }
+}
+
+.h4Title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 130%;
 }
 
 .h5Title {

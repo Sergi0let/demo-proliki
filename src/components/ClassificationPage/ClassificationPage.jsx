@@ -1,5 +1,5 @@
 import Container from '@/src/common/Container/Container';
-import { TitleBig } from '@/src/common/Title/Title';
+import { H1Title } from '@/src/common/Title/Title';
 import Link from 'next/link';
 import styles from '../ClassificationMain/ClassificationMain.module.scss';
 
@@ -13,7 +13,7 @@ const ClassificationPage = ({ data }) => {
           </li>
         </ul>
         <div className={styles.classification__title}>
-          <TitleBig title="ATХ классификация" />
+          <H1Title title="ATХ классификация" />
         </div>
         <ul className={styles.classification__list}>
           {data &&

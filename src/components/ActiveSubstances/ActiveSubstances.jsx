@@ -1,7 +1,7 @@
 import Container from '@/src/common/Container/Container';
 import Letter from '@/src/common/Letter/Letter';
 import RadioButton from '@/src/common/RadioButton/RadioButton';
-import Title, { TitleBig, TittleIntermidiate } from '@/src/common/Title/Title';
+import { H1Title, H2Title, H3Title } from '@/src/common/Title/Title';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import active_substances from '../../data/active_substances';
@@ -19,8 +19,6 @@ const ActiveSubstances = () => {
     abc: false,
   });
 
-  console.log('dataLetter', dataLetter);
-  console.log('substances', substances);
   useEffect(() => {
     const filtered = active_substances[currentLetter];
     if (!filtered) return;
@@ -34,11 +32,6 @@ const ActiveSubstances = () => {
   const filter = Object.keys(checked)
     .filter((key) => checked[key])
     .toString();
-
-  // const handleTabClick = (e) => {
-  //   setCurrentTab(e.target.id);
-  //   setChecked({ абв: true, abc: false, 123: false });
-  // };
 
   const handleCheck = (id) => {
     if (id === 'абв') {
@@ -123,6 +116,7 @@ const ActiveSubstances = () => {
       ],
     },
   ];
+
   return (
     <Container>
       <div className={styles['active-substances']}>
@@ -132,7 +126,7 @@ const ActiveSubstances = () => {
           </li>
         </ul>
         <div className={styles['active-substances__title']}>
-          <TitleBig title="Алфавитный указатель препаратов" />
+          <H1Title title="Алфавитный указатель препаратов" />
         </div>
 
         <div className={styles.content}>
@@ -174,6 +168,7 @@ const ActiveSubstances = () => {
             ))}
           </ul>
         </div>
+
         <ul className={styles['active-substances__list']}>
           {substances &&
             substances.map((item, i) => (
@@ -185,7 +180,7 @@ const ActiveSubstances = () => {
             ))}
         </ul>
 
-        <Title title="Активные вещества" />
+        <H2Title title="Активные вещества" />
         <div className={styles['active-substances__block-text']}>
           <p>
             Правильное питание и физическая активность – залог здоровья,
@@ -199,7 +194,7 @@ const ActiveSubstances = () => {
             интернет аптеке.
           </p>
         </div>
-        <TittleIntermidiate title="Назначение и виды активных веществ" />
+        <H3Title title="Назначение и виды активных веществ" />
         <div className={styles['active-substances__block-text']}>
           <p>
             Активные пищевые добавки бады – природные вещества (иногда
@@ -222,7 +217,7 @@ const ActiveSubstances = () => {
             восполнением нехватки.
           </p>
         </div>
-        <TittleIntermidiate title="Преимущества активных веществ" />
+        <H3Title title="Преимущества активных веществ" />
         <div className={styles['active-substances__block-text']}>
           <p>
             Санитарные нормы и правила четко определяют назначение такой группы,
@@ -247,7 +242,7 @@ const ActiveSubstances = () => {
             <span>•</span>Снижение веса;
           </p>
         </div>
-        <TittleIntermidiate title="Особенности применения" />
+        <H3Title title="Особенности применения" />
         <div className={styles['active-substances__block-text']}>
           <p>
             Несмотря на то, что добавки не являются лекарственными средствами,
