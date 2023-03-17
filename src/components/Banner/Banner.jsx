@@ -9,7 +9,7 @@ const Banner = () => {
       <div className={styles.wrapper}>
         <div className={styles.banner}>
           <H1Title
-            title="Надійний довідник в медичному світі: все про ліки тут."
+            title="Все про ліки - надійний довідник в медичному світі!"
             className={styles.banner__title}
           />
         </div>

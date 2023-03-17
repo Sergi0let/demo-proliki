@@ -78,7 +78,14 @@
   }
 }
 
-.h4Title {
+.h3Title {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+
+  @include for-sm {
+    font-size: 28px;
+  }
 }
 
 .h5Title {

@@ -49,6 +49,10 @@ export const H2Title = ({ title, className }) => (
   <h2 className={`${styles.h2Title} ${className}`}>{title}</h2>
 );
 
+export const H3Title = ({ title, className }) => (
+  <h3 className={`${styles.h3Title} ${className}`}>{title}</h3>
+);
+
 export const H4Title = ({ title, className }) => (
   <h4 className={`${styles.h4Title} ${className}`}>{title}</h4>
 );
