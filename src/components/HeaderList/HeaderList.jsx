@@ -5,20 +5,11 @@ import { useRouter } from 'next/router';
 import Burger from '@/src/common/Burger/Burger';
 import ChangeLang from '@/src/common/ChangeLang/ChangeLang';
 
-import styles from './List.module.scss';
+import styles from './HeaderList.module.scss';
+import menu_data from '@/src/data/menu_data';
 
 const List = ({ openBurger, onBurger, onClose }) => {
   const { pathname } = useRouter();
-
-  const navigation = [
-    { id: 0, title: 'ATХ класифікація', path: '/atx_classification' },
-    { id: 1, title: 'Активні речовини', path: '/active_substances' },
-    { id: 2, title: 'Алфавітний покажчик', path: '/alphabet' },
-    { id: 3, title: ' Виробники', path: '/manufacturers' },
-    { id: 4, title: 'Новини', path: '/news' },
-    { id: 5, title: 'Про нас', path: '/about' },
-    { id: 6, title: 'Контакти', path: '/' },
-  ];
 
   const burgerOpen = openBurger ? '0' : '-1000%';
 
@@ -65,16 +56,17 @@ const List = ({ openBurger, onBurger, onClose }) => {
           <Burger onBurger={onBurger} openBurger={openBurger} />
         </div>
       </div>
-      {navigation.map((item) => (
-        <li
-          key={item.id}
-          className={pathname === item.path ? styles.active : null}
-        >
-          <Link href={item.path} alt={item.title} onClick={() => onClose()}>
-            {item.title}
-          </Link>
-        </li>
-      ))}
+      {menu_data &&
+        menu_data.map((item) => (
+          <li
+            key={item.id}
+            className={pathname === item.path ? styles.active : null}
+          >
+            <Link href={item.path} alt={item.title} onClick={() => onClose()}>
+              {item.title}
+            </Link>
+          </li>
+        ))}
       <li className={styles.see}>
         <Link href="/" alt="Группы">
           <span>{lowSee}</span>

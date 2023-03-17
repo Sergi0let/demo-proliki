@@ -38,3 +38,21 @@ export const TittleIntermidiate = ({ level = '3', title }) => {
   const HeadingTag = `h${level}`;
   return <HeadingTag className={styles.intermidiateTitle}>{title}</HeadingTag>;
 };
+
+// --------- //
+
+export const H1Title = ({ title, className }) => (
+  <h1 className={`${styles.h1Title} ${className}`}>{title}</h1>
+);
+
+export const H2Title = ({ title, className }) => (
+  <h2 className={`${styles.h2Title} ${className}`}>{title}</h2>
+);
+
+export const H4Title = ({ title, className }) => (
+  <h4 className={`${styles.h4Title} ${className}`}>{title}</h4>
+);
+
+export const H5Title = ({ title, className }) => (
+  <h5 className={`${styles.h5Title} ${className}`}>{title}</h5>
+);

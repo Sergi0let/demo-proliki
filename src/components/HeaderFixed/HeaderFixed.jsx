@@ -7,7 +7,7 @@ import ChangeLang from '@/src/common/ChangeLang/ChangeLang';
 import Burger from '@/src/common/Burger/Burger';
 import styles from '@/src/components/HeaderFixed/HeaderFixed.module.scss';
 
-import logo from '../../../public/img/logo/logo-l.svg';
+import logo from '@/public/img/logo/logo-l.svg';
 
 const volumeIcon = (
   <svg
@@ -47,12 +47,9 @@ const searchIcon = (
 
 const HeaderFixed = ({ openBurger, onBurger }) => {
   const { pathname, route } = useRouter();
-  // const router = useRouter();
   const [search, setSearch] = useState('');
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [scroll, setScroll] = useState(false);
-
-  console.log('router', route);
 
   useEffect(() => {
     function handleResize() {

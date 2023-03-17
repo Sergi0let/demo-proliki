@@ -7,7 +7,7 @@ import medicine from '../../../public/img/farmGroups/medicine.svg';
 
 import styles from './FarmGroups.module.scss';
 import Container from '@/src/common/Container/Container';
-import FarmItem from '../farmaItem/FarmItem';
+import FarmItem from '../FarmItem/FarmItem';
 
 const farmGroupsData = [
   {

@@ -53,3 +53,41 @@
     font-size: 28px;
   }
 }
+
+// ---------------------------------- //
+
+.h1Title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 130%;
+
+  @include for-sm {
+    font-size: 40px;
+  }
+}
+
+.h2Title {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 130%;
+  text-align: left;
+  color: $blackColor;
+
+  @include for-sm {
+    font-size: 32px;
+  }
+}
+
+.h4Title {
+}
+
+.h5Title {
+  color: $blackColor;
+  font-size: 16px;
+  line-height: 160%;
+  font-weight: 400;
+
+  @include for-mm {
+    font-size: 18px;
+  }
+}

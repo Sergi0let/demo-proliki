@@ -1,4 +1,5 @@
 import Container from '@/src/common/Container/Container';
+import { H1Title } from '@/src/common/Title/Title';
 
 import styles from './Banner.module.scss';
 
@@ -7,9 +8,10 @@ const Banner = () => {
     <Container>
       <div className={styles.wrapper}>
         <div className={styles.banner}>
-          <h1 className={styles.banner__title}>
-            Надійний довідник в медичному світі: все про ліки тут.
-          </h1>
+          <H1Title
+            title="Надійний довідник в медичному світі: все про ліки тут."
+            className={styles.banner__title}
+          />
         </div>
       </div>
     </Container>
