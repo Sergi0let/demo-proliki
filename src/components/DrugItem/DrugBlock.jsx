@@ -11,6 +11,7 @@ import share from '@/public/img/icons/share.svg';
 import itemData from '@/src/data/item_data';
 
 import styles from './DrugBlock.module.scss';
+import Crumbreads from '@/src/common/Crumbreads/Crumbreads';
 
 const DrugBlock = () => {
   const [activeNav, setActiveNav] = useState('');
@@ -34,25 +35,7 @@ const DrugBlock = () => {
   return (
     <Container>
       <article className={styles.item}>
-        <ul className={styles.item__crumbreads}>
-          <li>
-            <Link href="/">Proliki</Link>
-          </li>
-          <li>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="4"
-              height="4"
-              viewBox="0 0 4 4"
-              fill="none"
-            >
-              <rect width="4" height="4" rx="2" fill="#4D5156" />
-            </svg>
-          </li>
-          <li>
-            <Link href="#">Лікарські препарати</Link>
-          </li>
-        </ul>
+        <Crumbreads />
 
         <H1Title title={item.name} className={styles.item__title} />
 

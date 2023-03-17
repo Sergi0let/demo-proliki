@@ -1,17 +1,15 @@
 import Container from '@/src/common/Container/Container';
+import Crumbreads from '@/src/common/Crumbreads/Crumbreads';
 import { H1Title } from '@/src/common/Title/Title';
 import Link from 'next/link';
 import styles from '../ClassificationMain/ClassificationMain.module.scss';
 
 const ClassificationPage = ({ data }) => {
+  const router = useRouter();
   return (
     <Container>
       <div className={styles.classification}>
-        <ul className={styles.classification__crumbreads}>
-          <li>
-            <Link href="/">Proliki</Link>
-          </li>
-        </ul>
+        <Crumbreads routePath={router} />
         <div className={styles.classification__title}>
           <H1Title title="ATХ классификация" />
         </div>

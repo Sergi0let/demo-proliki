@@ -1,4 +1,5 @@
 import Container from '@/src/common/Container/Container';
+import Crumbreads from '@/src/common/Crumbreads/Crumbreads';
 import Letter from '@/src/common/Letter/Letter';
 import RadioButton from '@/src/common/RadioButton/RadioButton';
 import { H1Title, H2Title, H3Title } from '@/src/common/Title/Title';
@@ -120,11 +121,7 @@ const ActiveSubstances = () => {
   return (
     <Container>
       <div className={styles['active-substances']}>
-        <ul className={styles['active-substances__crumbreads']}>
-          <li>
-            <Link href="/">Proliki</Link>
-          </li>
-        </ul>
+        <Crumbreads />
         <div className={styles['active-substances__title']}>
           <H1Title title="Алфавитный указатель препаратов" />
         </div>

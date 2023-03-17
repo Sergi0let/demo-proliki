@@ -1,5 +1,6 @@
 import CardNews from '@/src/common/CardNews/CardNews';
 import Container from '@/src/common/Container/Container';
+import Crumbreads from '@/src/common/Crumbreads/Crumbreads';
 import { H1Title } from '@/src/common/Title/Title';
 import newsData from '@/src/data/news_block-main';
 import Image from 'next/image';
@@ -12,11 +13,7 @@ const NewsBlockMain = () => {
     <Container>
       <main className={styles['news-block']}>
         <div className={styles['news-block__news']}>
-          <ul className={styles['news-block__crumbreads']}>
-            <li>
-              <Link href="/">Proliki</Link>
-            </li>
-          </ul>
+          <Crumbreads />
           <div className={styles['news-block__title']}>
             <H1Title title="Новости медицины и фармации" />
           </div>

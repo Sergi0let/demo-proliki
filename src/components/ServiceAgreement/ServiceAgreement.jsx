@@ -1,4 +1,5 @@
 import Container from '@/src/common/Container/Container';
+import Crumbreads from '@/src/common/Crumbreads/Crumbreads';
 import { H1Title, H2Title } from '@/src/common/Title/Title';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -21,11 +22,8 @@ const ServiceAgreement = () => {
     <Container>
       <div className={styles.agreement}>
         <main>
-          <ul className={styles.agreement__crumbreads}>
-            <li>
-              <Link href="/">Proliki</Link>
-            </li>
-          </ul>
+          <Crumbreads />
+
           <H1Title title="Угода користувача" />
           <div className={styles['agreement__block-text']}>
             <p>

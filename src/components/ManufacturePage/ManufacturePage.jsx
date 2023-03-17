@@ -1,8 +1,9 @@
 import Container from '@/src/common/Container/Container';
+import Crumbreads from '@/src/common/Crumbreads/Crumbreads';
 import MenuSort from '@/src/common/MenuSort/MenuSort';
 import MenuSortHuge from '@/src/common/MenuSortHuge/MenuSortHuge';
 import { H1Title } from '@/src/common/Title/Title';
-import Link from 'next/link';
+
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
@@ -13,7 +14,6 @@ import styles from './ManufacturePage.module.scss';
 const ManufacturePage = () => {
   const router = useRouter();
   const { id } = router.query;
-  console.log(id);
 
   const [drugsSort, setDrugsSort] = useState('По популярности');
   const [openSort, setOpenSort] = useState(false);
@@ -35,25 +35,7 @@ const ManufacturePage = () => {
   return (
     <Container>
       <div className={styles['manufacture-page']}>
-        <ul className={styles['manufacture-page__crumbreads']}>
-          <li>
-            <Link href="/">Proliki</Link>
-          </li>
-          <li>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="4"
-              height="4"
-              viewBox="0 0 4 4"
-              fill="none"
-            >
-              <rect width="4" height="4" rx="2" fill="#4D5156" />
-            </svg>
-          </li>
-          <li>
-            <Link href="/manufacturers">Производители</Link>
-          </li>
-        </ul>
+        <Crumbreads routePath={router} />
         <div className={styles['manufacture-page__header']}>
           <H1Title title={id} />
           <p> 14 препаратов, 1 активное вещество</p>

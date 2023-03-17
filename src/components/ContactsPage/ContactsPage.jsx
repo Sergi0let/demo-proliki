@@ -1,4 +1,5 @@
 import Container from '@/src/common/Container/Container';
+import Crumbreads from '@/src/common/Crumbreads/Crumbreads';
 import Title, {
   H1Title,
   H2Title,
@@ -19,11 +20,7 @@ const ContactsPage = () => {
   return (
     <Container>
       <div className={styles.contacts}>
-        <ul className={styles.contacts__crumbreads}>
-          <li>
-            <Link href="/">Proliki</Link>
-          </li>
-        </ul>
+        <Crumbreads />
         <div className={styles.contacts__title}>
           <H1Title title="Контакти" />
         </div>

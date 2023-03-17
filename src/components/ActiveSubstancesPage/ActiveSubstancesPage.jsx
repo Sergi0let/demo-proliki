@@ -1,6 +1,7 @@
 import BtnMore from '@/src/common/BtnMore/BtnMore';
 import Container from '@/src/common/Container/Container';
-import Title, { TittleIntermidiate } from '@/src/common/Title/Title';
+import Crumbreads from '@/src/common/Crumbreads/Crumbreads';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -35,25 +36,7 @@ const ActiveSubstancesPage = () => {
   return (
     <Container>
       <div className={styles['active-substance']}>
-        <ul className={styles['active-substance__crumbreads']}>
-          <li>
-            <Link href="/">Proliki</Link>
-          </li>
-          <li>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="4"
-              height="4"
-              viewBox="0 0 4 4"
-              fill="none"
-            >
-              <rect width="4" height="4" rx="2" fill="#4D5156" />
-            </svg>
-          </li>
-          <li>
-            <Link href="/atx_classification">Aктивні речовини</Link>
-          </li>
-        </ul>
+        <Crumbreads routePath={router} />
         <div className={styles['active-substance__title']}>
           <h1>{`  ${ua} (${eng})`}</h1>
         </div>

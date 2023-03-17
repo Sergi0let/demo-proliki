@@ -1,7 +1,8 @@
 import Container from '@/src/common/Container/Container';
+import Crumbreads from '@/src/common/Crumbreads/Crumbreads';
 import MenuSort from '@/src/common/MenuSort/MenuSort';
 import MenuSortHuge from '@/src/common/MenuSortHuge/MenuSortHuge';
-import Title, { H1Title, H2Title, TitleBig } from '@/src/common/Title/Title';
+import { H1Title, H2Title } from '@/src/common/Title/Title';
 
 import DrugsTable from '@/src/components/DrugsTable/DrugsTable';
 import Pagination from '@/src/components/Pagination/Pagination';
@@ -32,29 +33,13 @@ const ClassificationPage = () => {
   const handleOpenSort = () => {
     setOpenSort(!openSort);
   };
+  if (!data) return null;
 
   return (
     <Container>
       <div className={styles.classification}>
-        <ul className={styles.classification__crumbreads}>
-          <li>
-            <Link href="/">Proliki</Link>
-          </li>
-          <li>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="4"
-              height="4"
-              viewBox="0 0 4 4"
-              fill="none"
-            >
-              <rect width="4" height="4" rx="2" fill="#4D5156" />
-            </svg>
-          </li>
-          <li>
-            <Link href="/atx_classification">ATХ классификация</Link>
-          </li>
-        </ul>
+        <Crumbreads routePath={router} />
+
         <div className={styles.classification__title}>
           <H1Title
             title="Препараты влияющие на пищеварительную систему и обмен веществ"

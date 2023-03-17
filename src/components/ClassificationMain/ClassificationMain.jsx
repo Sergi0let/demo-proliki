@@ -5,16 +5,13 @@ import { H1Title, H2Title, H3Title } from '@/src/common/Title/Title';
 import atx_classification from '@/src/data/atx_classification';
 
 import styles from './ClassificationMain.module.scss';
+import Crumbreads from '@/src/common/Crumbreads/Crumbreads';
 
 const ClassificationMain = () => {
   return (
     <Container>
       <div className={styles.classification}>
-        <ul className={styles.classification__crumbreads}>
-          <li>
-            <Link href="/">Proliki</Link>
-          </li>
-        </ul>
+        <Crumbreads />
         <div className={styles.classification__title}>
           <H1Title title="ATХ классификация" />
         </div>
