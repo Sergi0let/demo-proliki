@@ -10,30 +10,6 @@
     padding-bottom: 64px;
   }
 
-  &__crumbreads {
-    margin-bottom: 16px;
-
-    li {
-      display: inline-block;
-      font-size: 14px;
-      line-height: 160%;
-      color: $blueColor;
-
-      @include for-sm {
-        font-size: 16px;
-      }
-
-      &:not(:last-child) {
-        margin-right: 8px;
-      }
-
-      svg {
-        position: relative;
-        top: -3px;
-      }
-    }
-  }
-
   &__title {
     padding-top: 16px;
     padding-bottom: 24px;
@@ -92,10 +68,6 @@
       padding-top: 32px;
       padding-bottom: 32px;
     }
-
-    // &:last-child {
-    //   padding-bottom: 0;
-    // }
   }
 }
 
@@ -110,11 +82,11 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 62px;
+    gap: 14px;
   }
 
   @include for-tablet {
-    gap: 83px;
+    gap: 28px;
   }
 
   span {

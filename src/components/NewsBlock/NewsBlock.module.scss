@@ -29,8 +29,27 @@
     color: $blueColor;
     white-space: nowrap;
     padding-top: 4px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    line-height: 180%;
+
+    &::before {
+      content: '';
+      height: 1px;
+      width: 100%;
+      background-color: $blueColor;
+      position: absolute;
+      bottom: 0px;
+      right: 100%;
+      transition: all 0.3s ease-in-out;
+    }
     &:hover {
       color: $blueHoverColor;
+
+      &::before {
+        background-color: $blueHoverColor;
+        right: 0;
+      }
     }
 
     @include for-mm {

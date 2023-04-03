@@ -4,10 +4,13 @@
 .crumbreads {
   padding-bottom: 16px;
   li {
+    position: relative;
     display: inline-block;
     font-size: 14px;
     line-height: 160%;
     color: $blueColor;
+    transition: all 0.3s ease 0s;
+    overflow: hidden;
 
     @include for-sm {
       font-size: 16px;
@@ -24,6 +27,26 @@
         color: #000;
         font-size: 44px;
         line-height: 0;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0px;
+      right: 100%;
+      width: 100%;
+      height: 2px;
+      background: $blueColor;
+      transition: all 0.3s ease 0s;
+    }
+
+    &:hover {
+      color: $blueHoverColor;
+
+      &::before {
+        right: 0;
+        background: $blueHoverColor;
       }
     }
   }

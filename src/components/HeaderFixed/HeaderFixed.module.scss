@@ -20,7 +20,7 @@
 
   &__nav {
     position: fixed;
-    z-index: 100;
+    z-index: 1;
     top: 0;
     display: flex;
     flex-direction: column;
@@ -31,7 +31,6 @@
     background-color: white;
     box-shadow: 0 4px 12px 100vmax white;
     clip-path: inset(0 -100vmax);
-
     height: auto;
 
     @include for-mm {
@@ -100,8 +99,8 @@
 
   &__btn_see {
     display: none;
-    padding: 11px 16px;
-    margin: 0px 16px;
+    padding: 9px 16px;
+    margin-left: 16px;
     cursor: pointer;
     color: $blueColor;
     font-size: 16px;
@@ -111,6 +110,24 @@
     transition: all 0.3s ease 0s;
     white-space: nowrap;
     transition: all 0.4s ease 0s;
+    font-family: inherit;
+
+    span {
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: -4px;
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0px;
+        right: 100%;
+        width: 100%;
+        height: 1px;
+        background: $blueColor;
+        transition: all 0.3s ease 0s;
+      }
+    }
 
     @include for-mm {
       order: 3;
@@ -122,7 +139,12 @@
 
     &:hover {
       color: $blueHoverColor;
-      text-decoration: underline;
+      span {
+        &::before {
+          background: $blueHoverColor;
+          right: 0px;
+        }
+      }
     }
   }
 
@@ -139,9 +161,24 @@
         font-weight: 400;
         font-size: 18px;
         border-bottom: 2px solid transparent;
+        transition: all 0.3s ease 0s;
+
+        a {
+          &:hover {
+            color: $blueHoverColor;
+            padding-bottom: 16px;
+            border-bottom: 2px solid $blueHoverColor;
+          }
+        }
       }
     }
   }
+}
+
+.active-tab {
+  border-bottom: 2px solid $blueHoverColor;
+  padding-bottom: 16px;
+  color: $blueHoverColor;
 }
 
 .search {

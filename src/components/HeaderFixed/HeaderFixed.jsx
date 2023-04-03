@@ -7,7 +7,7 @@ import ChangeLang from '@/src/common/ChangeLang/ChangeLang';
 import Burger from '@/src/common/Burger/Burger';
 import styles from '@/src/components/HeaderFixed/HeaderFixed.module.scss';
 
-import logo from '@/public/img/logo/logo-l.svg';
+import logo from '../../../public/img/logo/logo-l.svg';
 
 const volumeIcon = (
   <svg
@@ -50,6 +50,8 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
   const [search, setSearch] = useState('');
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [scroll, setScroll] = useState(false);
+
+  // console.log('header: isSmallScreen', isSmallScreen, 'scroll', scroll);
 
   useEffect(() => {
     function handleResize() {
@@ -147,14 +149,18 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
               {volumeIcon}
             </button>
           </form>
-          <button className={styles.header__btn_see}>Для слабозорих</button>
+          <button className={styles.header__btn_see}>
+            <span>Для слабозорих</span>
+          </button>
           <ChangeLang />
           <Burger openBurger={openBurger} onBurger={onBurger} />
         </ul>
         <ul className={styles.header__menu}>
           <li>
             <Link
-              style={pathname === '/atx_classification' ? classActiveTab : {}}
+              className={
+                pathname === '/atx_classification' ? styles['active-tab'] : null
+              }
               href="/atx_classification"
             >
               ATХ класифікація
@@ -162,7 +168,9 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
           </li>
           <li>
             <Link
-              style={pathname === '/active_substances' ? classActiveTab : {}}
+              className={
+                pathname === '/active_substances' ? styles['active-tab'] : null
+              }
               href="/active_substances"
             >
               Активні речовини
@@ -170,7 +178,7 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
           </li>
           <li>
             <Link
-              style={pathname === '/alphabet' ? classActiveTab : {}}
+              className={pathname === '/alphabet' ? styles['active-tab'] : null}
               href="/alphabet"
             >
               Алфавітний покажчик
@@ -178,7 +186,9 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
           </li>
           <li>
             <Link
-              style={pathname === '/manufacturers' ? classActiveTab : {}}
+              className={
+                pathname === '/manufacturers' ? styles['active-tab'] : null
+              }
               href="/manufacturers"
             >
               Виробники
@@ -186,7 +196,7 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
           </li>
           <li>
             <Link
-              style={pathname === '/news' ? classActiveTab : {}}
+              className={pathname === '/news' ? styles['active-tab'] : null}
               href="/news"
             >
               Новини
@@ -194,7 +204,7 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
           </li>
           <li>
             <Link
-              style={pathname === '/about' ? classActiveTab : {}}
+              className={pathname === '/about' ? styles['active-tab'] : null}
               href="/about"
             >
               Про нас
@@ -202,7 +212,7 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
           </li>
           <li>
             <Link
-              style={pathname === '/contacts' ? classActiveTab : {}}
+              className={pathname === '/contacts' ? styles['active-tab'] : null}
               href="/contacts"
             >
               Контакти

@@ -1,34 +1,69 @@
 @import './src/styles/breakpoints.scss';
 @import './src/styles/variables.scss';
 
-.radio-label {
+// .radio-label {
+//   font-size: 16px;
+//   line-height: 160%;
+//   font-weight: 400;
+//   margin-right: 24px;
+//   cursor: pointer;
+
+//   &:hover {
+//     border-color: $blueColor;
+//   }
+// }
+
+// .custom-radio {
+//   left: -8px;
+//   top: 6px;
+
+//   width: 20px;
+//   height: 20px;
+//   border: 2px solid $strokeColor;
+//   border-radius: 50%;
+//   display: inline-block;
+//   position: relative;
+//   transition: all 0.3s ease 0s;
+// }
+
+// .radio-input {
+//   visibility: hidden;
+// }
+
+// .radio-input:checked + span {
+//   border: 6px solid $blueColor;
+// }
+
+.radio-btn {
   font-size: 16px;
   line-height: 160%;
   font-weight: 400;
   margin-right: 24px;
-}
-
-.custom-radio {
-  left: -8px;
-  top: 6px;
   cursor: pointer;
-  width: 20px;
-  height: 20px;
-  border: 2px solid $strokeColor;
-  border-radius: 50%;
-  display: inline-block;
-  position: relative;
-  transition: all 0.3s ease 0s;
+
+  &__input {
+    visibility: hidden;
+  }
+
+  &__content {
+    left: -8px;
+    top: 6px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid $strokeColor;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s ease 0s;
+  }
 
   &:hover {
-    border-color: $blueColor;
+    .radio-btn__content {
+      border: 2px solid $blueColor;
+    }
   }
-}
-
-.radio-input {
-  visibility: hidden;
-}
-
-.radio-input:checked + span {
-  border: 6px solid $blueColor;
+  &__input:checked + span {
+    border: 6px solid $blueColor !important;
+    cursor: not-allowed;
+  }
 }

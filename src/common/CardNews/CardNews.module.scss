@@ -42,20 +42,41 @@
     }
   }
   &__category {
-    display: block;
+    display: inline-block;
     text-align: left;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
     color: $blueColor;
-    transition: color 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      height: 1px;
+      width: 100%;
+      background-color: $blueColor;
+      position: absolute;
+      bottom: 2px;
+      right: 100%;
+      transition: all 0.3s ease-in-out;
+    }
+    &:hover {
+      color: $blueHoverColor;
+
+      &::before {
+        background-color: $blueHoverColor;
+        right: 0;
+      }
+    }
 
     @include for-sm {
       font-size: 16px;
     }
 
-    &:hover {
-      color: $blueHoverColor;
+    @include for-mm {
+      padding-top: 0;
+      transform: translateY(-2px);
     }
   }
 
@@ -64,6 +85,7 @@
     transition: color 0.3s ease 0s;
     text-align: left;
     padding-top: 8px;
+    padding-bottom: 8px;
     font-size: 16px;
     line-height: 160%;
 
@@ -74,6 +96,7 @@
 
     &:hover {
       color: $blueHoverColor;
+      text-decoration: underline;
     }
   }
 }

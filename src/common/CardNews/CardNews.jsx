@@ -21,7 +21,7 @@ const CardNews = ({ image, alt, category, text }) => {
         <a className={styles.card__text_link} href="#">
           {text}
         </a>
-        <p className={styles.card__text_link}>
+        <p>
           <time dateTime="2021-02-01 00:00">2 марта 2021</time>
         </p>
       </div>

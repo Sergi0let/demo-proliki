@@ -11,17 +11,7 @@
   }
 
   h2 {
-    font-size: 20px;
-    line-height: 130%;
-    font-weight: 400;
-    color: $blackColor;
     padding-bottom: 24px;
-    border-bottom: 1px solid $strokeColor;
-
-    @include for-mm {
-      border-bottom: none;
-      font-size: 32px;
-    }
   }
 
   &__mobile {
@@ -31,6 +21,37 @@
   }
   &__desktop {
     display: none;
+
+    li {
+      cursor: pointer;
+      overflow: hidden;
+
+      span {
+        display: inline-block;
+        position: relative;
+        &::before {
+          content: '';
+          height: 1px;
+          width: 100%;
+          background-color: $blueColor;
+          position: absolute;
+          bottom: 0px;
+          right: 100%;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+
+      &:hover {
+        color: $blueHoverColor;
+
+        span {
+          &::before {
+            background-color: $blueHoverColor;
+            right: 0;
+          }
+        }
+      }
+    }
     @include for-mm {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -47,11 +68,11 @@
     padding-top: 18px;
     padding-bottom: 18px;
     border-bottom: 1px solid $strokeColor;
-    margin-bottom: 2px;
-    cursor: pointer;
+    border-top: 1px solid $strokeColor;
+    margin-bottom: -1px;
 
     @include for-mm {
-      border-bottom: none;
+      border: none;
       padding: 0px;
       padding-top: 8px;
     }

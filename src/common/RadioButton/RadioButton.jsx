@@ -6,9 +6,9 @@ const RadioButton = ({ name, id, value, onChange, checked, text }) => {
   };
 
   return (
-    <label htmlFor={id} className={styles['radio-label']}>
+    <label htmlFor={id} className={styles['radio-btn']}>
       <input
-        className={styles['radio-input']}
+        className={styles['radio-btn__input']}
         type="radio"
         name={name}
         id={id}
@@ -16,7 +16,7 @@ const RadioButton = ({ name, id, value, onChange, checked, text }) => {
         onChange={handleCheck}
         checked={checked}
       />
-      <span className={styles['custom-radio']} />
+      <span className={styles['radio-btn__content']} />
       {text}
     </label>
   );

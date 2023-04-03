@@ -35,7 +35,7 @@ const NewsBlockMain = () => {
                 Препараты от изжоги как новое средство для контроля уровня
                 глюкозы в крови при сахарном диабете
               </a>
-              <p className={styles.card__text_link}>
+              <p className={styles.card__text_date}>
                 <time dateTime="2021-02-01 00:00">2 марта 2021</time>
               </p>
             </div>
@@ -87,7 +87,7 @@ const NewsBlockMain = () => {
             </ul>
           </aside>
           <aside>
-            <h3>Категории</h3>
+            <h3>Популярні новини</h3>
             <ul>
               <li>
                 <a href="#">

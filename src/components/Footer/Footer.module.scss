@@ -38,6 +38,12 @@
     padding-bottom: 64px;
   }
 
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
   &__section_1 {
     @include for-sm {
       order: 2;
@@ -93,7 +99,7 @@
   &__text {
     font-size: 14px;
     line-height: 160%;
-    color: $greyColor;
+    color: $secondaryColor;
     margin-top: 16px;
     @include for-mm {
       font-size: 16px;
@@ -101,6 +107,7 @@
   }
 
   &__item {
+    overflow: hidden;
     &:not(:last-child) {
       margin-bottom: 16px;
     }
@@ -111,15 +118,29 @@
   }
 
   &__link {
-    text-decoration: none;
     color: $blueColor;
     line-height: 160%;
     font-size: 16px;
     transition: color 0.3s ease 0s;
+    position: relative;
 
+    &::before {
+      content: '';
+      height: 1px;
+      width: 100%;
+      background-color: $blueColor;
+      position: absolute;
+      bottom: 0px;
+      right: 100%;
+      transition: all 0.3s ease-in-out;
+    }
     &:hover {
       color: $blueHoverColor;
-      text-decoration: underline;
+
+      &::before {
+        background-color: $blueHoverColor;
+        right: 0;
+      }
     }
   }
 }
@@ -135,6 +156,7 @@
   padding-top: 16px;
   padding-bottom: 31px;
   color: $greyColor;
+  text-align: center;
 
   @include for-mm {
     padding-top: 24px;

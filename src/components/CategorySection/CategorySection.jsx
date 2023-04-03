@@ -86,7 +86,9 @@ const AccordionDesktop = ({ title, content }) => {
       {
         <ul className={styles['accordion-item__list']}>
           {content.map((item, index) => (
-            <li key={index}>{item}</li>
+            <li key={index}>
+              <span>{item}</span>
+            </li>
           ))}
         </ul>
       }

@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import flag from '@/public/img/icons/flag_ukr.svg';
 import style from './ChangeLang.module.scss';
+import Image from 'next/image';
 
 const ChangeLang = () => {
   const [isLang, setIsLang] = useState('UA');
@@ -21,6 +23,7 @@ const ChangeLang = () => {
         style={{ color: colorUa }}
         onClick={changeLang}
       >
+        <Image src={flag} alt="Україна" />
         UA
       </button>
       <button

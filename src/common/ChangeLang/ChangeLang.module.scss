@@ -14,15 +14,21 @@
   }
 
   button {
-    width: 36px;
     height: 32px;
+    padding: 0px 8px;
     background: $bgLightColor;
     color: $strokeColor;
     font-weight: 600;
     font-size: 16px;
+    font-family: inherit;
+    white-space: nowrap;
+    transition: all 0.3s ease 0s;
+
+    img {
+      margin-right: 4px;
+    }
 
     @include for-mm {
-      width: 48px;
       height: 48px;
     }
 
