@@ -2,5 +2,8 @@
 @import './src/styles/variables.scss';
 
 .alphabet {
-  padding-top: 50px;
+  padding-top: 48px;
+  @include for-mm {
+    padding-top: 24px + 64px;
+  }
 }

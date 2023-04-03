@@ -1,8 +1,9 @@
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import Container from '@/src/common/Container/Container';
-import { TitleMedium } from '@/src/common/Title/Title';
+import { H1Title, H2Title, H3Title } from '@/src/common/Title/Title';
 import BtnMore from '@/src/common/BtnMore/BtnMore';
 import linkPage from '@/public/img/icons/link-page.svg';
 import share from '@/public/img/icons/share.svg';
@@ -10,16 +11,14 @@ import share from '@/public/img/icons/share.svg';
 import itemData from '@/src/data/item_data';
 
 import styles from './DrugBlock.module.scss';
-import { useState } from 'react';
+import Crumbreads from '@/src/common/Crumbreads/Crumbreads';
 
 const DrugBlock = () => {
   const [activeNav, setActiveNav] = useState('');
   const item = itemData;
-  console.log('activeNav', activeNav);
 
   const handleNav = (e) => {
     const text = e.target.textContent;
-
     setActiveNav(text);
   };
 
@@ -32,35 +31,14 @@ const DrugBlock = () => {
       };
     }
   };
-  // style={{
-  //         color: '#4D5156',
-  //         cursor: 'not-allowed',
-  //         background: '#EAF2FA',
-  //       }}
 
   return (
     <Container>
       <article className={styles.item}>
-        <ul className={styles.item__crumbreads}>
-          <li>
-            <Link href="/">Proliki</Link>
-          </li>
-          <li>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="4"
-              height="4"
-              viewBox="0 0 4 4"
-              fill="none"
-            >
-              <rect width="4" height="4" rx="2" fill="#4D5156" />
-            </svg>
-          </li>
-          <li>
-            <Link href="#">Лікарські препарати</Link>
-          </li>
-        </ul>
-        <h1 className={styles.item__title}>{item.name}</h1>
+        <Crumbreads />
+
+        <H1Title title={item.name} className={styles.item__title} />
+
         <ul className={styles.item__nav}>
           <li onClick={handleNav}>
             <a style={styleActiveNav('Про препарат')} href="#anchor-1">
@@ -88,9 +66,14 @@ const DrugBlock = () => {
             </a>
           </li>
         </ul>
+
         <section id="anchor-1" className={styles.drug}>
           <div className={styles.table}>
-            <h2>Про Ібупрофен</h2>
+            <H2Title
+              item={'Про'}
+              title={item.name}
+              className={styles.item__title}
+            />
 
             <div className={styles.table__row}>
               <h4>Виробник:</h4>
@@ -183,11 +166,7 @@ const DrugBlock = () => {
         <ul className={styles.assent}>{}</ul>
 
         <section id="anchor-2" className={styles.instruction}>
-          <TitleMedium
-            level="2"
-            name={item.name}
-            title="Инструкция по применению"
-          />
+          <H2Title name={item.name} title="Инструкция по применению" />
 
           <ul className={styles.instruction__list}>
             <li>
@@ -219,7 +198,8 @@ const DrugBlock = () => {
             </li>
           </ul>
 
-          <h3 className={styles['instruction__sub-title']}>Склад</h3>
+          <H3Title title="Склад" />
+
           <div className={styles.instruction__info}>
             <p>речовина, що діє: ібупрофен;</p>
             <p>
@@ -237,7 +217,8 @@ const DrugBlock = () => {
               вещества, титана диоксид (Е 171), специальный красный (Е 129).
             </p>
           </div>
-          <h3 className={styles['instruction__sub-title']}>Лікарська форма</h3>
+
+          <H3Title title="Лікарська форма" />
           <div className={styles.instruction__info}>
             <p>Таблетки, покрытые пленочной оболочкой.</p>
             <p>
@@ -247,18 +228,16 @@ const DrugBlock = () => {
               пленочной оболочки.
             </p>
           </div>
-          <h3 className={styles['instruction__sub-title']}>
-            Фармакологічна група
-          </h3>
+
+          <H3Title title="Фармакологічна група" />
           <div className={styles.instruction__info}>
             <p>
               Нестероїдні протизапальні та протиревматичні засоби. Похідні
               пропіонової кислоти. Код АТХ М01А Е01.
             </p>
           </div>
-          <h3 className={styles['instruction__sub-title']}>
-            Фармакологічні властивості
-          </h3>
+
+          <H3Title title="Фармакологічні властивості" />
           <div className={styles.instruction__info}>
             <p>Фармакодинаміка.</p>
             <p>
@@ -290,9 +269,7 @@ const DrugBlock = () => {
             </p>
           </div>
           <div className={styles.instruction__contraindication}>
-            <h3 className={styles['instruction__sub-title']}>
-              Противопоказания
-            </h3>
+            <H3Title title="Противопоказания" />
             <ul>
               <li>
                 Підвищена чутливість до ібупрофену (або до іншого компонента
@@ -331,10 +308,11 @@ const DrugBlock = () => {
         </section>
 
         <section id="anchor-3" className={styles.analogs}>
-          <TitleMedium level="2" title="Аналоги Ібупрофен (16)" />
+          <H2Title title="Аналоги Ібупрофен (16)" />
+
           <ul>
             <li>
-              <a href="#" style={{ paddingTop: '0' }}>
+              <a href="#">
                 <Image
                   src="/img/drugs/analogs/item-1.jpg"
                   width={136}
@@ -473,15 +451,12 @@ const DrugBlock = () => {
               </div>
             </li>
           </ul>
+
           <BtnMore />
         </section>
 
         <section id="anchor-4" className={styles.diagnosis}>
-          <TitleMedium
-            level="2"
-            title="Диагнозы при которых применяют"
-            name="Ибупрофен"
-          />
+          <H2Title title="Диагнозы при которых применяют" name="Ибупрофен" />
           <ul>
             <li>
               <a className={styles.link} href="#">
@@ -529,7 +504,7 @@ const DrugBlock = () => {
         </section>
 
         <section id="anchor-5" className={styles.analogs}>
-          <TitleMedium level="2" title="Другие формы выпуска Ибупрофен (3)" />
+          <H2Title title="Другие формы выпуска Ибупрофен (3)" />
 
           <ul>
             <li>

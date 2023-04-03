@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 import MainContainer from '@/src/common/MainContainer/MainContainer';
 import HeaderFixed from '../HeaderFixed/HeaderFixed';
-import List from '../HeaderFixed/List/List';
+import HeaderList from '../HeaderList/HeaderList';
 import Footer from '../Footer/Footer';
 
 const Layout = ({ children }) => {
@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
           onBurger={handleBurger}
           onClose={handleCloseBurger}
         />
-        <List
+        <HeaderList
           openBurger={openBurger}
           onBurger={handleBurger}
           onClose={handleCloseBurger}

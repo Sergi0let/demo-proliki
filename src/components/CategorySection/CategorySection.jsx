@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { accordionData } from '@/public/utils/accordeon';
-import Title, { TitleSmall } from '@/src/common/Title/Title';
+import { H2Title, H5Title } from '@/src/common/Title/Title';
 
 import styles from './CategorySection.module.scss';
 
@@ -57,7 +57,10 @@ const Accordion = ({ title, content }) => {
         className={styles['accordion-item__title']}
         onClick={() => setIsActive(!isActive)}
       >
-        <TitleSmall title={title} />
+        <H5Title
+          className={styles['accordion-item__title-secondary']}
+          title={title}
+        />
         <button>{isActive ? minus : plus}</button>
       </div>
       {isActive && (
@@ -71,11 +74,14 @@ const Accordion = ({ title, content }) => {
   );
 };
 
-const AccordionDesctop = ({ title, content }) => {
+const AccordionDesktop = ({ title, content }) => {
   return (
     <div className={styles['accordion-item']}>
       <div className={styles['accordion-item__title']}>
-        <TitleSmall title={title} />
+        <H5Title
+          className={styles['accordion-item__title-secondary']}
+          title={title}
+        />
       </div>
       {
         <ul className={styles['accordion-item__list']}>
@@ -91,7 +97,7 @@ const AccordionDesctop = ({ title, content }) => {
 const CategorySection = () => {
   return (
     <section className={styles.accordion}>
-      <Title title="Популярные препараты по каттегориям" />
+      <H2Title title="Популярные препараты по каттегориям" />
       <div className={styles.accordion__mobile}>
         {accordionData.map(({ title, content }, index) => (
           <Accordion key={index} title={title} content={content} />
@@ -99,7 +105,7 @@ const CategorySection = () => {
       </div>
       <div className={styles.accordion__desktop}>
         {accordionData.map(({ title, content }, index) => (
-          <AccordionDesctop key={index} title={title} content={content} />
+          <AccordionDesktop key={index} title={title} content={content} />
         ))}
       </div>
     </section>

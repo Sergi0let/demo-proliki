@@ -1,12 +1,14 @@
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+
 import Container from '@/src/common/Container/Container';
 import Letter from '@/src/common/Letter/Letter';
 import RadioButton from '@/src/common/RadioButton/RadioButton';
-import { TitleBig } from '@/src/common/Title/Title';
-
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import styles from './Manufacture.module.scss';
+import { H1Title } from '@/src/common/Title/Title';
 import manufacturers from '@/src/data/manufactures';
+
+import styles from './Manufacture.module.scss';
+import Crumbreads from '@/src/common/Crumbreads/Crumbreads';
 
 const Manufacture = () => {
   const [currentLetter, setCurrentLetter] = useState('А');
@@ -36,11 +38,6 @@ const Manufacture = () => {
   const filter = Object.keys(checked)
     .filter((key) => checked[key])
     .toString();
-
-  // const handleTabClick = (e) => {
-  //   setCurrentTab(e.target.id);
-  //   setChecked({ абв: true, abc: false, 123: false });
-  // };
 
   const handleCheck = (id) => {
     if (id === 'абв') {
@@ -128,13 +125,9 @@ const Manufacture = () => {
   return (
     <Container>
       <div className={styles.manufacture}>
-        <ul className={styles.manufacture__crumbreads}>
-          <li>
-            <Link href="/">Proliki</Link>
-          </li>
-        </ul>
+        <Crumbreads />
         <div className={styles.manufacture__title}>
-          <TitleBig title="Производители" />
+          <H1Title title="Производители" />
         </div>
         <div className={styles.content}>
           {tabs.map((item, i) => (

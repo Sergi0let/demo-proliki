@@ -2,11 +2,11 @@
 @import './src/styles/variables.scss';
 
 .news {
-  padding-top: 48px;
+  padding-top: 48px +24px;
   padding-bottom: 48px;
-  @include for-sm {
-    padding-top: 64px;
-    padding-bottom: 58px;
+  @include for-mm {
+    padding-top: 32px + 64px;
+    padding-bottom: 64px;
   }
 
   &__header {

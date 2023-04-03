@@ -8,8 +8,6 @@ const DrugItem = () => {
   const { search } = router.query;
   const [drug, setDrug] = useState(null);
   const [allDrug, setAllDrug] = useState(null);
-  console.log('search', search);
-  console.log('drug', drug);
 
   useEffect(() => {
     const searchDrug = drugItems.filter(

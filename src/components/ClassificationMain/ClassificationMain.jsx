@@ -1,21 +1,19 @@
-import Container from '@/src/common/Container/Container';
-import Title, { TitleBig, TittleIntermidiate } from '@/src/common/Title/Title';
 import Link from 'next/link';
-import styles from './ClassificationMain.module.scss';
+
+import Container from '@/src/common/Container/Container';
+import { H1Title, H2Title, H3Title } from '@/src/common/Title/Title';
 import atx_classification from '@/src/data/atx_classification';
-import ItemClassification from '@/src/common/ItemClassification/ItemClassification';
+
+import styles from './ClassificationMain.module.scss';
+import Crumbreads from '@/src/common/Crumbreads/Crumbreads';
 
 const ClassificationMain = () => {
   return (
     <Container>
       <div className={styles.classification}>
-        <ul className={styles.classification__crumbreads}>
-          <li>
-            <Link href="/">Proliki</Link>
-          </li>
-        </ul>
+        <Crumbreads />
         <div className={styles.classification__title}>
-          <TitleBig title="ATХ классификация" />
+          <H1Title title="ATХ классификация" />
         </div>
         <ul className={styles.classification__list}>
           {atx_classification &&
@@ -28,7 +26,7 @@ const ClassificationMain = () => {
               </li>
             ))}
         </ul>
-        <Title title="Классификационная система ATC (Anatomical Therapeutic Chemical (АТС) classification system)" />
+        <H2Title title="Классификационная система ATC (Anatomical Therapeutic Chemical (АТС) classification system)" />
         <div className={styles['classification__block-text']}>
           <p>
             Классификационная система ATC (Anatomical Therapeutic Chemical (АТС)
@@ -45,7 +43,7 @@ const ClassificationMain = () => {
             сотрудничеству в методологии статистических исследований.
           </p>
         </div>
-        <TittleIntermidiate title="Структура и номенклатура системы АТС" />
+        <H3Title title="Структура и номенклатура системы АТС" />
         <div className={styles['classification__block-text']}>
           <p>
             В системе АТС лекарственные средства классифицируются в соответствии
@@ -80,7 +78,7 @@ const ClassificationMain = () => {
             таковыми в других странах.
           </p>
         </div>
-        <TittleIntermidiate title="Принципы классификации АТС" />
+        <H3Title title="Принципы классификации АТС" />
         <div className={styles['classification__block-text']}>
           <p>
             Центр ВОЗ включает новые статьи в классификацию АТС только по заявке

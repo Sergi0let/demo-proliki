@@ -1,6 +1,7 @@
 import CardNews from '@/src/common/CardNews/CardNews';
 import Container from '@/src/common/Container/Container';
-import { TitleBig } from '@/src/common/Title/Title';
+import Crumbreads from '@/src/common/Crumbreads/Crumbreads';
+import { H1Title } from '@/src/common/Title/Title';
 import newsData from '@/src/data/news_block-main';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -12,13 +13,9 @@ const NewsBlockMain = () => {
     <Container>
       <main className={styles['news-block']}>
         <div className={styles['news-block__news']}>
-          <ul className={styles['news-block__crumbreads']}>
-            <li>
-              <Link href="/">Proliki</Link>
-            </li>
-          </ul>
+          <Crumbreads />
           <div className={styles['news-block__title']}>
-            <TitleBig title="Новости медицины и фармации" />
+            <H1Title title="Новости медицины и фармации" />
           </div>
           <article className={styles.card}>
             <a href="#" className={styles.card__img_wrapper}>

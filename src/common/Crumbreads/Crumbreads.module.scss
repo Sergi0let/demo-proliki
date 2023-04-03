@@ -1,0 +1,30 @@
+@import './src/styles/breakpoints.scss';
+@import './src/styles/variables.scss';
+
+.crumbreads {
+  padding-bottom: 16px;
+  li {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 160%;
+    color: $blueColor;
+
+    @include for-sm {
+      font-size: 16px;
+    }
+
+    &:not(:last-child) {
+      position: relative;
+      margin-right: 32px;
+      &::after {
+        content: '.';
+        position: absolute;
+        top: 0;
+        right: -24px;
+        color: #000;
+        font-size: 44px;
+        line-height: 0;
+      }
+    }
+  }
+}
