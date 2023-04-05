@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <Banner />
-      <FarmGroups />
+      {/* <FarmGroups /> */}
       <AlphabetSection />
       <NewsBlock />
       <CategorySection />
