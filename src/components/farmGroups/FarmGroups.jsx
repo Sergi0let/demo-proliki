@@ -24,13 +24,17 @@ const FarmGroups = () => {
   return (
     <Container>
       <div className={styles.main}>
-        {farmGroupsData.map(({ card, title, link }) => (
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam
+        animi provident beatae ducimus, quos illo amet voluptatibus deserunt
+        nulla suscipit natus reiciendis est enim veritatis hic laudantium.
+        Cumque, alias fugiat.
+        {/* {farmGroupsData.map(({ card, title, link }) => (
           <Link href={link} key={title} className={styles.main__item}>
             <FarmItem card={card} title={title}>
               {title}
             </FarmItem>
           </Link>
-        ))}
+        ))} */}
       </div>
     </Container>
   );
