@@ -25,13 +25,16 @@ const FarmGroups = () => {
   return (
     <Container>
       <div className={styles.main}>
-        {farmGroupsData.map(({ card, title, link }) => (
+        {/* {farmGroupsData.map(({ card, title, link }) => (
           <Link href={link} key={title} className={styles.main__item}>
             <FarmItem card={card} title={title}>
               {title}
             </FarmItem>
           </Link>
-        ))}
+        ))} */}
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi sed
+        deserunt quas facilis? Quasi nesciunt fugiat, officia nihil eum quod ad,
+        et vero similique quam libero repellendus corporis architecto rem.
       </div>
     </Container>
   );
