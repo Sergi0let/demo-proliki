@@ -1,7 +1,7 @@
 import AlphabetSection from '@/src/components/AlphabetSection/AlphabetSection';
 import Banner from '@/src/components/Banner/Banner';
 import CategorySection from '@/src/components/CategorySection/CategorySection';
-import FarmGroups from '@/src/components/FarmGroups/FarmGroups';
+import FarmGroups from '../src/components/FarmGroups/FarmGroups';
 import NewsBlock from '@/src/components/NewsBlock/NewsBlock';
 
 export default function Home() {
