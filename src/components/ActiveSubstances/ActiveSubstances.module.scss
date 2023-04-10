@@ -10,33 +10,12 @@
     padding-bottom: 64px;
   }
 
-  &__crumbreads {
-    margin-bottom: 16px;
-
-    li {
-      display: inline-block;
-      font-size: 14px;
-      line-height: 160%;
-      color: $blueColor;
-
-      @include for-sm {
-        font-size: 16px;
-      }
-
-      &:not(:last-child) {
-        margin-right: 8px;
-      }
-
-      svg {
-        position: relative;
-        top: -3px;
-      }
-    }
+  @include for-tablet {
+    padding-bottom: 120px;
   }
 
   &__title {
     padding-bottom: 24px;
-    border-bottom: 1px solid $strokeColor;
 
     @include for-mm {
       padding-bottom: 32px;
@@ -129,7 +108,6 @@
 
 .content {
   padding-top: 24px;
-  border-bottom: 1px solid $strokeColor;
   &__links {
     display: flex;
     flex-wrap: wrap;
@@ -144,8 +122,8 @@
 
     @include for-mm {
       margin-top: 16px;
-      padding: 24px 25px;
-      gap: 10px;
+      padding: 12px 12px;
+      gap: 8px;
     }
 
     span {

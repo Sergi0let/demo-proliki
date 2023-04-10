@@ -26,7 +26,7 @@ const normalizeNameCrumb = (name) => {
     return 'Препарат';
   }
   if (name === 'atx_classification') {
-    return 'ATC классификация';
+    return 'ATX классификация';
   }
 
   if (name === 'active_substances') {

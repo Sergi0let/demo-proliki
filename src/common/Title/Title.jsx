@@ -1,10 +1,17 @@
 import styles from './Title.module.scss';
 
-export const H1Title = ({ title, className, variable }) => {
+export const H1Title = ({ title, className, variable, varibleSub }) => {
   if (variable) {
     return (
       <h1 className={`${styles.h1Title} ${className}`}>
         {variable} - {title}
+      </h1>
+    );
+  }
+  if (varibleSub) {
+    return (
+      <h1 className={`${styles.h1Title} ${className}`}>
+        {title} {varibleSub}
       </h1>
     );
   }

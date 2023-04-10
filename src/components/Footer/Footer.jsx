@@ -109,7 +109,7 @@ const Footer = () => {
                   href="/service_page/agreement"
                   className={styles.sections__link}
                 >
-                  Cоглашение
+                  Згода
                 </Link>
               </li>
               <li className={styles.sections__item}>
@@ -117,7 +117,7 @@ const Footer = () => {
                   href="/service_page/confidentiality"
                   className={styles.sections__link}
                 >
-                  Конфиденциальность
+                  Конфіденційність
                 </Link>
               </li>
               <li className={styles.sections__item}>
@@ -125,7 +125,7 @@ const Footer = () => {
                   href="/service_page/cookie"
                   className={styles.sections__link}
                 >
-                  Обработка cookie
+                  Обробка cookie
                 </Link>
               </li>
             </ul>

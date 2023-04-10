@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import Container from '@/src/common/Container/Container';
-import { H1Title, H2Title, H3Title } from '@/src/common/Title/Title';
+import { H1Title, H2Title, H3Title, H4Title } from '@/src/common/Title/Title';
 import BtnMore from '@/src/common/BtnMore/BtnMore';
 import linkPage from '@/public/img/icons/link-page.svg';
 import share from '@/public/img/icons/share.svg';
@@ -168,35 +168,38 @@ const DrugBlock = () => {
         <section id="anchor-2" className={styles.instruction}>
           <H2Title name={item.name} title="Инструкция по применению" />
 
-          <ul className={styles.instruction__list}>
-            <li>
-              <a href="#">Фармакологічні властивості</a>
-            </li>
-            <li>
-              <a href="#">Показания</a>
-            </li>
-            <li>
-              <a href="#">Застосування</a>
-            </li>
-            <li>
-              <a href="#">Побічні ефекти</a>
-            </li>
-            <li>
-              <a href="#">Умови зберігання</a>
-            </li>
-            <li>
-              <a href="#">Протипоказання</a>
-            </li>
-            <li>
-              <a href="#">Особливі вказівки</a>
-            </li>
-            <li>
-              <a href="#">Клінічні характеристики</a>
-            </li>
-            <li>
-              <a href="#">Передозування</a>
-            </li>
-          </ul>
+          <div className={styles.instruction__wrapper}>
+            <H4Title title="Навігація по інструкції" />
+            <ul className={styles.instruction__list}>
+              <li>
+                <a href="#">Фармакологічні властивості</a>
+              </li>
+              <li>
+                <a href="#">Показания</a>
+              </li>
+              <li>
+                <a href="#">Застосування</a>
+              </li>
+              <li>
+                <a href="#">Побічні ефекти</a>
+              </li>
+              <li>
+                <a href="#">Умови зберігання</a>
+              </li>
+              <li>
+                <a href="#">Протипоказання</a>
+              </li>
+              <li>
+                <a href="#">Особливі вказівки</a>
+              </li>
+              <li>
+                <a href="#">Клінічні характеристики</a>
+              </li>
+              <li>
+                <a href="#">Передозування</a>
+              </li>
+            </ul>
+          </div>
 
           <H3Title title="Склад" />
 
