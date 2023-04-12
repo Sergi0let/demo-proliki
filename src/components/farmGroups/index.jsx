@@ -1,14 +1,13 @@
 import Link from 'next/link';
 
-import Container from '@/src/common/Container/Container';
-import FarmItem from '../FarmItem/FarmItem';
-
 import phylogenetic from '@/public/img/farmGroups/phylogenetic.svg';
 import substance from '@/public/img/farmGroups/substance.svg';
 import alphabet from '@/public/img/farmGroups/alphabet.svg';
 import medicine from '@/public/img/farmGroups/medicine.svg';
 
 import styles from './FarmGroups.module.scss';
+import Container from '../../common/Container/Container';
+import FarmItem from '../FarmItem/FarmItem';
 
 const farmGroupsData = [
   {
