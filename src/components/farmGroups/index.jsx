@@ -25,15 +25,13 @@ const FarmGroups = () => {
   return (
     <Container>
       <div className={styles.main}>
-        <Link
-          href="/atx_classification"
-          key={'ATХ класифікація'}
-          className={styles.main__item}
-        >
-          <FarmItem card={phylogenetic} title="ATХ класифікація">
-            {'ATХ класифікація'}
-          </FarmItem>
-        </Link>
+        {farmGroupsData.map(({ card, title, link }) => (
+          <Link href={link} key={title} className={styles.main__item}>
+            <FarmItem card={card} title={title}>
+              {title}
+            </FarmItem>
+          </Link>
+        ))}
       </div>
     </Container>
   );
