@@ -8,6 +8,7 @@ import substance from '@/public/img/farmGroups/substance.svg';
 import alphabet from '@/public/img/farmGroups/alphabet.svg';
 import medicine from '@/public/img/farmGroups/medicine.svg';
 
+
 import styles from './FarmGroups.module.scss';
 
 const farmGroupsData = [
