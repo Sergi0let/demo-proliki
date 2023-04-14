@@ -1,7 +1,7 @@
-import ServiceAgreement from '@/src/components/ServiceAgreement/ServiceAgreement';
+import CookieInfo from '@/src/components/ServiceAgreement/CookieInfo';
 
 const ServicePage = () => {
-  return <ServiceAgreement />;
+  return <CookieInfo />;
 };
 
 export default ServicePage;

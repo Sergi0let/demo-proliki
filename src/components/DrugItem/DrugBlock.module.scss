@@ -15,30 +15,6 @@
     margin-top: -9px;
   }
 
-  &__crumbreads {
-    margin-bottom: 16px;
-
-    li {
-      display: inline-block;
-      font-size: 14px;
-      line-height: 160%;
-      color: $blueColor;
-
-      @include for-sm {
-        font-size: 16px;
-      }
-
-      &:not(:last-child) {
-        margin-right: 8px;
-      }
-
-      svg {
-        position: relative;
-        top: -3px;
-      }
-    }
-  }
-
   &__title {
     margin-bottom: 24px;
 
@@ -69,7 +45,6 @@
       transition: all 0.3s ease 0s;
       line-height: 58px;
       white-space: nowrap;
-      // overflow: auto;
 
       &:hover {
         color: $blueHoverColor;
@@ -102,7 +77,6 @@
     margin: 0 auto;
     width: 290px;
     height: auto;
-    // position: relative;
     margin-bottom: 24px;
 
     @include for-mm {
@@ -206,63 +180,6 @@
     padding-bottom: 64px;
   }
 
-  &__wrapper {
-    background: $bgColor;
-    padding: 16px;
-    margin: 32px 0;
-
-    @include for-tablet {
-      padding: 40px;
-      margin: 24px 0;
-    }
-  }
-
-  &__title {
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 130%;
-
-    @include for-sm {
-      font-size: 28px;
-    }
-  }
-
-  &__list {
-    padding-top: 24px;
-
-    list-style: disc;
-    display: grid;
-    transform: translateX(22px);
-    grid-template-columns: 1fr;
-
-    @include for-sm {
-      grid-template-columns: 1fr 1fr;
-      column-gap: 30px;
-    }
-
-    li {
-      transition: all 0.3s ease 0s;
-      color: $blueColor;
-      &:not(:last-child) {
-        margin-bottom: 16px;
-      }
-
-      &:hover {
-        color: $blueHoverColor;
-        text-decoration: underline;
-      }
-    }
-
-    a {
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 160%;
-    }
-
-    @include for-sm {
-    }
-  }
-
   &__info {
     padding-top: 24px;
     padding-bottom: 32px;
@@ -342,12 +259,16 @@
   }
 
   li {
-    // gap: 16px;
     border-bottom: 1px solid #e5e5e5;
     padding-top: 24px;
     padding-bottom: 24px;
     display: grid;
     grid-template-rows: auto auto auto 1fr auto;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
     @include for-sm {
       border: 1px solid #e5e5e5;
       padding: 32px;
@@ -487,7 +408,6 @@
     justify-content: center;
     gap: 4px;
     border-top: 1px solid #d3dce9;
-
     padding: 16px 0px;
     font-weight: 400;
     font-size: 16px;
@@ -501,7 +421,6 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-
       font-size: 18px;
     }
   }

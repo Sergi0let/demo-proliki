@@ -109,7 +109,7 @@ const Footer = () => {
                   href="/service_page/agreement"
                   className={styles.sections__link}
                 >
-                  Згода
+                  Угода користувача
                 </Link>
               </li>
               <li className={styles.sections__item}>

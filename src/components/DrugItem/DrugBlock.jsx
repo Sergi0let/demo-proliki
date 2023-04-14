@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import Container from '@/src/common/Container/Container';
 import { H1Title, H2Title, H3Title, H4Title } from '@/src/common/Title/Title';
@@ -12,6 +11,7 @@ import itemData from '@/src/data/item_data';
 
 import styles from './DrugBlock.module.scss';
 import Crumbreads from '@/src/common/Crumbreads/Crumbreads';
+import NavBlock from '@/src/common/NavBlock';
 
 const DrugBlock = () => {
   const [activeNav, setActiveNav] = useState('');
@@ -154,7 +154,7 @@ const DrugBlock = () => {
             </a> */}
             <ul className={styles.share}>
               <li>
-                <p>Аналоги (16)</p>
+                <a href="#anchor-3">Аналоги (16)</a>
               </li>
               <li>
                 <Image src={share} alt="Поділитись" />
@@ -168,38 +168,7 @@ const DrugBlock = () => {
         <section id="anchor-2" className={styles.instruction}>
           <H2Title name={item.name} title="Инструкция по применению" />
 
-          <div className={styles.instruction__wrapper}>
-            <H4Title title="Навігація по інструкції" />
-            <ul className={styles.instruction__list}>
-              <li>
-                <a href="#">Фармакологічні властивості</a>
-              </li>
-              <li>
-                <a href="#">Показания</a>
-              </li>
-              <li>
-                <a href="#">Застосування</a>
-              </li>
-              <li>
-                <a href="#">Побічні ефекти</a>
-              </li>
-              <li>
-                <a href="#">Умови зберігання</a>
-              </li>
-              <li>
-                <a href="#">Протипоказання</a>
-              </li>
-              <li>
-                <a href="#">Особливі вказівки</a>
-              </li>
-              <li>
-                <a href="#">Клінічні характеристики</a>
-              </li>
-              <li>
-                <a href="#">Передозування</a>
-              </li>
-            </ul>
-          </div>
+          <NavBlock title={'Навігація по інструкції'} />
 
           <H3Title title="Склад" />
 

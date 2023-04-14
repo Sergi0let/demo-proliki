@@ -1,7 +1,7 @@
-import ServiceAgreement from '@/src/components/ServiceAgreement/ServiceAgreement';
+import PrivacyPolicy from '@/src/components/ServiceAgreement/PrivacyPolicy';
 
 const ServicePage = () => {
-  return <ServiceAgreement />;
+  return <PrivacyPolicy />;
 };
 
 export default ServicePage;
