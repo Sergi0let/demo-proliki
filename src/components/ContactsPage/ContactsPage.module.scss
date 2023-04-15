@@ -10,30 +10,6 @@
     padding-bottom: 64px;
   }
 
-  &__crumbreads {
-    margin-bottom: 16px;
-
-    li {
-      display: inline-block;
-      font-size: 14px;
-      line-height: 160%;
-      color: $blueColor;
-
-      @include for-sm {
-        font-size: 16px;
-      }
-
-      &:not(:last-child) {
-        margin-right: 8px;
-      }
-
-      svg {
-        position: relative;
-        top: -3px;
-      }
-    }
-  }
-
   &__block {
     padding-top: 32px;
     @include for-tablet {
@@ -53,9 +29,13 @@
 
   &__socials-list {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     padding-bottom: 32px;
     gap: 28px;
+
+    @include for-mm {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   &__socials-items {

@@ -42,7 +42,8 @@ body {
   background: #fff;
   margin: 0;
   height: 100vh;
-  overflow: unset;
+  overflow: hidden; // uset
+  overflow-y: auto;
 }
 
 a {

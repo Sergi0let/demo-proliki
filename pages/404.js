@@ -1,3 +1,4 @@
+import NoMatches from '@/src/components/NoMatches';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
@@ -7,9 +8,9 @@ const Error = () => {
   useEffect(() => {
     setTimeout(() => {
       router.push('/');
-    }, 3000);
+    }, 5000);
   });
 
-  return <div>404</div>;
+  return <NoMatches />;
 };
 export default Error;
