@@ -3,18 +3,6 @@ import React from 'react';
 
 import styles from './Crumbreads.module.scss';
 
-// const dot = (
-//   <svg
-//     xmlns="http://www.w3.org/2000/svg"
-//     width="4"
-//     height="4"
-//     viewBox="0 0 4 4"
-//     fill="none"
-//   >
-//     <rect width="4" height="4" rx="2" fill="#4D5156" />
-//   </svg>
-// );
-
 const routeData = (route) =>
   route.route.split('/').filter((el) => el !== '[id]' && el !== '');
 

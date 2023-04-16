@@ -51,6 +51,13 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [scroll, setScroll] = useState(false);
 
+  const router = useRouter();
+
+  const handleRedirect = (e) => {
+    e.preventDefault();
+    router.push('/drug-list');
+  };
+
   // console.log('header: isSmallScreen', isSmallScreen, 'scroll', scroll);
 
   useEffect(() => {
@@ -89,7 +96,7 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
   };
 
   const styleFixedHeader = `${styles.header__nav} ${
-    route === '/about' ? styles.noFixed : ''
+    route === '/drugItem' ? styles.noFixed : ''
   }`;
 
   return (
@@ -113,6 +120,7 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
             />
           </Link>
           <form
+            onSubmit={handleRedirect}
             style={
               !openBurger && scroll
                 ? {

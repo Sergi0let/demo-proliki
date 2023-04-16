@@ -1,10 +1,17 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import styles from './DrugsTable.module.scss';
 
 const DrugsTable = () => {
+  const router = useRouter();
+
+  const handleRedirect = (e) => {
+    e.preventDefault();
+    router.push('/drugItem');
+  };
   return (
     <ul className={styles.table}>
-      <li>
+      <li onClick={handleRedirect}>
         <a href="#">
           <Image
             src="/img/drugs/analogs/item-1.jpg"
@@ -22,7 +29,7 @@ const DrugsTable = () => {
           <button className={styles.table__insturction}>Інструкція</button>
         </div>
       </li>
-      <li>
+      <li onClick={handleRedirect}>
         <Image
           src="/img/drugs/analogs/item-2.jpg"
           width={136}
@@ -36,7 +43,7 @@ const DrugsTable = () => {
           <button className={styles.table__insturction}>Інструкція</button>
         </div>
       </li>
-      <li>
+      <li onClick={handleRedirect}>
         <Image
           src="/img/drugs/analogs/item-3.jpg"
           width={136}
@@ -53,7 +60,7 @@ const DrugsTable = () => {
           <button className={styles.table__insturction}>Інструкція</button>
         </div>
       </li>
-      <li>
+      <li onClick={handleRedirect}>
         <Image
           src="/img/drugs/analogs/item-4.jpg"
           width={136}
@@ -67,7 +74,7 @@ const DrugsTable = () => {
           <button className={styles.table__insturction}>Інструкція</button>
         </div>
       </li>
-      <li>
+      <li onClick={handleRedirect}>
         <Image
           src="/img/drugs/analogs/item-5.jpg"
           width={136}
@@ -84,7 +91,7 @@ const DrugsTable = () => {
           <button className={styles.table__insturction}>Інструкція</button>
         </div>
       </li>
-      <li>
+      <li onClick={handleRedirect}>
         <Image
           src="/img/drugs/analogs/no_photo.jpg"
           width={136}
@@ -98,7 +105,7 @@ const DrugsTable = () => {
           <button className={styles.table__insturction}>Інструкція</button>
         </div>
       </li>
-      <li>
+      <li onClick={handleRedirect}>
         <Image
           src="/img/drugs/analogs/item-6.jpg"
           width={136}

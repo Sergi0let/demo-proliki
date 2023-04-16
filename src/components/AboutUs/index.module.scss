@@ -264,9 +264,6 @@
 }
 
 .features-about {
-  // background: rgb(220, 255, 186);
-  height: 30%;
-
   padding: 48px 0;
 
   @include for-mm {
@@ -280,20 +277,18 @@
     }
     @include for-mm {
       display: flex;
+      align-items: center;
+      justify-content: space-between;
       column-gap: 26px;
 
       &:nth-child(2) {
         flex-direction: row-reverse;
+        padding-left: 30px;
       }
 
       &:not(:last-child) {
         margin-bottom: 170px;
       }
-    }
-  }
-  &__item.reverse {
-    @include for-mm {
-      flex-direction: row-reverse;
     }
   }
 
@@ -305,7 +300,7 @@
     }
     @include for-mm {
       text-align: left;
-      flex-basis: 50%;
+      flex-basis: 45%;
       img {
         max-width: 100%;
         height: auto;
@@ -318,7 +313,7 @@
     padding-left: 35px;
 
     @include for-mm {
-      flex-basis: 50%;
+      flex-basis: 45%;
     }
   }
   &__item-title {
