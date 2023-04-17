@@ -13,11 +13,11 @@ const farmGroupsData = [
   {
     card: phylogenetic,
     title: 'ATХ класифікація',
-    link: '/atx_classification',
+    link: '/atx-class',
   },
-  { card: substance, title: 'Активні речовини', link: '/active_substances' },
+  { card: substance, title: 'Активні речовини', link: '/subst' },
   { card: alphabet, title: 'Алфавітний покажчик', link: '/alphabet' },
-  { card: medicine, title: 'Виробники', link: '/manufacturers' },
+  { card: medicine, title: 'Виробники', link: '/manuf' },
 ];
 
 export default function FarmBlock() {

@@ -47,7 +47,7 @@ const searchIcon = (
 
 const HeaderFixed = ({ openBurger, onBurger }) => {
   const { pathname, route } = useRouter();
-  const [search, setSearch] = useState('');
+  // const [search, setSearch] = useState('');
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [scroll, setScroll] = useState(false);
 
@@ -55,7 +55,7 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
 
   const handleRedirect = (e) => {
     e.preventDefault();
-    router.push('/drug-list');
+    router.push('/srch-rst');
   };
 
   // console.log('header: isSmallScreen', isSmallScreen, 'scroll', scroll);
@@ -89,22 +89,19 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
     };
   }, [isSmallScreen, openBurger]);
 
-  const classActiveTab = {
-    borderBottom: '2px solid #3B009A',
-    paddingBottom: '16px',
-    color: '#3B009A',
-  };
-
   const styleFixedHeader = `${styles.header__nav} ${
     route === '/drugItem' ? styles.noFixed : ''
   }`;
 
   return (
-    <header style={scroll ? { height: '63px' } : {}} className={styles.header}>
+    <header
+      className={`${styles.header} ${scroll ? styles.header_scroll : ''}`}
+    >
       <nav className={styleFixedHeader}>
         <ul
-          style={scroll ? { gridTemplateRows: '40px' } : {}}
-          className={styles.header__top}
+          className={`${styles.header__top} ${
+            scroll ? styles.header__top_scroll : ''
+          }`}
         >
           <Link
             href="/"
@@ -121,23 +118,10 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
           </Link>
           <form
             onSubmit={handleRedirect}
-            style={
-              !openBurger && scroll
-                ? {
-                    position: 'fixed',
-                    top: '6px',
-                    left: '0%',
-                    right: '0%',
-                    paddingTop: '4px',
-                    margin: '0 auto',
-                    paddingLeft: '15px',
-                    paddingRight: '15px',
-                    zIndex: '101',
-                  }
-                : {}
-            }
             type="sumbit"
-            className={styles.search}
+            className={`${styles.search} ${
+              !openBurger && scroll ? styles.search_scroll : ''
+            }`}
           >
             <input
               className={styles.search__input}
@@ -145,14 +129,16 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
               placeholder="Шукати ліки"
             />
             <span
-              style={scroll ? { left: '30px' } : {}}
-              className={styles.search__placeholder}
+              className={`${styles.search__placeholder} ${
+                scroll ? styles.search__placeholder_scroll : ''
+              }`}
             >
               {searchIcon}
             </span>
             <button
-              style={scroll ? { right: '15px' } : {}}
-              className={styles.search__btn}
+              className={`${styles.search__btn} ${
+                scroll ? styles.search__btn_scroll : ''
+              }`}
             >
               {volumeIcon}
             </button>
@@ -167,19 +153,17 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
           <li>
             <Link
               className={
-                pathname === '/atx_classification' ? styles['active-tab'] : null
+                pathname === '/atx-class' ? styles['active-tab'] : null
               }
-              href="/atx_classification"
+              href="/atx-class"
             >
               ATХ класифікація
             </Link>
           </li>
           <li>
             <Link
-              className={
-                pathname === '/active_substances' ? styles['active-tab'] : null
-              }
-              href="/active_substances"
+              className={pathname === '/subst' ? styles['active-tab'] : null}
+              href="/subst"
             >
               Активні речовини
             </Link>
@@ -194,10 +178,8 @@ const HeaderFixed = ({ openBurger, onBurger }) => {
           </li>
           <li>
             <Link
-              className={
-                pathname === '/manufacturers' ? styles['active-tab'] : null
-              }
-              href="/manufacturers"
+              className={pathname === '/manuf' ? styles['active-tab'] : null}
+              href="/manuf"
             >
               Виробники
             </Link>

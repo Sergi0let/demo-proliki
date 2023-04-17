@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 
 import Burger from '@/src/common/Burger/Burger';
 import ChangeLang from '@/src/common/ChangeLang/ChangeLang';
+import logo from '@/public/img/logo/logo-l.svg';
 
 import styles from './HeaderList.module.scss';
 import menu_data from '@/src/data/menu_data';
@@ -46,7 +47,7 @@ const List = ({ openBurger, onBurger, onClose }) => {
       <div className={styles.topList}>
         <Image
           onClick={() => onClose()}
-          src={'./img/logo/logo-l.svg'}
+          src={logo}
           alt="Емблема сайту"
           width={124}
           height={32}

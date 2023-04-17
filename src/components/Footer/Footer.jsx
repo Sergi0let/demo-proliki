@@ -35,7 +35,7 @@ const Footer = () => {
             <ul>
               <li className={styles.sections__item}>
                 <Link
-                  href="/atx_classification"
+                  href="/atx-class"
                   alt="ATХ класифікація"
                   className={styles.sections__link}
                 >
@@ -44,7 +44,7 @@ const Footer = () => {
               </li>
               <li className={styles.sections__item}>
                 <Link
-                  href="/active_substances"
+                  href="/subst"
                   alt="Активні речовини"
                   className={styles.sections__link}
                 >
@@ -62,7 +62,7 @@ const Footer = () => {
               </li>
               <li className={styles.sections__item}>
                 <Link
-                  href="/manufacturers"
+                  href="/manuf"
                   alt="Виробники"
                   className={styles.sections__link}
                 >
@@ -105,26 +105,17 @@ const Footer = () => {
                 </Link>
               </li>
               <li className={styles.sections__item}>
-                <Link
-                  href="/service_page/agreement"
-                  className={styles.sections__link}
-                >
+                <Link href="/agrmt" className={styles.sections__link}>
                   Угода користувача
                 </Link>
               </li>
               <li className={styles.sections__item}>
-                <Link
-                  href="/service_page/confidentiality"
-                  className={styles.sections__link}
-                >
+                <Link href="/confiden" className={styles.sections__link}>
                   Конфіденційність
                 </Link>
               </li>
               <li className={styles.sections__item}>
-                <Link
-                  href="/service_page/cookie"
-                  className={styles.sections__link}
-                >
+                <Link href="/cookie" className={styles.sections__link}>
                   Обробка cookie
                 </Link>
               </li>

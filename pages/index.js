@@ -10,7 +10,6 @@ export default function Home() {
       <Banner />
       <FarmBlock />
       <AlphabetSection />
-
       <NewsBlock />
       <CategorySection />
     </>
