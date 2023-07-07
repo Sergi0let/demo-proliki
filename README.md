@@ -17,7 +17,7 @@ Contacts: If you have any questions, suggestions, or feedback, you can reach out
 Search: Easily search for drugs by their name or active substances. The search functionality helps you find specific drugs quickly and efficiently.
 Installation
 To set up the project locally, follow these steps:
-
+Demo project https://demo-proliki.vercel.app/
 Clone the repository: git clone https://github.com/your-username/drugs-directory.git
 Navigate to the project directory: cd drugs-directory
 Install the dependencies: npm install
